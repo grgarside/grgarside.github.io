@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /search
+
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteRule ^(.*)$ https://georgegarside.com/search/$1 [R=301,L,QSA]

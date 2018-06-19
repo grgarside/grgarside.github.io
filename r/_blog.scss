@@ -1,0 +1,7 @@
+$colour-blog: #47555b;
+.main.blog {
+	@include mainheader($colour-blog, false);
+}
+.main.blog.post {
+	@include mainheader($colour-blog, true);
+}

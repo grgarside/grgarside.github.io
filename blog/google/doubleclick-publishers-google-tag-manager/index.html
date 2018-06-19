@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add DoubleClick for Publishers to Google Tag Manager - George Garside</title>
+	<meta name="description" content="How to use GTM to add your DFP Small Business or Premium ad units and ad tags to pages on your site.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Add DoubleClick for Publishers to Google Tag Manager">
+	<meta name="twitter:description" content="How to use GTM to add your DFP Small Business or Premium ad units and ad tags to pages on your site.">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/dfp-gtm.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/google/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Google</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Add DoubleClick for Publishers to Google Tag Manager</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/dfp-gtm.png" itemprop="image url" class="post-header-image" alt="Google Tag Manager with DoubleClick for Publishers variable for DOM elements of ad units">
+						<meta itemprop="caption" content="Google Tag Manager with DoubleClick for Publishers variable for DOM elements of ad units">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name">Add <span class="wrapspan">DoubleClick for Publishers</span> to <span class="wrapspan">Google Tag Manager</span></h1></a>
+						<p><span itemprop="articleSection">Google</span> <span itemprop="datePublished">2016-02-19</span> <span itemprop="dateModified">2016-10-07</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<h2>Introduction and prerequisites</h2>
+					<p>Google doesn't provide an official way to add DoubleClick for Publisher ad tags to a page using Google Tag Manager. Adding the tag as a Custom HTML tag doesn't work, because the tag comes in two parts and must be read in the correct order. Fortunately, there's a way around this, which I will discuss in this article. It relies on some newer features in Google Tag Manager, so if you haven't migrated to the new GTM, you'll need to do this before beginning with this tutorial. Of course, by the time you're reading this, there's probably no choice and you have no idea what I'm talking about — if so, continue! Also make sure you haven't got any DFP tags or code on your page at the moment.</p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline Links -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4651406832"
+						     data-ad-format="link"></ins>
+					</aside>
+					<h2>Detect if DFP ad units are on the page</h2>
+					<p>To tell Google Tag Manager that DFP ad units are on the page, a variable will be set up which looks for DOM elements that need to be filled with ads. This variable uses a CSS selector to find these elements, and GTM will store the result in a variable which can be looked at later. To begin, open Google Tag Manager and log in, then select the relevant container. Once you're in GTM, follow the instructions to set up the variable.</p>
+					<ol>
+						<li>
+							<p>Choose <i>Variables</i>, then select <i>New</i> under <i>User-Defined Variables</i> at the bottom of the page.</p>
+							<img src="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-user-defined-variables.png" width="264" alt="Google Tag Manager User-Defined Variables">
+						</li>
+						<li><p>Give the variable a name (in this example, we'll use <q>DFP Ads</q>), then select <i>DOM element</i> as the type.</p></li>
+						<li>
+							<p>Under <i>Configure Variable</i> choose <i>CSS selector</i> as the <i>Selection Method</i> and enter the following as the <i>Element Selector</i>:</p>
+							<pre>div[id^="div-gpt-ad-"]</pre>
+							<p>This looks for all <code>div</code> elements on the page which have an <code>id</code> beginning <code>div-gpt-ad-</code>. Leave <i>Attribute Name</i> empty.</p></li>
+						<li>
+							<p>Make sure your variable looks like the following before continuing with this tutorial.</p>
+							<img src="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-dfp-variable.png" width="309" alt="DFP ads variable in GTM">
+						</li>
+					</ol>
+					<p>If you're interested in precisely what this does, here's the explanation: Google Tag Manager, once the DOM has loaded, looks through the DOM for all elements matching the CSS selector of <code>div[id^="div-gpt-ad-"]</code>. This CSS selector is looking for all <code>div</code> elements (which the DFP ad tags are, but so are other elements on the page) with an ID beginning with <q><code>div-gpt-ad-</code></q>, which is true only for DFP ad tags, but is true for <i>all</i> DFP ad tags. Thus, the content of the variable is the concatenation of these elements. We'll use this variable to trigger the tag if and only if there are DFP ad units on the page which need DFP ads.</p>
+					<h2>Trigger the DFP ad code</h2>
+					<p>Using the variable we just set up, a trigger can be set up to trigger the DFP ad code (which we haven't got yet, but we'll get there).</p>
+					<ol>
+						<li><p>In Google Tag Manager, select <i>Triggers</i> &rarr; <i>New</i>.</p></li>
+						<li><p>Set a name for the trigger (in this example, we'll use <q>Page contains DFP Ads</q>), and choose <i>Page View</i> as the event.</p></li>
+						<li><p>For the trigger type…</p>
+							<ul>
+								<li><i>Page View</i>: <b>Don't use this option</b> — DFP will not inject ads correctly with this selected.</li>
+								<li><i>DOM Ready</i>: Use this if you wish for the DFP ads to be injected as soon as possible.</li>
+								<li><i>Window Loaded</i>: Use this if you don't mind a short delay before the ads are injected in return for making sure that all the other elements of your page are loaded first.</li>
+							</ul>
+						</li>
+						<li>
+							<p>Under <i>Fire On</i>, select <i>Some Page Views</i>, then select your variable that you named earlier (in our case, <q>DFP Ads</q>). Choose <i>does not equal</i> and enter <q>null</q> into the box on the right.</p>
+							<img src="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-trigger-dfp-ads-does-not-equal-null.png" width="882" alt="GTM trigger: DFP Ads does not equal null">
+						</li>
+						<li>
+							<p>Make sure your trigger looks like the following before continuing with this tutorial.</p>
+							<img src="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-trigger-dfp-ads.png" width="308" alt="GTM trigger: DFP Ads">
+						</li>
+					</ol>
+					<h2>Generate the DFP tags for use in GTM</h2>
+					<p>You'll have to make some changes to the DFP ad code before you can add it though. Before you begin this section, open DoubleClick for Publishers and log in to your account. In this tutorial, we will use a DoubleClick for Publishers Small Business account, however this also works with DoubleClick for Publishers Premium accounts.</p>
+					<ol>
+						<li>
+							<p>In DoubleClick for Publishers, select <i>Inventory</i> &rarr; <i>Generate tags</i>. Under <i>Select ad units</i>, click <i>Include all</i>, then <i>Generate Tags</i>.</p>
+							<img src="https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/dfp-inventory-generate-tags.png" width="757" alt="DFP inventory: Generate tags">
+						</li>
+						<li><p>Set the tag type to <i>Google Publisher Tag</i>, then click <i>Continue</i>. Leave the tag options to their defaults, and click <i>Continue</i>.</p></li>
+						<li><p>Copy and keep the <i>Document header</i> section of the ad tags. You'll need to add this to the tag in Google Tag Manager. Ignore the <i>Document body</i> section of the ad tags.</p>
+					</ol>
+					<h2>Add the DoubleClick for Publishers ad tag code</h2>
+					<p>It's time to add the ads from DFP.</p>
+					<ol>
+						<li><p>In Google Tag Manager, select <i>Tags</i> &rarr; <i>New</i>.</p></li>
+						<li><p>Set a name for the tag (in this example, we'll use <q>Google DFP</q>). For the product, choose <i>Custom HTML Tag</i>.</p></li>
+						<li><p>Paste in the DFP tag you copied in the previous section. We'll need to make some changes to this code though.</p></li>
+						<li>
+							<p>Add the following code before the last closing <code>&lt;script&gt;</code> tag. This loops through all elements with an id beginning with <code>div-gpt-ad-</code> and calls <code>googletag.display(element)</code> on each element.</p>
+							<pre class="prettyprint">var adunits = document.querySelectorAll('div[id^="div-gpt-ad-"]');
+for (var i = 0; i &lt; adunits.length; i++) { googletag.cmd.push(function() { googletag.display(adunits[i].getAttribute('id')); }); }</pre>
+						</li>
+						<li><p>Under <i>Advanced Settings</i>, set <i>Tag firing options</i> to <i>Once per page</i>. This ensures the code is not run multiple times per page.</p></li>
+						<li><p>For <i>Fire On</i>, choose <i>Some Pages</i>, then check the trigger you named earlier (in this example, <q>Page contains DFP Ads</q> is the name of the trigger).</p></li>
+						<li><p>Click <i>Save Tag</i>, then choose <i>Publish</i> in the top-right to publish this code to your site's GTM tag. Don't worry that you haven't implemented the ads yet — the code has no effect without the next section implemented.</p>
+					</ol>
+					<h2>Add the ad units to your HTML</h2>
+					<p>You now need these <code>div-gpt-ad-</code> elements on your page to tell the code above where to inject the ads. You shouldn't use the code from DFP, as mentioned earlier. Instead, you should take the ID from the tag in the previous section and use this as the id for the div element on your page.</p>
+					<p>Look in the tag code you added in GTM. You should see lines which look like this:</p>
+					<pre class="prettyprint">googletag.defineSlot('/122783354/BlogFooter', [728, 90], '<b>div-gpt-ad-1455876604709-0</b>').addService(googletag.pubads());</pre>
+					<p>The string I have marked as bold is the id of the div you need to insert in your HTML for this ad unit. The div needs to be empty for this to work. Again, <b>don't</b> insert the <i>Document body</i> code provided by DFP into the div — use this instead.</p>
+					<pre class="prettyprint">&lt;div id="<b>div-gpt-ad-1455876604709-0</b>"&gt;&lt;/div&gt;</pre>
+					<h2>DoubleClick for Publishers is now implemented using Google Tag Manager!</h2>
+					<p>Any pages with DFP ad units should now load using Google Tag Manager! If you have any questions, let me know in the comments below. Here's an example ad implemented using the method discussed in this article.</p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-dfpgtm';
+						var disqus_title = 'Add DoubleClick for Publishers to Google Tag Manager';
+						var disqus_url = 'https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<div class="card card-sidebar" itemprop="author" itemscope itemtype="https://schema.org/Person">
+					<p>Article written by <span itemprop="name">George&nbsp;Garside</span>, a student from the UK who's being doing web development for a few years alongside his studies.</p>
+					<ul>
+						<li><a href="https://georgegarside.com/" itemprop="sameAs">About grgarside</a></li>
+						<li><a href="https://georgegarside.com/blog/google/">Other Google posts</a></li>
+					</ul>
+				</div>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/&amp;text=Add%20DoubleClick%20for%20Publishers%20to%20Google%20Tag%20Manager&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

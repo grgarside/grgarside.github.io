@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+	<url>
+		<loc>https://georgegarside.com/blog/</loc>
+		<lastmod>2018-06-09</lastmod>
+	</url>
+	<!-- Categories -->
+	<url>
+		<loc>https://georgegarside.com/blog/macos/</loc>
+		<lastmod>2018-06-09</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/osx-10-11-el-capitan-icon.png</image:loc>
+			<image:title>OS X 10.11 El Capitan Icon</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/ios/</loc>
+		<lastmod>2015-10-04</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/ios/ios-9-icon.png</image:loc>
+			<image:title>iOS 9 Icon</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/google/</loc>
+		<lastmod>2016-02-19</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/google/google-search-icon.png</image:loc>
+			<image:title>Google Search Icon</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/stack-exchange/</loc>
+		<lastmod>2017-05-19</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/stack-exchange/Stack-Exchange-Logo-Retina.png</image:loc>
+			<image:title>Stack Exchange Logo Retina high resolution with alpha</image:title>
+		</image:image>
+	</url>
+	<!-- Casio Calculator Tutorials -->
+	<url>
+		<loc>https://georgegarside.com/blog/casio-calculator-tutorials/</loc>
+		<lastmod>2017-04-17</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/casio-calculator-tutorials/fx-991es-plus/equation-solve/</loc>
+		<lastmod>2017-04-18</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/eqnsolve.png</image:loc>
+			<image:title>Casio FX-991ES PLUS Equation Solve Calculator Display Screenshot</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/eqnsolve.gif</image:loc>
+			<image:title>Casio FX-991ES PLUS Equation Solve Calculator Tutorial Animation</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/casio-calculator-tutorials/fx-991es-plus/quadratic-equation-solve/</loc>
+		<lastmod>2017-04-18</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/quadraticeqnsolve.png</image:loc>
+			<image:title>Casio FX-991ES PLUS Quadratic Equation Solve Calculator Display Screenshot</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/quadraticeqnsolve.gif</image:loc>
+			<image:title>Casio FX-991ES PLUS Quadratic Equation Solve Calculator Tutorial Animation</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/casio-calculator-tutorials/fx-82es/mean-sum-count/</loc>
+		<lastmod>2016-01-31</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/statmode.png</image:loc>
+			<image:title>Casio FX-82ES Quadratic Equation Solve Calculator Display Screenshot</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/mean-sum.gif</image:loc>
+			<image:title>Casio FX-82ES Quadratic Equation Solve Calculator Tutorial Animation</image:title>
+		</image:image>
+	</url>
+	<!-- Boom Beach -->
+	<url>
+		<loc>https://georgegarside.com/blog/boom-beach-help-guide/</loc>
+		<lastmod>2016-02-15</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/boom-beach-help-guide/task-force-and-operations/</loc>
+		<lastmod>2015-11-30</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/boom-beach-help-guide/account/</loc>
+		<lastmod>2015-12-31</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/boom-beach-help-guide/account/gamecenter-1-settings.png</image:loc>
+			<image:title>iOS Settings Game Center</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/boom-beach-help-guide/account/gamecenter-2-app.png</image:loc>
+			<image:title>Game Center App Icon on Home Screen SpringBoard</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/boom-beach-help-guide/account/gamecenter-3-app-play.png</image:loc>
+			<image:title>Game Center App More Play</image:title>
+			<image:caption>Game Center Boom Beach More</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/boom-beach-help-guide/account/gamecenter-4-welcome-back.png</image:loc>
+			<image:title>Game Center welcome back banner</image:title>
+			<image:caption>Welcome back, GRGarside</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/boom-beach-help-guide/account/boom-beach-transfer-link-account-device.png</image:loc>
+			<image:title>Boom Beach Account link &amp; transfer old to new device</image:title>
+			<image:caption>Boom Beach Link a device. Choose the type of device you want to link to. I want to link to an iPhone, iPad or iPod. I want to link to another device.</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/boom-beach-help-guide/account/boom-beach-link-device-type-iphone-another.png</image:loc>
+			<image:title>Boom Beach Account link type of device iPhone or Android (other)</image:title>
+			<image:caption>Boom Beach Link a device. If you would like to play on two devices or would like to transfer your account to a new device, you can do it here.</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/boom-beach-help-guide/account/boom-beach-transfer-link-device-code.png</image:loc>
+			<image:title>Boom Beach Account link device code</image:title>
+			<image:caption>Boom Beach Link a device. Now, leave this screen open. On the other device, go to the linking screen and tap the "This is the NEW device" button. Enter this code in your new device.</image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/boom-beach-help-guide/gameplay-support/</loc>
+		<lastmod>2015-08-14</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/boom-beach-help-guide/troubleshooting/</loc>
+		<lastmod>2015-10-18</lastmod>
+	</url>
+</urlset>

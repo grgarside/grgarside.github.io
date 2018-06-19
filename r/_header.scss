@@ -1,0 +1,122 @@
+@mixin mainheader($colour, $tall) {
+	min-height: 300px;
+	&::before {
+		display: block;
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		background-color: $colour;
+		background-image: linear-gradient($colour, lighten($colour, 8%));
+		@if $tall {
+			height: 460px;
+			@media (max-width: $medium) {
+				height: 800px;
+			}
+		} @else {
+			height: 200px;
+			@media (max-width: $medium) {
+				height: 600px;
+			}
+		}
+	}
+}
+
+.main:not(.blog) {
+	@include mainheader($colour-home, false);
+}
+.header {
+	padding: 15px 0;
+	display: block;
+	position: relative;
+	color: white;
+	.title {
+		font-size: xx-large;
+		letter-spacing: -0.03em;
+		width: 280px;
+		text-transform: lowercase;
+		word-spacing: -5px;
+		a {
+			white-space: nowrap;
+		}
+	}
+	p.subtitle {
+		color: lightgrey;
+	}
+	// Remove default margin on h1
+	> h1 {
+		margin: 0;
+	}
+}
+@media (max-width: $medium) {
+	// subtitle is hidden on thin
+	div.header p.subtitle {
+		display: none;
+	}
+}
+@media (min-width: $large) {
+	// Subtitle next to title
+	.header .title {
+		float: left;
+	}
+	.header p.subtitle {
+		padding-left: 260px;
+		padding-top: 10px;
+	}
+}
+.header img {
+	width: 29px;
+	margin-top: -4px;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+@media (max-width: $medium) {
+	.header + div > img {
+		float: none !important;
+	}
+	.header + div > img + div {
+		float: none;
+		width: 100%;
+		height: auto;
+	}
+}
+.title a, .header a, .breadcrumbs, .breadcrumbs a {
+	color: white;
+}
+// Position breadcrumbs on top-right of page, only when page is widest
+@media (min-width: $large) {
+	.breadcrumbs {
+		position: absolute;
+		top: 24px;
+		right: 0;
+	}
+}
+
+// Contents for page
+.card-toc {
+	// Overlaps darker background in header
+	&, & a {
+		color: white;
+	}
+	// Show contents text
+	&:not(.plain):before {
+		content: "Contents";
+		font-size: 1em;
+		display: block;
+		color: grey;
+		margin-bottom: -10px;
+		margin-left: 8px;
+	}
+	&.jump {
+		li {
+			display: inline-block;
+			margin-right: 12px;
+		}
+		&:before {
+			content: "Jump to"
+		}
+	}
+}

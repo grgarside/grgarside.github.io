@@ -1,0 +1,105 @@
+// Homepage
+.main.home {
+	@include mainheader($colour-home, true);
+}
+.container nav {
+	margin-bottom: 18px;
+}
+// Used for displaying a list of links such as at the top of the homepage
+.siteslinks {
+	margin: -10px 30px 0 0;
+	padding-left: 0;
+	
+	li {
+		display: inline-block;
+		margin: 10px 0 0 30px;
+		font-size: 130%;
+	}
+
+	> li > a {
+		font-size: 120%;
+	}
+	> li .siteslinks > li > a {
+		font-size: 70%;
+	}
+	.siteslinks {
+		margin: -10px;
+	}
+	.sub.online {
+	color: green;
+	}
+	.sub.offline {
+		color: orange;
+	}
+	.sub {
+		font-size: 80%;
+		display: block;
+		margin-top: -3px;
+	}
+}
+.about {
+	@media (min-width: $small) {
+		margin-right: 190px;
+		
+		aside {
+			position: absolute;
+			top: -10px;
+			right: -210px;
+		}
+	}
+}
+
+// Flair
+.stackexchangeflair {
+	width: 155px;
+	padding: 10px;
+	background-color: #fff8dc;
+	//border: 1px solid #e0dcbf;
+	margin-right: 20px;
+	margin-top: 10px;
+		
+	@media (min-width: $large) {
+		.stackexchangeflair {
+			margin-top: 5px;
+		}
+	}
+	// Favicons imported in data
+	.username { display: block; }
+	.userInfo .username { line-height: 12px; }
+	.userInfo .username img { border: none; padding-right: 3px; }
+	.userInfo .username a { color: #07c; font-weight: bold; text-decoration: none; }
+	.badge1 { color: #fc0; margin-left: 3px; }
+	.badge2 { color: #c0c0c0; margin-left: 3px; }
+	.badge3 { color: #C96; margin-left: 3px; }
+	.reputation-score { color: #444; font-size: 120%; font-weight: bold; margin-right: 2px; }
+	.badgecount { color: #808185; padding-left: 1px; }
+	.badgecount-tight { color: #808185; padding-left: 1px; letter-spacing: -1px; }
+	
+	.username {
+		display: block;
+		text-align: center;
+		font-size: 120%;
+		&::after {
+			content: "♦";
+			font-size: .8em;
+		}
+	}
+	.mod-flair, .mod-flair-other-sites {
+		display: none;
+	}
+	.flairreputation {
+		margin: 5px 0;
+	}
+	.favicon {
+		margin: 0 auto;
+	}
+	.reputation-score {
+		display: block;
+		text-align: center;
+		margin-bottom: 4px;
+		font-size: 150%;
+	}
+	.badge1 {
+		margin-left: 15%;
+	}
+}

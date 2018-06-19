@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+	<url>
+		<loc>https://georgegarside.com/apps/</loc>
+		<lastmod>2017-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/apps/tda-planner/</loc>
+		<lastmod>2016-02-15</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-planner/tda-planner-icon.png</image:loc>
+			<image:title>TDA Planner App Icon</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-planner/tda-planner-1.jpg</image:loc>
+			<image:title>TDA Planner home page and news</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-planner/tda-planner-2.jpg</image:loc>
+			<image:title>TDA Planner information tab</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-planner/tda-planner-3.jpg</image:loc>
+			<image:title>TDA house information for Milton</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-planner/tda-planner-4.jpg</image:loc>
+			<image:title>About TDA information</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-planner/tda-planner-5.jpg</image:loc>
+			<image:title>TDA VLE timetable login in Planner app</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/apps/tda-enrichment/</loc>
+		<lastmod>2016-11-24</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tda-enrichment-icon.png</image:loc>
+			<image:title>TDA Enrichment App Icon</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tda-enrichment-2.2-home.png</image:loc>
+			<image:title>TDA Enrichment iOS app home screen with list of houses</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tda-enrichment-2.2-list.png</image:loc>
+			<image:title>TDA Enrichment iOS app list of enrichment activities</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tdaenrichment2.png</image:loc>
+			<image:title>TDA Enrichment iOS app screenshot</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tda-enrichment-1.png</image:loc>
+			<image:title>TDA Enrichment iOS app screenshot of the main menu</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tda-enrichment-2.png</image:loc>
+			<image:title>TDA Enrichment iOS app screenshot of the warm up and cool down section</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tda-enrichment-3.png</image:loc>
+			<image:title>TDA Enrichment iOS app screenshot of the resistance training section</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-enrichment/tda-enrichment-4.png</image:loc>
+			<image:title>TDA Enrichment iOS app screenshot of the legs workout</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/apps/free-bitcoin/</loc>
+		<lastmod>2018-05-04</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/free-bitcoin-app@2x.png</image:loc>
+			<image:title>Free Bitcoin App Icon</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/freebitcoin-app-1.png</image:loc>
+			<image:title>Free Bitcoin App iOS homepage</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/freebitcoin-app-2.png</image:loc>
+			<image:title>Rolled random number for bitcoin faucet</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/freebitcoin-app-3.png</image:loc>
+			<image:title>Payout your bitcoin to your bitcoin address</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/freebitcoin-app-4.png</image:loc>
+			<image:title>Earn interest at 4.08% on your bitcoin</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/freebitcoin-app-5.png</image:loc>
+			<image:title>Bitcoin lottery every week</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/apps/tda-connect/</loc>
+		<lastmod>2015-05-27</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-connect/tda-connect-icon.png</image:loc>
+			<image:title>TDA Connect App Icon</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-connect/img/2x-1.png</image:loc>
+			<image:title>TDA Connect Screenshot of login page</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-connect/img/2x-2.png</image:loc>
+			<image:title>TDA Connect Screenshot of dashboard</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/tda-connect/img/2x-3.png</image:loc>
+			<image:title>TDA Connect Screenshot of home drive</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/apps/free-ether/</loc>
+		<lastmod>2017-06-19</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/free-bitcoin-app@2x.png</image:loc>
+			<image:title>Free Ether App Icon</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/freebitcoin-app-1.png</image:loc>
+			<image:title>Free Ether App iOS homepage</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/apps/free-bitcoin/freebitcoin-app-2.png</image:loc>
+			<image:title>Rolled random number for ethereum faucet</image:title>
+		</image:image>
+	</url>
+</urlset>

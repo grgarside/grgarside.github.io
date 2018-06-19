@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/</loc>
+		<lastmod>2018-06-09</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/safari-no-longer-supports-unsafe-extension-tampermonkey-header.png</image:loc>
+			<image:title>Safari error message ‘Safari no longer supports the unsafe extension Tampermonkey’ with Tampermonkey showing in the background having been installed successfully</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/safari-no-longer-supports-the-unsafe-extension-error.png</image:loc>
+			<image:title>Safari no longer supports the unsafe extension. You can find newer extensions reviewed by Apple in the App Store or Safari Extensions Gallery.</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/tampermonkey-safariextz.png</image:loc>
+			<image:title>Tampermonkey.safariextz extension bundle package</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/rename-safariextz-zip.gif</image:loc>
+			<image:title>Rename safariextz file to zip file</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/extracting-safariextz-zip.png</image:loc>
+			<image:title>Extracting Safari extension as zip file</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/safari-enable-develop-menu.png</image:loc>
+			<image:title>Safari Preferences showing develop menu option in Advanced</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/develop-menu-show-extension-builder.png</image:loc>
+			<image:title>Safari Develop menu with Show Extension Builder highlighted</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/extension-builder-add-extension.png</image:loc>
+			<image:title>Extension Builder with Add Extension menu option from plus button</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/extension-builder-extension.png</image:loc>
+			<image:title>Extension Builder showing one extension just added</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/extension-builder-install-extension.png</image:loc>
+			<image:title>Safari is trying to install an extension</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/tampermonkey-install-macos-mojave.png</image:loc>
+			<image:title>Tampermonkey menu shown in macOS Mojave's Safari</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/tampermonkey-safari-preferences-mojave.png</image:loc>
+			<image:title>Safari Preferences showing Extensions tab with Tampermonkey listed as installed</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/extension-teamid.gif</image:loc>
+			<image:title>Safari extensions settings plist to copy preferences from an older version of the extension</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/safari-extensions-preferences-locked.png</image:loc>
+			<image:title>Safari extensions preferences file locked in Finder Get Info</image:title>
+		</image:image>
+	</url>
+</urlset>

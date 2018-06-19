@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/</loc>
+		<lastmod>2017-09-23</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/new-nav-custom-css-improved-stack-overflow.png</image:loc>
+			<image:title>New navigation custom CSS for Stack Exchange</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/css-applied-to-new-nav-stack-overflow.png</image:loc>
+			<image:title>CSS applied to the new nav bar on Stack Overflow</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/new-nav-better-stylesheet-stack-exchange.png</image:loc>
+			<image:title>New nav bar better stylesheet for Stack Exchange</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/sierra-console-private/</loc>
+		<lastmod>2017-04-29</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/console-app-logs.png</image:loc>
+			<image:title>Unified Logging in macOS Sierra replaces important information with private to hide the contents</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/</loc>
+		<lastmod>2017-09-24</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/significant-locations.png</image:loc>
+			<image:title>Significant locations in High Sierra and iOS 11 shows places you've visited whether frequently or for a long period which the OS deems is significant to record</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/privacy-system-services-unlocked.png</image:loc>
+			<image:title>Security &amp; Privacy: System Services</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/system-preferences-show-all.png</image:loc>
+			<image:title>System Preferences show all button hold function to show all preference panes list</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/notes-monospaced.png</image:loc>
+			<image:title>Notes.app monospaced format font in macOS</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/notes-monospaced-touch-bar.png</image:loc>
+			<image:title>Notes.app monospaced format font button missing on the Touch Bar format menu</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/finder-recents-all-my-files.png</image:loc>
+			<image:title>All My Files renamed to Recents in High Sierra Finder</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/colour-picker-touch-bar-redesign.png</image:loc>
+			<image:title>All new colour picker in the Touch Bar in macOS High Sierra</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/touch-bar-colour-picker-old-sierra.png</image:loc>
+			<image:title>A summary of the old Touch Bar colour picker in macOS Sierra</image:title>
+		</image:image>
+		<video:video>
+	    <video:content_loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/touch-bar-colour-picker-old-sierra.mp4</video:content_loc>
+	    <video:thumbnail_loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/touch-bar-colour-picker-old-sierra.png</video:thumbnail_loc>
+	    <video:title>Touch Bar colour picker in macOS Sierra</video:title>
+	    <video:description>A look at interactions with the colour picker shown on the Touch Bar in macOS Sierra, prior to its redesign in macOS High Sierra.</video:description>
+	    <video:duration>7</video:duration>
+	    <video:publication_date>2017-09-04</video:publication_date>
+	    <video:tag>Touch Bar</video:tag>
+	    <video:category>macOS</video:category>
+	    <video:uploader info="https://georgegarside.com/blog/">George Garside's Blog</video:uploader>
+	  </video:video>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/colour-picker-swatches.png</image:loc>
+			<image:title>Colour picker swatches now supports scrolling</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/pressandhold-custom-characters-touch-bar.png</image:loc>
+			<image:title>PressAndHold.app Touch Bar controls</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/pressandhold-redesign-high-sierra.png</image:loc>
+			<image:title>PressAndHold.app character viewer shown on screen redesigned in High Sierra</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/safari-use-reader-automatically.png</image:loc>
+			<image:title>Use reader automatically on georgegarside.com in Safari by holding down the Reader button in the toolbar</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/high-sierra-content-caching/</loc>
+		<lastmod>2017-09-24</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/content-caching.png</image:loc>
+			<image:title>Content caching in Sharing.prefpane for macOS High Sierra</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/content-caching-storage.png</image:loc>
+			<image:title>View storage used and set maximum cache size for caching service</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/content-caching-clients.png</image:loc>
+			<image:title>Limit who can use your caching service</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/content-caching-peers.png</image:loc>
+			<image:title>Decide whether other caching servers can share your cache</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/content-caching-parents.png</image:loc>
+			<image:title>Add caching server parents</image:title>
+		</image:image>
+	</url>
+</urlset>

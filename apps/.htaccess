@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /apps/
+
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteRule ^(.*)$ https://georgegarside.com/apps/$1 [R=301,L]

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Person markup for adding structured data - George Garside</title>
+	<meta name="description" content="You can add a variety of person structured data to your personal webpage for search engines and the main way to do this is through Schema.org—here's how.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/google/person-markup-adding-structured-data/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/google/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Google</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/google/person-markup-adding-structured-data/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Person markup for adding structured data</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/google/person-markup-adding-structured-data/schema-org-person.png" itemprop="image" class="post-header-image">
+					<div class="post-info">
+						<h1 itemprop="headline">Person markup for adding structured data</h1>
+						<p><span itemprop="articleSection">Google</span> <span itemprop="datePublished">2014-12-13</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>Adding structured data to your personal website will allow Google and other search engines to show rich snippets for your site. This is especially important on your homepage to promote your content. You can use a variety of markup to your page to add person structured data providing a lot of extra bot-readable information to make the page more useful for search engines, and the main way to do this is through <a href="https://schema.org">Schema.org</a>. This is a collaboration between Google, Yahoo! and Bing to provide a standard for extra markup to pages, but the markup can be confusing.</p>
+					<blockquote><p>If Google understands the content on your pages, we can create rich snippets—detailed information intended to help users with specific queries. These rich snippets help users recognize when your site is relevant to their search, and may result in more clicks to your pages.</p></blockquote>
+					<p>Schema.org provides structure for markup of pages containing information about people, allowing person structured data to be added. A lot of information can be marked up on your page within the Person itemscope, but these are the main properties which you should mark up:</p>
+					<ul>
+						<li>name (or givenName and familyName)</li>
+						<li>url</li>
+						<li>image</li>
+						<li>email</li>
+						<li>jobTitle</li>
+					</ul>
+					<h2>Adding Person Structured Data</h2>
+					<p>Begin by making sure that all the content that you want to mark up is included in the page. Here is an example page that I will markup for this article:</p>
+<pre class="prettyprint">&lt;body&gt;
+&lt;h1&gt;George Garside&lt;/h1&gt;
+&lt;h2&gt;Student&lt;/h2&gt;
+&lt;img src="photo.jpg"&gt;
+&lt;p&gt;email@address.com&lt;/p&gt;
+&lt;a href="http://georgegarside.com/"&gt;georgegarside.com&lt;/a&gt;
+&lt;/body&gt;</pre>
+					<p>This is a very simple page that contains a heading with the name of the person, a subheading with the job title, a photo, an email address and a URL. This is obviously a very simple page and your page will be more complicated, but this basic page will demonstrate the method which can be adapted for your own page.</p>
+					<p>The type of item that you will be marking up on the page must be defined by setting the item type by adding attributes to the tag which wraps the content, which in this case is the <em>body</em> tag:</p>
+<pre class="prettyprint">&lt;body itemscope itemtype="https://schema.org/Person"&gt;
+&lt;h1&gt;George Garside&lt;/h1&gt;
+&lt;h2&gt;Student&lt;/h2&gt;
+&lt;img src="photo.jpg"&gt;
+&lt;p&gt;email@address.com&lt;/p&gt;
+&lt;a href="http://georgegarside.com/"&gt;georgegarside.com&lt;/a&gt;
+&lt;/body&gt;</pre>
+					<p>Next, the actual content can be marked up. The simplest content to markup is text, using <em>itemprop</em> attributes on the tags with the content that you wish to mark up. Spans are recommended, but not required, so you do not need to change the actual structure of your page to add markup. I will add markup to my name, job title and email address:</p>
+<pre class="prettyprint">&lt;body itemscope itemtype="https://schema.org/Person"&gt;
+&lt;h1 itemprop="name"&gt;George Garside&lt;/h1&gt;
+&lt;h2 itemprop="jobTitle"&gt;Student&lt;/h2&gt;
+&lt;img src="photo.jpg"&gt;
+&lt;p itemprop="email"&gt;email@address.com&lt;/p&gt;
+&lt;a href="http://georgegarside.com/"&gt;georgegarside.com&lt;/a&gt;
+&lt;/body&gt;</pre>
+					<p>There’s another thing to note before we move on—the name can be marked up further, using <em>givenName</em> and <em>familyName.</em> This is not absolutely necessary, but does add extra information for the search engines to use in the future (I’m not aware of any rich snippets that use <em>givenName</em> and <em>familyName</em> over the more general <em>name,</em> but things can change in the future).</p>
+<pre class="prettyprint">&lt;body itemscope itemtype="https://schema.org/Person"&gt;
+&lt;h1 itemprop="name"&gt;
+	&lt;span itemprop="givenName"&gt;George&lt;/span&gt;
+	&lt;span itemprop="familyName"&gt;Garside&lt;/span&gt;
+&lt;/h1&gt;
+&lt;h2 itemprop="jobTitle"&gt;Student&lt;/h2&gt;
+&lt;img src="photo.jpg"&gt;
+&lt;p itemprop="email"&gt;email@address.com&lt;/p&gt;
+&lt;a href="http://georgegarside.com/"&gt;georgegarside.com&lt;/a&gt;
+&lt;/body&gt;</pre>
+					<p>Photos and URLs are slightly different, but still easy to mark up. URLs are marked up like text, but in anchor tags with <em>href</em> attributes. Photos can use ImageObject to define it, or simply by marking up an img. It’s also a good idea to add an alt attribute to the image for Google to understand the content of the image with words. ImageObjects can also contain captions, custom thumbnails and more. For more information about ImageObject, see <a href="https://schema.org/ImageObject">schema.org/ImageObject</a>.</p>
+<pre class="prettyprint">&lt;body itemscope itemtype="https://schema.org/Person"&gt;
+&lt;h1 itemprop="name"&gt;
+	&lt;span itemprop="givenName"&gt;George&lt;/span&gt;
+	&lt;span itemprop="familyName"&gt;Garside&lt;/span&gt;
+&lt;/h1&gt;
+&lt;h2 itemprop="jobTitle"&gt;Student&lt;/h2&gt;
+&lt;img src="photo.jpg" itemprop="image" alt="Photo of George Garside"&gt;
+&lt;p itemprop="email"&gt;email@address.com&lt;/p&gt;
+&lt;a href="http://georgegarside.com/" itemprop="url"&gt;georgegarside.com&lt;/a&gt;
+&lt;/body&gt;</pre>
+					<h2>Testing Person Structured Data</h2>
+					<p>Person structured data, along with all other structured data, is shown in Google Webmaster Tools under Search Appearance → Structured Data next time the page is crawled (use the Fetch with Google tool and submit the page to the index), but you can test it immediately with the <a href="https://www.google.com/webmasters/tools/richsnippets">Structured Data Testing Tool</a>. Using the HTML upload and previewing the above shows the metadata that Google can extract from the page.</p>
+					<p><img class="post-image" src="https://georgegarside.com/blog/google/person-markup-adding-structured-data/structured-data-testing-tool.png" alt="Extracted structured data" width="607"></p>
+					<p>That’s it! Fetch your webpage with Google and submit it for crawling, then wait for Google to crawl the page. Once this is done, it takes a little while for Google to update the Webmaster Tools, but once it has, you will see the structured data shown in Google Webmaster Tools → Search Appearance → Structured Data.</p>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-ios-personmarkup';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+				xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/</loc>
+		<lastmod>2017-06-05</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/tdalogo.jpg</image:loc>
+			<image:title>Thomas Deacon Academy Logo</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/tda-logo-atom.png</image:loc>
+			<image:title>TDA Logo</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/tda-students-graph.png</image:loc>
+			<image:title>TDA Students year distribution graph</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term3-1.jpg</image:loc>
+			<image:title>Lion Kheswa, Y10, awarded Principals Award and met Prince Charles</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term3-2.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term3-3.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term3-4.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term3-5.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term3-6.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term3-7.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term2-1.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term2-2.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term2-3.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term2-4.jpg</image:loc>
+			<image:title>Christmas carol service</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-1.jpg</image:loc>
+			<image:title>Google Expeditions</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-2.jpg</image:loc>
+			<image:title>TDA students on an expedition with Google Expeditions</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-3.jpg</image:loc>
+			<image:title>TDA U14 Hockey team</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-4.jpg</image:loc>
+			<image:title>TDA Football</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-5.jpg</image:loc>
+			<image:title>TDA DofE</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-6.jpg</image:loc>
+			<image:title>TDA CCF Cadets</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-7.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/thomasdeaconacademy/blog/images/term1-8.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/vle-login/</loc>
+		<lastmod>2016-04-16</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/vle-login/term-dates/</loc>
+		<lastmod>2017-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/vle-login/ict-code-of-conduct/</loc>
+		<lastmod>2016-02-10</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/webmail/</loc>
+		<lastmod>2015-11-05</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/remote-access/</loc>
+		<lastmod>2015-04-11</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/projects/stem14</loc>
+		<lastmod>2015-07-20</lastmod>
+		<video:video>
+      <video:thumbnail_loc>http://img.youtube.com/vi/CyPyME9SFy0/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>STEM 2014</video:title>
+      <video:description>STEM 2014 Questions and Answers with the students.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/CyPyME9SFy0?rel=0&amp;showinfo=0&amp;color=white&amp;autohide=1</video:player_loc>
+      <video:duration>114</video:duration>
+      <video:publication_date>2015-07-20</video:publication_date>
+      <video:tag>STEM</video:tag>
+      <video:category>School</video:category>
+      <video:uploader info="https://georgegarside.com/">George Garside</video:uploader>
+	  </video:video>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/thomasdeaconacademy/projects/business-lesson</loc>
+		<lastmod>2016-04-16</lastmod>
+		<video:video>
+      <video:thumbnail_loc>http://img.youtube.com/vi/NzuT1OsaekY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>TDA Y10 Business Lesson</video:title>
+      <video:description>Setting up good classroom routines at the Thomas Deacon Academy. Lesson recorded was Mr Garcha's business lesson.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/NzuT1OsaekY?rel=0&amp;showinfo=0&amp;color=white&amp;autohide=1</video:player_loc>
+      <video:duration>359</video:duration>
+      <video:publication_date>2016-03-29</video:publication_date>
+      <video:tag>Business</video:tag>
+      <video:category>School</video:category>
+      <video:uploader info="https://georgegarside.com/">George Garside</video:uploader>
+	  </video:video>
+	</url>
+</urlset>

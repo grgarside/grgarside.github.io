@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/grgarside
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://georgegarside.com
+  * I am grgarside (https://keybase.io/grgarside) on keybase.
+  * I have a public key with fingerprint 7FD1 447E F582 6B8C D971  5AA0 0BBE F520 D97C F686
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010157690c4aa71a35235523d5a3a26a87687f61082d966607209bdd82d48410fc5e0a",
+            "fingerprint": "7fd1447ef5826b8cd9715aa00bbef520d97cf686",
+            "host": "keybase.io",
+            "key_id": "0bbef520d97cf686",
+            "kid": "010157690c4aa71a35235523d5a3a26a87687f61082d966607209bdd82d48410fc5e0a",
+            "uid": "bd521b39e3c32867a8bf1b08d77fd319",
+            "username": "grgarside"
+        },
+        "service": {
+            "hostname": "georgegarside.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1474971818,
+    "expire_in": 157680000,
+    "prev": "832c5a5478958f296063efeb19f7bd62352a0e44f13cd59f91f71bd2825b915d",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMIpAnicrVJbSFRBGN6t9ZJkWRRRFNXpAobZmXOZM2ehwELqpYdSi6LcZs7MWU/p
+nvXsWct0XyKC6Io92EMSSYVdqCjEMPKWblmBkmAhRGWU5UsbQjchm1P51GsDw/D/
+833ffP/HdGdP9WX5x0bnHx3snV3jf9LZEPdtH910tUYgNq0WgjXCPvb7YOWUxdzQ
+PosKQUEEIlA1qIuGgrEGsKxKsso3VbGMJYiRBpFmQiAiieoQQlGTRJ1QyksFKUA0
+DZWJWMgTTCsSZk7UsSIul9VMChRFY6aKJEiQQXUNqBiLIiG8J4m8NkyIICeW2TGP
+wc0RHGP5ls17vAj9sfcv/j/7jv+WI1SVAJF1JhuyhKCGETEBERHV+CQy0D1gjDkR
+XME4OuyEsROzKBMSeQJvV1kG85L1RpmEMNsJs7+wfMOu4ApRx3Ztwy7n12WuG40F
+PbpbHfXw+xkJ/VUKEStCeZqcUcU4344IQcCRhmt50kDRFJ4mAihPYAeilsNClofg
+aSCRL+8dVsUlkSwZKlYVDekqMiUdilBmJiNANzVCIc9LwiJTFBPIBlV1UwemBgiV
+kKQSHahU8GarjNhCEHKbOMwlY1Y4gt24wwfv6tgV8PmzfOlpU7xf5sualjP59zK2
+Zvpu+dfntI4NR5oyB1tqoydXWs0zN7zwv0w+nXu7uy3a3/cu90LBwJE6u3Xu+OKe
+T9tu7OxvQAO5pQ2dTbAwsPZre1FuV0nf7S1nhk8kXo9OSa34Vvnz+8bS2iw1+9z+
+w21Nq2YUFRcuqS/QnEuPb2bUXQktv1ebfNM4p3Xe/YHq5pZ1sKJ02dDEnbsJ/Vjv
+9OezUhnP3t5LJFP4wY871zry12dLPXQo81be58315DQFFxN9pyb27givuv9+QfHQ
+0s5DHx8uchvPxgNfOjZMvKquW/1oT+B4svLA+OaK3SWpNc2J6+nD7YHzjfXu4ba0
+mSvuHutJvFmUe3nhwS+g4GVy5ENp78gvdVhIwQ==
+=aWbd
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/grgarside
+
+==================================================================

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vector Magic crash in macOS Sierra - George Garside</title>
+	<meta name="description" content="Fix Vector Magic Desktop Edition crash when smoothing image in macOS Sierra due to an updated system dylib">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Vector Magic crash in macOS Sierra">
+	<meta name="twitter:description" content="Fix Vector Magic Desktop Edition crash when smoothing image in macOS Sierra due to an updated system dylib">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/vector-magic-smoothing-image.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Vector Magic crash in macOS Sierra</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/vector-magic-smoothing-image.png" itemprop="image" class="post-header-image" alt="Vector Magic Smoothing Image">
+					<div class="post-info">
+						<h1 itemprop="headline">Vector Magic crash in macOS Sierra</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2015-10-18</span> <span itemprop="dateUpdated">2016-10-07</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<h2>About the problem</h2>
+					<p>Since updating to OS X El Capitan, <a href="http://vectormagic.com/desktop">Vector Magic Desktop Edition</a> crashes when you try to vectorise an image, at the smoothing image step.</p>
+					<blockquote>
+						Dyld Error Message:<br>
+						&nbsp;&nbsp;Symbol not found: _dgesv_<br>
+						&nbsp;&nbsp;Referenced from: /Applications/Vector Magic.app/Contents/MacOS/Vector Magic Desktop Edition<br>
+						&nbsp;&nbsp;Expected in: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+					</blockquote>
+					<p>This is due to the libBLAS.dylib being updated in El Capitan and Vector Magic not being updated for it. This also applies to macOS Sierra since the same updated dylib is present there too. You can fix this by replacing the libBLAS.dylib with an older version.</p>
+					<p>Also, since updating to Sierra, Vector Magic crashes on launch as <q>Vector Magic Desktop Edition cannot be opened because of a problem.</q> This is followed by a crash log with the following:</p>
+					<blockquote>
+						Application Specific Information:<br>
+						dyld: launch, loading dependent libraries<br>
+						DYLD_LIBRARY_PATH=/Applications/Vector Magic.app/Contents/MacOS:/Applications/Vector Magic.app/Contents/MacOS/ImageMagick-6.4.1/lib<br>
+						<br>
+						Dyld Error Message:<br>
+						&nbsp;&nbsp;Symbol not found: _appleblas_i16gemm<br>
+						&nbsp;&nbsp;Referenced from: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib<br>
+						&nbsp;&nbsp;Expected in: /Applications/Vector Magic.app/Contents/MacOS/libBLAS.dylib<br>
+						&nbsp;in /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib
+					</blockquote>
+					<h2>libBLAS.dylib</h2>
+					<p>For both the solutions below, you will need a copy of libBLAS.dylib from Yosemite. If you have a Mac still running 10.10, you can grab it from the folder shown in the next step, otherwise you can <span class="highlight-yellow">download <a href="https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/libBLAS.dylib">libBLAS.dylib</a></span> here. This libBLAS.dylib is from OS X Yosemite 10.10.4 where Vector Magic works fine.</p>
+					<h2><span class="highlight-yellow">New solution:</span> replace the dylib in Vector Magic</h2>
+					<p>Thanks to a comment, an alternative solution is provided which doesn't require you to disable SIP, as you can replace the dylib within Vector Magic itself.</p>
+					<ol>
+						<li>Open Finder, press ⇧⌘G and paste <code>/Applications/Vector Magic.app/Contents/MacOS/ImageMagick-6.4.1/lib</code></li>
+						<li>Drag the replacement libBLAS.dylib from Yosemite (download from above) into this folder.</li>
+						<li><b>In macOS Sierra:</b> Run the following in Terminal: (triple-click to select the entire line) <pre>cp /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib /Applications/Vector\ Magic.app/Contents/MacOS/ImageMagick-6.4.1/lib</pre><p>This command copies libBNNS.dylib from the system's Accelerate framework to Vector Magic ImageMagick's lib folder. You are welcome to do this manually using the Finder instead of running this command as both achieve the same effect.</li>
+					</ol>
+					<p>
+					<p>If this doesn't work, try the original solution provided below.</p>
+					<h2>Original solution for El Capitan and prior: replacing the system dylib</h2>
+					<p>The new solution applies to Sierra and prior, not just Sierra. You should try the new solution first before tampering with system files in this solution.</p>
+					<ol>
+						<li><a href="https://georgegarside.com/blog/macos/package-incompatible-installer/">Disable System Integrity Protection</a> to permit OS X to modify system dylibs. If you don't disable SIP, you can't make changes to /System/Library/Frameworks/ which prevents you from modifying the dylib.</li>
+						<li>Open Finder, press ⇧⌘G and paste <code>/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/</code></li>
+						<li>These next steps must be carried out <b>exactly</b> as shown here, otherwise this could leave you with a system which only boots to single user mode. You're making changes to system dylibs—have a backup you can access in single user mode. <i>You can't just delete the dylib and replace it.</i></li>
+						<li>Select libBLAS.dylib in the folder you just opened, hold ⌥ and drag it to the same folder.<br><img src="https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/Finder-copy-same-folder.tiff" width="650" alt="OS X Finder Copy file to same folder by holding alt and dragging the file"></li>
+						<li>Drag the replacement libBLAS.dylib which you obtained above or from another system to this folder and select Replace in the Finder dialog.<br><img src="https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/Finder-copy-replace.png" width="399" alt="Copy file in Finder replacing existing file"></li>
+					</ol>
+					<p>Vector Magic will work fine now! If you need to use the original libBLAS.dylib, you can replace it with the <code>libBLAS 2.dylib</code>. You can re-enable System Integrity Protection after verifying that Vector Magic works.</p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-osx-vectormagiccrash';
+						var disqus_title = 'Vector Magic crash in macOS Sierra';
+						var disqus_url = 'https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/&amp;text=Vector Magic crash in macOS Sierra&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

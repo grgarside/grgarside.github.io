@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/fonts.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+	<link rel="stylesheet" href="assets/css/style.css?v=1.1.1">
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+	<script src="https://www.google.com/jsapi?key=AIzaSyDButSjezEyduups1FimXq35smcXtlqO3A"></script>
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script src="https://apis.google.com/js/client.js"></script>
+	<script src="assets/js/pikaday-jquery.js"></script>
+	<script type="text/javascript">var _kmq = _kmq || [];
+	var _kmk = _kmk || '34bb7aac74cf8f0f59529480d65e42f3649e6ef4';
+	function _kms(u){
+	  setTimeout(function(){
+	    var d = document, f = d.getElementsByTagName('script')[0],
+	    s = d.createElement('script');
+	    s.type = 'text/javascript'; s.async = true; s.src = u;
+	    f.parentNode.insertBefore(s, f);
+	  }, 1);
+	}
+	_kms('//i.kissmetrics.com/i.js');
+	_kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
+	</script>
+	<script src="assets/js/app.js?v=1.1.6"></script>
+	<title>Jack Hunt School JAE Form</title>
+</head>
+<body>
+
+<div class="container">
+	<header>
+		<img src="assets/jack-hunt-logo-alpha.png" class="logo">
+		<h1>Jack Hunt School - JAE Form</h1> <span>v1.1.7</span>
+		<span class="subtext">
+				<p id="authtemp">Connecting to Google Drive…</p>
+				<p id="auth" style="display: none;">&#9888; Google Drive has not been authorised <button type="button" class="header small" id="authbutton">Authorise</button></p>
+				<ul id="operations" style="display: none;">
+					<li><button type="button" class="header" id="resetbutton">Clear</button></li>
+					<li><button type="button" class="header" id="savebutton">Save as new</button></li>
+					<li><button type="button" class="header" id="loadbutton">Load</button></li>
+				</ul>
+		</span>
+	</header>
+		
+	<section class="card">
+		<form>
+			<div class="input-group full-width">
+				<label for="studentName" class="hide">Name</label>
+				<input type="text" id="studentName" placeholder="Student name">
+			</div>
+			<div class="student-photo">
+				<img src="https://placehold.it/150x200?text=No%20Photo" width="150" id="studentPhotoImage">
+				<div class="input-group">
+					<label for="studentPhoto" class="hide">Photo</label>
+					<input type="file" id="studentPhoto">
+				</div>
+			</div>
+			<label for="studentYear">Year</label>
+			<input type="text" id="studentYear" placeholder="•" style="width: 2em;">
+			<label for="studentTutor">Personal tutor</label>
+			<input type="text" id="studentTutor" placeholder="Tutor name" style="width: 13.5em;">
+			<br>
+			<label for="studentSport">Sport</label>
+			<input type="text" id="studentSport" placeholder="Sport name" style="width: 22.4em;">
+			<br>
+			<label for="studentMentor">JAE mentor</label>
+			<input type="text" id="studentMentor" placeholder="Mentor name" style="width: 20em;">
+			<br>
+			<label for="studentContact">Club contact</label>
+			<input type="text" id="studentContact" placeholder="Contact name" style="width: 19.5em;">
+		</form>
+		
+		<div class="tabs-group">
+		
+			<ul class="tabs">
+				<li class="tab-link current" data-tab="tab-meetings">Mentor Meetings</li>
+				<li class="tab-link" data-tab="tab-home">Home TINA</li>
+				<li class="tab-link" data-tab="tab-squad">Squad TINA</li>
+				<li class="tab-link" data-tab="tab-school">School TINA</li>
+				<li class="tab-link" data-tab="tab-updates">Sport Updates</li>
+			</ul>
+		
+			<div data-tab-content="tab-meetings" class="tab-content current">
+				<h2>Meetings</h2>
+				<ul class="accordion"></ul>
+				<ul>
+					<li><button type="button" class="save small new" id="new-meeting">New meeting</button></li>
+					<li class="meeting" style="display: none;">
+						<button type="button" class="list small">Blank meeting</button>
+						<div style="display: none;">
+							<div class="single-text">
+								<label>Date</label>
+								<input type="text" data-type="date">
+							</div>
+							<div class="single-text">
+								<label>Time</label>
+								<input type="text">
+							</div>
+							<div class="single-text">
+								<label>Reason for meeting</label>
+								<input type="text">
+							</div>
+							<div class="single-text">
+								<label>Requested by</label>
+								<input type="text">
+							</div>
+							<div class="points-text">
+								<div class="column">
+									<label>Main points discussed</label>
+									<textarea></textarea>
+								</div>
+								<div class="column">
+									<label>Agreed Action</label>
+									<textarea></textarea>
+								</div>
+							</div>
+							<div class="prose-text">
+								<label>Any additional actions?</label>
+								<textarea></textarea>
+							</div>
+							<button type="button" class="delete small">Delete meeting</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div data-tab-content="tab-home" class="tab-content">
+				<h2>Home TINA</h2>
+				<ul class="accordion"></ul>
+				<ul>
+					<li><button type="button" class="save small new" id="new-hometina">New Home TINA</button></li>
+					<li class="meeting" style="display: none;">
+						<button type="button" class="list small">Blank Home TINA</button>
+						<div style="display: none;">
+							<div class="single-text">
+								<label>Date</label>
+								<input type="text" data-type="date">
+							</div>
+							<div class="single-text">
+								<label>During the period</label>
+								<input type="text">
+							</div>
+							<div class="prose-text">
+								<label>What other sports training are you doing apart from your main sport?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Do you have access to, or use other training facilities, e.g. gymnasium, pool?<br>If so, please give details.</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>How long does it take to travel to (each of) your training venue(s)?<br>Give name and time of venue and travel time in minutes.</label>
+								<textarea></textarea>
+							</div>
+							<div class="single-text-prompt">
+								<label>How do you get to and from the training venue?</label>
+								<input type="text">
+							</div>
+							<div class="single-text-prompt">
+								<label>How long does it take to travel to school?</label>
+								<input type="text">
+							</div>
+							<div class="single-text-prompt">
+								<label>How do you travel to school?</label>
+								<input type="text">
+							</div>
+							<div class="prose-text">
+								<label>Does the time taken to get to school alter if you go to morning training?<br>Please give details.</label>
+								<textarea></textarea>
+							</div>
+							<div class="single-text-prompt">
+								<label>Which is the closest training venue to your home?</label>
+								<input type="text">
+							</div>
+							<div class="single-text-prompt">
+								<label>Which is the closest training venue to your school?</label>
+								<input type="text">
+							</div>
+							<div class="multi-single-text">
+								<p>What costs are involved in training/membership fees?</p>
+								<div class="single-text">
+									<label>Equipment</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Travel to training</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Membership fees</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Session fees</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Special diet</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Other</label>
+									<input type="text">
+								</div>
+							</div>
+							<div class="prose-text">
+								<label>Over a 12 month period, how often do you compete?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What are the cost/time implications for such competitions?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What other regular activities do you take part in outside of school, e.g. music?</label>
+								<textarea></textarea>
+							</div>
+							<div class="scale">
+								<label>How difficult do you find it to fit everything in?</label>
+								(<input type="radio" value="" checked>
+								<span>unset</span>)
+								<br>
+								<span>Not difficult</span>
+								<div class="radio-scale">
+									<span>1</span>
+									<input type="radio" value="1">
+								</div>
+								<div class="radio-scale">
+									<span>2</span>
+									<input type="radio" value="2">
+								</div>
+								<div class="radio-scale">
+									<span>3</span>
+									<input type="radio" value="3">
+								</div>
+								<div class="radio-scale">
+									<span>4</span>
+									<input type="radio" value="4">
+								</div>
+								<div class="radio-scale">
+									<span>5</span>
+									<input type="radio" value="5">
+								</div>
+								<span>Very difficult</span>
+							</div>
+							<div class="prose-text">
+								<label>Comments (for previous 1–5 scale question)</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What are your ambitions in your sport?</label>
+								<textarea></textarea>
+							</div>
+							<b>Parents</b>
+							<div class="prose-text">
+								<label>What issues does the family have with your sport's participation?<br>e.g. other children's activities, transport difficulties, financial</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What support would help you to help your child with their sporting career?<br>e.g. from school or club, financial, transport, flexibility</label>
+								<textarea></textarea>
+							</div>
+							<button type="button" class="delete small">Delete Home TINA</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div data-tab-content="tab-squad" class="tab-content">
+				<h2>Squad TINA</h2>
+				<ul class="accordion"></ul>
+				<ul>
+					<li><button type="button" class="save small new" id="new-squadtina">New Squad TINA</button></li>
+					<li class="meeting" style="display: none;">
+						<button type="button" class="list small">Blank Squad TINA</button>
+						<div style="display: none;">
+							<div class="single-text">
+								<label>Date</label>
+								<input type="text" data-type="date">
+							</div>
+							<div class="single-text">
+								<label>Squad coach</label>
+								<input type="text">
+							</div>
+							<div class="single-text">
+								<label>During the period</label>
+								<input type="text">
+							</div>
+							<div class="single-text-prompt">
+								<label>With your programme, what is the maximum number of training sessions the athlete can attend per week?</label>
+								<input type="text">
+							</div>
+							<div class="prose-text">
+								<label>What training sessions do you expect the athlete to attend?<br>Please detail number, day, time, venue and type of session.</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What competitions do you expect the athlete to compete in?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Where could there be flexibility with these competitions?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What open/age group competitions do you expect the athlete to compete in?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What are the key dates for this athlete over the next six months?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Do you have any concerns regarding this athlete fitting in training and competitions with other commitments?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Do you encourage or allow your athlete to take part in other sports?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>If yes, are there any sports you would not wish your athlete to participate in?</label>
+								<textarea></textarea>
+							</div>
+							<button type="button" class="delete small">Delete Squad TINA</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div data-tab-content="tab-school" class="tab-content">
+				<h2>School TINA</h2>
+				<ul class="accordion"></ul>
+				<ul>
+					<li><button type="button" class="save small new" id="new-schooltina">New School TINA</button></li>
+					<li class="meeting" style="display: none;">
+						<button type="button" class="list small">Blank School TINA</button>
+						<div style="display: none;">
+							<div class="single-text">
+								<label>Date</label>
+								<input type="text" data-type="date">
+							</div>
+							<div class="single-text">
+								<label>School contact name</label>
+								<input type="text">
+							</div>
+							<div class="single-text">
+								<label>During the period</label>
+								<input type="text">
+							</div>
+							<div class="prose-text">
+								<label>The athlete's timetable including registration times, form periods and assemblies, and homework timetable.</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What are the main sports covered in the athlete's PE lesson?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Are there any important exam/coursework dates?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>What extra curricular activities is the athlete involved in?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>When do these take place, and to what level is the athlete participating?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Are there any extra curricular activities the athlete will be expected to compete in?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Are there any school trips/sports days/concerts that the athlete will be involved with?</label>
+								<textarea></textarea>
+							</div>
+							<div class="multi-single-text">
+								<p>In which areas of the timetable could there be flexibility?</p>
+								<div class="single-text">
+									<label>Arriving at school late</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Leaving school early</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Use of PE lesson for specific training</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Use of PE lesson to catch up on homework</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Access to quiet facilities at lunchtime</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Access to sports facilities at lunchtime</label>
+									<input type="text">
+								</div>
+								<div class="single-text">
+									<label>Other flexible learning opportunities</label>
+									<input type="text">
+								</div>
+							</div>
+							<div class="prose-text">
+								<label>Which areas of the timetable have no room for flexibility?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>With which extra curricular activities can there be flexibility?</label>
+								<textarea></textarea>
+							</div>
+							<div class="prose-text">
+								<label>Do you offer any special arrangements for gifted and talented athletes?<br>e.g. tutorials, private tuition, funding</label>
+								<textarea></textarea>
+							</div>
+							<button type="button" class="delete small">Delete School TINA</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div data-tab-content="tab-updates" class="tab-content">
+				<h2>Updates</h2>
+				<ul class="updates"></ul>
+				<ul>
+					<li id="newupdatebutton"><button type="button" class="save small" id="newupdate">New update</button></li>
+					<li id="newupdatetemplate" style="display: none;">
+						<img src="https://placehold.it/150x200?text=No%20Photo" width="100">
+						<textarea></textarea>
+						<div></div>
+						<input type="file">
+						<button type="button" class="delete small">Delete update</button>
+					</li>
+				</ul>
+			</div>
+		
+		</div>
+	
+	</section>
+	
+</div>
+
+</body>
+</html>

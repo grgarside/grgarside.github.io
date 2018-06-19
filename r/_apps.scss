@@ -1,0 +1,47 @@
+$colour-apps: #53c0c6;
+
+img.appicon {
+	border-radius: 20%;
+}
+
+.main.apps {
+	@include mainheader($colour-apps, false);
+	
+	/* App Cards */
+	.apps {
+		padding-left: 2px;
+		justify-content: space-evenly;
+		h2 {
+			width: 100%;
+			text-align: center;
+			margin-bottom: 16px;
+		}
+	}
+	
+	.app {
+		width: 277px;
+		box-sizing: border-box;
+		img {
+			width: 100%;
+		}
+		h3 {
+			text-align: center;
+			border-top: .5px solid lightgrey;
+			padding: 16px 0 0;
+			font-size: 1.8em;
+		}
+	}
+		
+	ul.inlineli li {
+		display: inline-block;
+		padding: 0 30px 10px 0;
+	}
+	
+	ul li ul {
+		padding-left: 20px;
+	}
+	
+	ul[itemprop="featurelist"] li, ul[itemprop="featurelist"] li ul li {
+		list-style-type: square;
+	}
+}

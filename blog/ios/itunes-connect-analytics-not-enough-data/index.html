@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iTunes Connect Analytics Not Enough Data - George Garside</title>
+	<meta name="description" content="In iTunes Connect App Analytics, sometimes a specific app shows Not Enough Data. This is not a bug, but rather a feature by Apple to protect user privacy.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/ios/itunes-connect-analytics-not-enough-data/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/ios/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">iOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/ios/itunes-connect-analytics-not-enough-data/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">iTunes Connect Analytics Not Enough Data</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-19.52.27.png" itemprop="image" class="post-header-image">
+					<div class="post-info">
+						<h1 itemprop="headline">iTunes Connect Analytics Not Enough Data</h1>
+						<p><span itemprop="articleSection">iOS</span> <span itemprop="datePublished">2015-06-18</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>In iTunes Connect’s Analytics feature, it sometimes occurs that data is not available for a specific app or group of apps. This is not a bug, but rather a feature by Apple to protect user privacy. If you receive the error Not Enough Data when attempting to access analytics data for your app in <a href="https://itunesconnect.apple.com/">iTunes Connect</a>, do not presume that there is no data at all for the app, but simply that there is not enough data to be able to show data to you <b>without the possibility of providing identifiable information</b> by correlating the information provided with information gleaned from exports of the data in Analytics.</p>
+					<p>To rectify this, you need to have your app downloaded more, in a more recent timespan, by users who have opted in to sending app diagnostic and usage information to app developers. Downloads over a long period of time do not necessarily mean that there is enough data to not show potentially identifiable information, because the time period can be selected to be as short as a single day, causing iTunes Connect Analytics Not Enough Data to be shown for the app.</p>
+					<p>Apple’s iTunes Connect Analytics FAQ mentions</p>
+					<blockquote><p>Why do I sometimes see an error that there isn’t enough data?<br>
+						To protect customer privacy, we only show data in App Analytics after a certain number of data points are available</p></blockquote>
+					<p>Apps that do have enough data to show app units and other overview information may not have enough data to show specific sections of the iTunes Connect App Analytics report. For example, an app with plenty of app units may not have enough downloads through the custom campaigns (or through websites) to show campaign analytics in the Sources tab.</p>
+					<p><img src="https://georgegarside.com/blog/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-19.54.53.png" alt="iTunes Connect Analytics Not Enough Data App Campaigns Top Campaigns Generate a Campaign Link There isn't enough data to display campaigns" width="980"></p>
+					<p>This also applies to the Retention tab, whereby not enough data may exist to show retention data.</p>
+					<blockquote><p>There isn’t enough data to display retention</p></blockquote>
+					<p>The solution to this is simply to have more downloads for your app, by users who have opted in to having diagnostic and usage data sent to app developers. There’s no bug in iTunes Connect—this is a privacy feature for your users.</p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = '709 https://georgegarside.com/blog/?p=709';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

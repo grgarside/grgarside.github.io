@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Installing Hugs 98 on macOS - George Garside</title>
+	<meta name="description" content="How to install Hugs 98 to run Haskell on your Mac using Homebrew, compatible with macOS Sierra.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/installing-hugs-98-haskell/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Installing Hugs 98 on macOS">
+	<meta name="twitter:description" content="How to install Hugs 98 to run Haskell on your Mac using Homebrew, compatible with macOS Sierra.">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/installing-hugs-98-haskell/hugs-98-mac-terminal-haskell.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/installing-hugs-98-haskell/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Installing Hugs 98 on macOS</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/macos/installing-hugs-98-haskell/hugs-98-mac-terminal-haskell.png" itemprop="image url" class="post-header-image" alt="Hugs 98 in macOS Terminal">
+						<meta itemprop="caption" content="Hugs 98 in macOS Terminal">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/macos/installing-hugs-98-haskell/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name">Installing Hugs 98 on macOS</h1></a>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2016-11-11</span> <span itemprop="dateModified">2016-11-11</span></p>
+					</div>
+				</div>
+				<div class="card">
+					<p>Here's the latest instructions for how to install Hugs 98 on macOS. All the other documentation I could find was regarding installing the full Haskell platform and GHC, so if all you want is Hugs 98 for a university module, here's how to get it. You'll need to open Terminal to run these commands (and to use Hugs), which is in <code>/Applications/Utilities</code>.</p>
+					<ol>
+						<li>
+							<p><b>Install Homebrew</b> if you don't have it already. Run the following in Terminal, and follow the steps as prompted.</p>
+							<pre>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</pre>
+						</li>
+						<li>
+							<p><b>Install Hugs 98</b>. Make sure Homebrew installed successfully, then run the following:</p>
+							<pre>brew install FranklinChen/tap/hugs --HEAD</pre>
+						</li>
+					</ol>
+					<p>That's it! Once the command finishes running, you can start using Hugs by running <code><b>hugs</b></code> from Terminal.</p>
+					<pre class="prettyprint">$ hugs
+__   __ __  __  ____   ___      _________________________________________
+||   || ||  || ||  || ||__      Hugs 98: Based on the Haskell 98 standard
+||___|| ||__|| ||__||  __||     Copyright (c) 1994-2005
+||---||         ___||           World Wide Web: http://haskell.org/hugs
+||   ||                         Bugs: http://hackage.haskell.org/trac/hugs
+||   || Version: September 2006 _________________________________________
+
+Haskell 98 mode: Restart with command line option -98 to enable extensions
+
+Type :? for help
+Hugs> </pre>
+					<p>The installation of Hugs may take some time, as it has to build it on your machine rather than just pouring it. Here's the expected output from the above command so you can make sure it installed successfully.</p>
+					<pre class="prettyprint">$ brew install FranklinChen/tap/hugs --HEAD        
+<span style="color: lightblue;">==></span> Tapping franklinchen/tap
+Cloning into '/usr/local/Homebrew/Library/Taps/franklinchen/homebrew-tap'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+Tapped 2 formulae (31 files, 23K)
+<span style="color: lightblue;">==></span> Installing hugs from franklinchen/tap
+<span style="color: lightblue;">==></span> Installing dependencies for franklinchen/tap/hugs: readline
+<span style="color: lightblue;">==></span> Installing franklinchen/tap/hugs dependency: readline
+<span style="color: lightblue;">==></span> Downloading https://homebrew.bintray.com/bottles/readline-7.0.sierra.bottle.
+######################################################################## 100.0%
+<span style="color: lightblue;">==></span> Pouring readline-7.0.sierra.bottle.tar.gz
+<span style="color: lightblue;">==></span> Caveats
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/readline/lib
+    CPPFLAGS: -I/usr/local/opt/readline/include
+
+<span style="color: lightblue;">==></span> Summary
+🍺  /usr/local/Cellar/readline/7.0: 45 files, 2M
+<span style="color: lightblue;">==></span> Installing franklinchen/tap/hugs
+<span style="color: lightblue;">==></span> Cloning https://github.com/FranklinChen/hugs98-plus-Sep2006.git
+Cloning into '/Users/grgarside/Library/Caches/Homebrew/hugs--git'...
+remote: Counting objects: 5852, done.
+remote: Compressing objects: 100% (4726/4726), done.
+remote: Total 5852 (delta 441), reused 5781 (delta 430), pack-reused 0
+Receiving objects: 100% (5852/5852), 5.29 MiB | 1.15 MiB/s, done.
+Resolving deltas: 100% (441/441), done.
+Checking connectivity... done.
+<span style="color: lightblue;">==></span> Checking out branch master
+<span style="color: lightblue;">==></span> ./configure --prefix=/usr/local/Cellar/hugs/HEAD-86e2342
+<span style="color: lightblue;">==></span> make
+<span style="color: lightblue;">==></span> make install
+🍺  /usr/local/Cellar/hugs/HEAD-86e2342: 909 files, 8.0M, built in 6 minutes 13 seconds</pre>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-macOS-installinghugs98';
+						var disqus_title = 'Installing Hugs 98 on macOS';
+						var disqus_url = 'https://georgegarside.com/blog/macos/installing-hugs-98-haskell/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/macos/installing-hugs-98-haskell/&amp;text=Installing Hugs 98 on macOS&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/macos/installing-hugs-98-haskell/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/macos/installing-hugs-98-haskell/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

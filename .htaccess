@@ -1,0 +1,49 @@
+Options +FollowSymLinks -MultiViews
+DefaultLanguage en-GB
+AddDefaultCharset utf-8
+SetEnv TZ Europe/London
+RewriteEngine On
+RewriteBase /
+
+# Rewrite HTTP_HOST
+RewriteCond %{HTTP_HOST} ^www.georgegarside.com [NC]
+RewriteRule ^(.*)$ https://georgegarside.com/$1 [L,R=301]
+
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteRule ^(.*)$ https://georgegarside.com/$1 [R=301,L,QSA]
+
+# Rewrite single files
+RewriteRule ^8ball /o/8ball.html [L,NC]
+RewriteRule ^pinterest-78870.html /o/pinterest-78870.html [L,NC]
+RewriteRule ^zX-jQ9euNJ8tSE4o5eC0I2qRG2U.html /o/zX-jQ9euNJ8tSE4o5eC0I2qRG2U.html [L,NC]
+RewriteRule ^flair\.css /r/i/css/flair.css? [L,NC]
+
+# Well known
+RewriteRule ^googlefa43cd709af41814\.html /.well-known/googlewebmtools.html [L,NC]
+RewriteRule ^yandex_c36e709359aae699.html /.well-known/yandex_c36e709359aae699.html [L,NC]
+RewriteRule ^BingSiteAuth\.xml /.well-known/BingSiteAuth.xml [L,NC]
+
+# Rewrite Tumblr
+RewriteRule ^tagged/(.*) /blog/tagged/$1 [R=301]
+RewriteRule ^post/(.*) /blog/post/$1 [R=301]
+RewriteRule ^archive/(.*) /blog/archive/$1 [R=301]
+
+# Compression
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+
+# cache images and flash content for one month
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+# Block referral spam
+RewriteCond %{HTTP_REFERER} semalt\.semalt\.com [NC]
+RewriteCond %{HTTP_REFERER} musicas.kambasoft.com [NC]
+RewriteCond %{HTTP_REFERER} ^semalt.com$ [NC]
+RewriteRule .* - [F,L]
+
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+	order allow,deny
+	deny from all
+	satisfy all
+</Files>

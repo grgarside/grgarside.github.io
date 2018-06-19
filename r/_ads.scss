@@ -1,0 +1,35 @@
+// Ads
+
+.ad.ad-footer {
+	clear: both;
+	background: lightcyan;
+}
+.ad.ad-sidebar {
+	text-align: center;
+	background: lightcyan;
+}
+@media (max-width: $large) {
+	.ad.ad-sidebar {
+		display: none;
+	}
+}
+.ad.ad-inline {
+	background: #f7f7f7;
+	border-top: .5px solid #cacaca;
+	border-bottom: .5px solid #cacaca;
+	padding: 10px;
+	text-align: center;
+}
+.ad.ad-inline:before {
+	content: 'Content continues below';
+	display: block;
+	margin-bottom: 10px;
+	font-size: 90%;
+}
+.ad.ad-between {
+	@extend .ad.ad-inline;
+	margin-top: -20px;
+	background: none;
+	padding: 18px 10px;
+	border: none;
+}

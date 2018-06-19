@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>How to fix Safari 8 crash in Yosemite - George Garside</title>
+	<meta name="description" content="OS X Yosemite Safari crash on launch is a well known and prolific bug. There's a quick fix to get your Safari working again: run the following in Terminal.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/fix-safari-8-crash-yosemite/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/fix-safari-8-crash-yosemite/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">How to fix Safari 8 Crash in Yosemite</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<div class="post-info">
+						<h1 itemprop="headline">How to fix Safari 8 Crash in Yosemite</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2014-07-22</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>It seems OS X Yosemite developer preview 4 (DP4) has broken Safari 8’s ability to access favourites, or Smart Search Field, or something, and whenever the browser attempts to access these features, it crashes. As by default, Safari 8 has the Smart Search Field which shows your favourites when you click the address bar, or having the default start page to the Top Sites, it’s possible that the Safari crash in Yosemite is immediate before you have the ability to change the settings.</p>
+					<p>Fortunately, there’s a quick fix to the Yosemite Safari crash to get Safari working again; simply run the following commands in Terminal without Safari being open, then launch Safari.</p>
+					<pre class="prettyprint">defaults write com.apple.Safari ShowFavoritesUnderSmartSearchField 0
+defaults write com.apple.Safari NewWindowBehavior 1
+defaults write com.apple.Safari NewTabBehavior 1
+					</pre>
+					<p>These commands set a number of preferences in the com.apple.Safari property list, which will hide the favourites from under the Smart Search Field, fixing the crash that occurs when you click on the address bar, as well as fixing the crash caused by showing the Top Sites page by changing the new window behaviour and new tab behaviour to showing the about:blank page.</p>
+					<p>If Safari still crashes, ensure that no background Safari processes are running by checking in Activity Monitor. These commands will be overwritten and ignored if any Safari processes are running and the crash will not be resolved. If all else fails, log out immediately after running these commands, or run these commands in another user account:</p>
+<pre class="prettyprint">defaults write /Users/username/Library/Preferences/com.apple.Safari ShowFavoritesUnderSmartSearchField 0
+defaults write /Users/username/Library/Preferences/com.apple.Safari NewWindowBehavior 1
+defaults write /Users/username/Library/Preferences/com.apple.Safari NewTabBehavior 1</pre>
+					<p>Make sure to replace “username” with the username of your original OS X account.</p>
+					<p>Don’t forget to comment below if it worked for you and share your Yosemite tricks!</p>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = '5 http://georgegarside.com/blog/?p=5';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

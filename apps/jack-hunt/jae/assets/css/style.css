@@ -1,0 +1,308 @@
+body {
+  /* Reset */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+  background-color: #f5f5f5;
+  box-shadow: 0 150px 0 #562A79 inset;
+  min-height: 500px;
+  cursor: default;
+  box-sizing: border-box; }
+
+#nprogress .bar {
+  background: white; }
+  #nprogress .bar .peg {
+    box-shadow: 0 0 10px white, 0 0 5px white; }
+
+#nprogress .spinner-icon {
+  border-top-color: white;
+  border-left-color: white; }
+
+header {
+  padding: 15px 0;
+  display: block;
+  position: relative;
+  color: white; }
+  header .logo {
+    width: 2rem;
+    margin-top: -15px;
+    margin-right: 10px;
+    vertical-align: middle; }
+  header h1 {
+    display: inline-block;
+    font-weight: 400;
+    margin: 0; }
+  @media (min-width: 768px) {
+    header .subtext {
+      position: absolute;
+      top: 25px;
+      right: 0; } }
+  header .subtext #authtemp {
+    margin: 12px; }
+  header .subtext #auth {
+    margin: 6px;
+      margin-top: 10px; }
+    header .subtext #auth #authbutton {
+      margin-top: -2px; }
+  header .subtext #operations {
+    list-style: none;
+    margin: 0;
+      margin-top: -10px;
+    padding: 0; }
+    header .subtext #operations li {
+      display: inline-block; }
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 200px; }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+      padding: 0; } }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px; } }
+
+.card {
+  background: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.26);
+  padding: 13px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1; }
+
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 9px; }
+
+h2:first-of-type {
+  margin-top: 2px; }
+
+h2:not(:first-child) {
+  padding-top: 15px;
+  border-top: 1px solid #dddddd; }
+
+button {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: .25rem;
+  cursor: pointer;
+  color: #0275d8;
+  background-image: none;
+  background-color: transparent;
+  border-color: #0275d8; }
+  button:hover, button:focus {
+    border-color: #108ffd; }
+    button:hover:active, button:focus:active {
+      color: white;
+      background-color: #0275d8; }
+  button:disabled {
+    border-color: lightgrey;
+    color: lightgrey; }
+  button.small {
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    border-radius: .2rem; }
+  button.save {
+    color: #562A79;
+    border-color: #562A79; }
+    button.save:hover, button.save:focus {
+      border-color: #71379f; }
+      button.save:hover:active, button.save:focus:active {
+        color: white;
+        background-color: #562A79; }
+  button.list {
+    color: black;
+    border-color: black; }
+    button.list:hover, button.list:focus {
+      border-color: #1a1a1a; }
+      button.list:hover:active, button.list:focus:active {
+        color: white;
+        background-color: black; }
+  button.delete {
+    color: #d9534f;
+    border-color: #d9534f; }
+    button.delete:hover, button.delete:focus {
+      border-color: #e27c79; }
+      button.delete:hover:active, button.delete:focus:active {
+        color: white;
+        background-color: #d9534f; }
+  button.header {
+    color: white;
+    border-color: white; }
+    button.header:hover, button.header:focus {
+      border-color: white; }
+      button.header:hover:active, button.header:focus:active {
+        color: white;
+        background-color: white; }
+
+form {
+  min-height: 310px; }
+  form .input-group {
+    margin-bottom: 1rem; }
+    form .input-group.full-width input[type="text"] {
+      display: block;
+      width: 100%; }
+    form .input-group input[id="studentName"] {
+      font-size: 1.5rem; }
+  @media (min-width: 768px) {
+    form .student-photo {
+      float: left; } }
+  form label {
+    color: #55595c; }
+  form input + label {
+    margin-left: 1rem; }
+  form input {
+    box-sizing: border-box; }
+    form input[type="text"] {
+      padding-left: .2rem;
+      padding-bottom: .5rem;
+      padding-right: .2rem;
+      padding-top: .5rem;
+      font-size: 1rem;
+      line-height: 1.25;
+      background-color: #fff;
+      background-image: none;
+      border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
+      form input[type="text"]::placeholder {
+        color: lightgray; }
+    form input[id="studentPhoto"] {
+      width: 180px; }
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  border-bottom: 1px solid #dddddd; }
+  ul.tabs li {
+    background: none;
+    color: #222;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer; }
+    ul.tabs li.current {
+      color: #222;
+      border-bottom: 2px solid #562A79; }
+
+.tab-content {
+  display: none;
+  padding: 15px; }
+  .tab-content.current {
+    display: inherit; }
+  .tab-content h2 {
+    display: none; }
+  .tab-content[data-tab-content="tab-meetings"] > ul, .tab-content[data-tab-content="tab-home"] > ul, .tab-content[data-tab-content="tab-squad"] > ul, .tab-content[data-tab-content="tab-school"] > ul {
+    margin: 0;
+      margin-bottom: 2px;
+    padding-left: 20px; }
+    .tab-content[data-tab-content="tab-meetings"] > ul > li, .tab-content[data-tab-content="tab-home"] > ul > li, .tab-content[data-tab-content="tab-squad"] > ul > li, .tab-content[data-tab-content="tab-school"] > ul > li {
+      list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10"><rect fill="grey" x="2" y="2" height="4" width="4"/></svg>'); }
+      .tab-content[data-tab-content="tab-meetings"] > ul > li > div, .tab-content[data-tab-content="tab-home"] > ul > li > div, .tab-content[data-tab-content="tab-squad"] > ul > li > div, .tab-content[data-tab-content="tab-school"] > ul > li > div {
+        margin: 5px;
+        padding: 5px;
+          padding-left: 20px;
+        border-left: 2px solid grey; }
+        .tab-content[data-tab-content="tab-meetings"] > ul > li > div input, .tab-content[data-tab-content="tab-home"] > ul > li > div input, .tab-content[data-tab-content="tab-squad"] > ul > li > div input, .tab-content[data-tab-content="tab-school"] > ul > li > div input {
+          font-size: 100%; }
+        .tab-content[data-tab-content="tab-meetings"] > ul > li > div h3, .tab-content[data-tab-content="tab-home"] > ul > li > div h3, .tab-content[data-tab-content="tab-squad"] > ul > li > div h3, .tab-content[data-tab-content="tab-school"] > ul > li > div h3 {
+          font-weight: normal;
+          padding-top: 4px;
+          margin-bottom: 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.25); }
+        .tab-content[data-tab-content="tab-meetings"] > ul > li > div h4, .tab-content[data-tab-content="tab-home"] > ul > li > div h4, .tab-content[data-tab-content="tab-squad"] > ul > li > div h4, .tab-content[data-tab-content="tab-school"] > ul > li > div h4 {
+          margin-top: 8px;
+          font-weight: bold; }
+        .tab-content[data-tab-content="tab-meetings"] > ul > li > div div, .tab-content[data-tab-content="tab-home"] > ul > li > div div, .tab-content[data-tab-content="tab-squad"] > ul > li > div div, .tab-content[data-tab-content="tab-school"] > ul > li > div div {
+          margin-bottom: 8px; }
+          .tab-content[data-tab-content="tab-meetings"] > ul > li > div div textarea, .tab-content[data-tab-content="tab-home"] > ul > li > div div textarea, .tab-content[data-tab-content="tab-squad"] > ul > li > div div textarea, .tab-content[data-tab-content="tab-school"] > ul > li > div div textarea {
+            height: 5em;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            max-height: 25em; }
+          .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.single-text > label, .tab-content[data-tab-content="tab-home"] > ul > li > div div.single-text > label, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.single-text > label, .tab-content[data-tab-content="tab-school"] > ul > li > div div.single-text > label {
+            display: inline-block;
+            width: 140px;
+            text-align: right; }
+          .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.single-text > input, .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.single-text-prompt > input, .tab-content[data-tab-content="tab-home"] > ul > li > div div.single-text > input, .tab-content[data-tab-content="tab-home"] > ul > li > div div.single-text-prompt > input, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.single-text > input, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.single-text-prompt > input, .tab-content[data-tab-content="tab-school"] > ul > li > div div.single-text > input, .tab-content[data-tab-content="tab-school"] > ul > li > div div.single-text-prompt > input {
+            width: 500px;
+            max-width: 100%;
+            border: none;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
+          .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.points-text, .tab-content[data-tab-content="tab-home"] > ul > li > div div.points-text, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.points-text, .tab-content[data-tab-content="tab-school"] > ul > li > div div.points-text {
+            max-width: 650px;
+            column-count: 2;
+            column-width: 300px; }
+            .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.points-text .column, .tab-content[data-tab-content="tab-home"] > ul > li > div div.points-text .column, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.points-text .column, .tab-content[data-tab-content="tab-school"] > ul > li > div div.points-text .column {
+              break-inside: avoid; }
+              .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.points-text .column > label, .tab-content[data-tab-content="tab-home"] > ul > li > div div.points-text .column > label, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.points-text .column > label, .tab-content[data-tab-content="tab-school"] > ul > li > div div.points-text .column > label {
+                display: block; }
+              .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.points-text .column > textarea, .tab-content[data-tab-content="tab-home"] > ul > li > div div.points-text .column > textarea, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.points-text .column > textarea, .tab-content[data-tab-content="tab-school"] > ul > li > div div.points-text .column > textarea {
+                width: 100%;
+                resize: vertical; }
+          .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.prose-text > label, .tab-content[data-tab-content="tab-home"] > ul > li > div div.prose-text > label, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.prose-text > label, .tab-content[data-tab-content="tab-school"] > ul > li > div div.prose-text > label {
+            display: block; }
+          .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.prose-text > textarea, .tab-content[data-tab-content="tab-home"] > ul > li > div div.prose-text > textarea, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.prose-text > textarea, .tab-content[data-tab-content="tab-school"] > ul > li > div div.prose-text > textarea {
+            width: 600px;
+            max-width: 100%; }
+          .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.scale .radio-scale, .tab-content[data-tab-content="tab-home"] > ul > li > div div.scale .radio-scale, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.scale .radio-scale, .tab-content[data-tab-content="tab-school"] > ul > li > div div.scale .radio-scale {
+            display: inline-block; }
+            .tab-content[data-tab-content="tab-meetings"] > ul > li > div div.scale .radio-scale > span, .tab-content[data-tab-content="tab-home"] > ul > li > div div.scale .radio-scale > span, .tab-content[data-tab-content="tab-squad"] > ul > li > div div.scale .radio-scale > span, .tab-content[data-tab-content="tab-school"] > ul > li > div div.scale .radio-scale > span {
+              display: block;
+              text-align: center; }
+  .tab-content[data-tab-content="tab-updates"] > ul {
+    margin: 0;
+      margin-bottom: 2px;
+    padding-left: 20px; }
+    .tab-content[data-tab-content="tab-updates"] > ul > li {
+      list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10"><rect fill="grey" x="2" y="2" height="4" width="4"/></svg>'); }
+      .tab-content[data-tab-content="tab-updates"] > ul > li:not(#newupdatebutton) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        padding: 5px;
+        margin: 5px 0; }
+      .tab-content[data-tab-content="tab-updates"] > ul > li img {
+        max-height: 130px;
+        margin-right: 5px; }
+        @media (min-width: 768px) {
+          .tab-content[data-tab-content="tab-updates"] > ul > li img {
+            float: left; } }
+      .tab-content[data-tab-content="tab-updates"] > ul > li textarea {
+        font-size: 14px;
+        width: 600px;
+        height: 130px;
+        max-width: 100%;
+        resize: none; }
+      .tab-content[data-tab-content="tab-updates"] > ul > li button.delete {
+        float: right;
+        margin-top: -2px; }
+
+.hide {
+  display: none; }
+
+footer {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 -1px 4px #d9d9d9;
+  margin-top: -40px;
+  position: relative;
+  z-index: 0;
+  clear: both;
+  padding-top: 20px;
+  padding-bottom: 30px; }

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Can't submit app to iTunes Connect with El Capitan - George Garside</title>
+	<meta name="description" content="Fix apps and app updates submitted to the App Store must be built with Xcode 6.4 or later, and iOS 8 SDK when submitting app using El Capitan beta.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/ios/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">iOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Can't submit app to iTunes Connect with El Capitan</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/OS-X-10.11-El-Capitan-SystemVersion-plist-ProductBuildVersion.png" itemprop="image" class="post-header-image" alt="OS X 10.11 El Capitan SystemVersion.plist ProductBuildVersion">
+					<div class="post-info">
+						<h1 itemprop="headline">Can't submit app to iTunes Connect with El Capitan</h1>
+						<p><span itemprop="articleSection">iOS</span> <span itemprop="datePublished">2015-08-24</span><span itemprop="dateModified">2016-02-11</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>If you try to submit an app to iTunes Connect which has built with the Mac App Store's Xcode 6.4, which is currently not in beta, using the iOS 8 SDK, also not in beta, you can add the build but you can't submit the app for review. The following error message is shown:</p>
+					<blockquote style="font-size: 115%;">Apps and app updates submitted to the App Store must be built with Xcode 6.4 or later, and iOS 8 SDK.</blockquote>
+					<p>Now that the GM build is out, there's a new error message:</p>
+					<blockquote style="font-size: 115%;">Invalid Toolchain. New apps and app updates must be built with the public (GM) versions of Xcode 6 or later, and iOS 8 SDK or later. Don't submit apps built with beta software including beta OS X builds.</blockquote>
+					<img src="https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/itunes-connect-error-new-apps-beta-osx.png" alt="iTunes Connect error when submitting an app built on a beta version of OS X" width="708">
+					<p>This is because even though the app has been built with the compatible version of Xcode and the correct iOS SDK, the app contains the build version of the OS that built the app.</p>
+					<pre class="prettyprint">&lt;key>BuildMachineOSBuild&lt;/key><br>&lt;string><span class="note">15A204h</span>&lt;/string></pre>
+					<p>It is this build number that causes the problem. <a href="https://itunesconnect.apple.com/">iTunes Connect</a> reads this value and determines that the app was built using a pre-release version of OS X, thus rejecting the build. Unfortunately, you can't simply <a href="https://georgegarside.com/blog/macos/decode-data-plist/">modify the plist</a> because this invalidates the codesigning—you'll be allowed to submit the app to iTunes Connect but it will fail review because the app can't be installed on any device (except jailbroken devices with	<a href="https://cydia.angelxwind.net/?page/net.angelxwind.appsyncunified">AppSync</a>).</p>
+					<p>Fortunately, there is a solution without having to downgrade to OS X 10.10 Yosemite: change the build number of the OS, temporarily.</p>
+					<div class="box-aside inline">Note: This solution requires you to <a href="https://georgegarside.com/blog/macos/package-incompatible-installer/">disable System Integrity Protection</a> to make changes to system files.</div>
+					<ol>
+						<li>
+							<p>Open <code>/System/Library/CoreServices/SystemVersion.plist</code> with your favourite editor.</p>
+							<p>For this example, I will open it with TextMate.</p>
+							<pre class="prettyprint">mate /System/Library/CoreServices/SystemVersion.plist</pre>
+							<img src="https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/systemversion-plist-10-11.png" width="595" style="margin: 0 0 10px;" alt="SystemVersion.plist OS X 10.11">
+						</li>
+						<li>
+							<p>Edit line 6 to change the ProductBuildVersion to one that is for an older version of OS X. Replace <code>15A263e</code> or your respective build version with an older build version such as <code>14C109</code> (Yosemite 10.10.2) which is not a pre-release build.</p>
+							<pre class="prettyprint">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+	&lt;key&gt;ProductBuildVersion&lt;/key&gt;
+	&lt;string&gt;<span class="note">14C109</span>&lt;/string&gt;
+	&lt;key&gt;ProductCopyright&lt;/key&gt;
+	&lt;string&gt;1983-2015 Apple Inc.&lt;/string&gt;
+	&lt;key&gt;ProductName&lt;/key&gt;
+	&lt;string&gt;Mac OS X&lt;/string&gt;
+	&lt;key&gt;ProductUserVisibleVersion&lt;/key&gt;
+	&lt;string&gt;10.11&lt;/string&gt;
+	&lt;key&gt;ProductVersion&lt;/key&gt;
+	&lt;string&gt;10.11&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</pre>
+						</li>
+						<li>Relaunch Xcode, re-archive your app and submit it to the App Store as normal. The build should be accepted by iTunes Connect for review!</li>
+					</ol>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-ios-submitappsbuiltbetaxcode';
+						var disqus_title = 'Can\'t submit app to iTunes Connect with El Capitan';
+						var disqus_url = 'https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/&amp;text=Can't submit app to iTunes Connect with El Capitan&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

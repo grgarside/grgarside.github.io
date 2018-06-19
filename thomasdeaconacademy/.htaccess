@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /thomasdeaconacademy/
+
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteRule ^(.*)$ https://georgegarside.com/thomasdeaconacademy/$1 [R=301,L]
+
+RedirectPermanent /thomasdeaconacademy/ict-code-of-conduct/ https://georgegarside.com/thomasdeaconacademy/vle-login/ict-code-of-conduct/
+RedirectPermanent /thomasdeaconacademy/connect/ https://georgegarside.com/thomasdeaconacademy/remote-access/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

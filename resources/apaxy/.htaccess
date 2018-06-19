@@ -1,0 +1,88 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
+
+    # META VIEWPORT
+    IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /theme .DS_Store
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace resources with your directory URL eg:
+# If your directory is http://mywebsite.com/share/
+# you would change to:
+#
+# AddIcon /share/resources/apaxy/theme/icons/blank.png ^^BLANKICON^^
+#
+
+	AddIcon /resources/apaxy/theme/icons/blank.png ^^BLANKICON^^
+	AddIcon /resources/apaxy/theme/icons/folder.png ^^DIRECTORY^^
+	AddIcon /resources/apaxy/theme/icons/folder-home.png ..
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /resources/apaxy/theme/icons/archive.png .7z .bz2 .cab .gz .tar
+	AddIcon /resources/apaxy/theme/icons/audio.png .aac .aif .aifc .aiff .ape .au .flac .iff .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg .xm .it .s3m .mod
+	AddIcon /resources/apaxy/theme/icons/bin.png .bin .hex
+	AddIcon /resources/apaxy/theme/icons/bmp.png .bmp
+	AddIcon /resources/apaxy/theme/icons/c.png .c
+	AddIcon /resources/apaxy/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /resources/apaxy/theme/icons/cpp.png .cpp
+	AddIcon /resources/apaxy/theme/icons/css.png .css .sass .scss
+	AddIcon /resources/apaxy/theme/icons/deb.png .deb
+	AddIcon /resources/apaxy/theme/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /resources/apaxy/theme/icons/draw.png .svg .svgz
+	AddIcon /resources/apaxy/theme/icons/eps.png .ai .eps
+	AddIcon /resources/apaxy/theme/icons/exe.png .exe
+	AddIcon /resources/apaxy/theme/icons/gif.png .gif
+	AddIcon /resources/apaxy/theme/icons/h.png .h
+	AddIcon /resources/apaxy/theme/icons/html.png .html .xhtml .shtml .htm .URL .url
+	AddIcon /resources/apaxy/theme/icons/ico.png .ico
+	AddIcon /resources/apaxy/theme/icons/java.png .jar
+	AddIcon /resources/apaxy/theme/icons/jpg.png .jpg .jpeg .jpe
+	AddIcon /resources/apaxy/theme/icons/js.png .js .json
+	AddIcon /resources/apaxy/theme/icons/markdown.png .md
+	AddIcon /resources/apaxy/theme/icons/package.png .pkg .dmg
+	AddIcon /resources/apaxy/theme/icons/pdf.png .pdf
+	AddIcon /resources/apaxy/theme/icons/php.png .php .phtml
+	AddIcon /resources/apaxy/theme/icons/playlist.png .m3u .m3u8 .pls .pls8
+	AddIcon /resources/apaxy/theme/icons/png.png .png
+	AddIcon /resources/apaxy/theme/icons/ps.png .ps
+	AddIcon /resources/apaxy/theme/icons/psd.png .psd
+	AddIcon /resources/apaxy/theme/icons/py.png .py
+	AddIcon /resources/apaxy/theme/icons/rar.png .rar
+	AddIcon /resources/apaxy/theme/icons/rb.png .rb
+	AddIcon /resources/apaxy/theme/icons/rpm.png .rpm
+	AddIcon /resources/apaxy/theme/icons/rss.png .rss
+	AddIcon /resources/apaxy/theme/icons/script.png .bat .cmd .sh
+	AddIcon /resources/apaxy/theme/icons/sql.png .sql
+	AddIcon /resources/apaxy/theme/icons/tiff.png .tiff .tif
+	AddIcon /resources/apaxy/theme/icons/text.png .txt .nfo
+	AddIcon /resources/apaxy/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+	AddIcon /resources/apaxy/theme/icons/xml.png .xml
+	AddIcon /resources/apaxy/theme/icons/zip.png .zip
+	DefaultIcon /resources/apaxy/theme/icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /resources/apaxy/theme/header.html
+	ReadmeName /resources/apaxy/theme/footer.html
+	IndexStyleSheet "/resources/apaxy/theme/style.css"

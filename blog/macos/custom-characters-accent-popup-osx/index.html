@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Custom Characters in OS X Accent Popup - George Garside</title>
+	<meta name="description" content="You can add custom characters to these popups to include your own characters (and even strings) by customising PressAndHold.app.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Custom Characters in OS X Accent Popup</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/pressandhold-app-custom-characters.png" itemprop="image url" class="post-header-image" alt="Custom Characters in OS X PressAndHold.app Accent Popup">
+						<meta itemprop="caption" content="Custom Characters in OS X PressAndHold.app Accent Popup">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<h1 itemprop="headline">Custom Characters in OS X Accent Popup</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2015-01-05</span> <span itemprop="dateModified">2016-10-4</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>When holding down a character on the keyboard in OS X, a popup appears with accented characters that you can use. If you don’t want to remember all the keyboard shortcuts for the <a href="http://quotesandaccents.com">accents</a>, this provides an easy way to access them. However, you can add custom characters to these popups to include your own characters and even strings by customising the PressAndHold.app.</p>
+					<ol>
+						<li>
+							<p>Navigate to <code>/System/Library/Input Methods/PressAndHold.app/Contents/Resources/</code>.</p>
+							<div class="box-note" style="padding: 5px 5px 0 5px;">
+								<p><b>In macOS Sierra, this path has changed.</b> The path is now <br><code>/System/Library/Input Methods/PressAndHold.app/Contents/<b>PlugIns/PAH_Extension.appex/Contents/</b>Resources/</code></p>
+							</div>
+						</li>
+						<li>Make a backup of the relevant keyboard file for your locale. In my case, this is Keyboard-en.plist or Keyboard-en_GB.plist.</li>
+						<li>Add custom characters or change the characters that you wish, then save the file.</li>
+						<li>Log out and back in for the changes to take effect in all apps.</li>
+					</ol>
+					<p>Here’s my custom characters that I’ve added to my Keyboard-en.plist. This is updated automatically when changes are made to the file on my Mac. The file is also used on my jailbroken iPhone.</p>
+<pre class="prettyprint">&lt;!-- q: OS X symbols --&gt;
+&lt;key&gt;Roman-Accent-q&lt;/key&gt;
+&lt;dict&gt;
+ &lt;key&gt;Direction&lt;/key&gt;
+ &lt;string&gt;right&lt;/string&gt;
+ &lt;key&gt;Keycaps&lt;/key&gt;
+ &lt;!-- All the symbols I need for writing answers on Ask Different! --&gt;
+ &lt;string&gt;⌘ ⌥ ⇧ ⌃ ⎋ ⏏ ⌫ ⇥ ↩︎ ⇞&lt;/string&gt;
+ &lt;key&gt;Strings&lt;/key&gt;
+ &lt;string&gt;⌘ ⌥ ⇧ ⌃ ⎋ ⏏ ⌫ ⇥ ↩︎ ⇞&lt;/string&gt;
+&lt;/dict&gt;
+
+&lt;!-- w: arrows --&gt;
+&lt;key&gt;Roman-Accent-w&lt;/key&gt;
+&lt;dict&gt;
+ &lt;key&gt;Direction&lt;/key&gt;
+ &lt;string&gt;right&lt;/string&gt;
+ &lt;key&gt;Keycaps&lt;/key&gt;
+ &lt;string&gt;→ ← ↑ ↓&lt;/string&gt;
+ &lt;key&gt;Strings&lt;/key&gt;
+ &lt;string&gt;→ ← ↑ ↓&lt;/string&gt;
+&lt;/dict&gt;
+
+&lt;!-- r: misc --&gt;
+&lt;key&gt;Roman-Accent-r&lt;/key&gt;
+&lt;dict&gt;
+ &lt;key&gt;Direction&lt;/key&gt;
+ &lt;string&gt;right&lt;/string&gt;
+ &lt;key&gt;Keycaps&lt;/key&gt;
+ &lt;!-- That's a double prime, not speech marks
+ also, the degrees celsius is a single unicode character
+ I rarely use these arrows in comparison to the ones above --&gt;
+ &lt;string&gt;″ ✓ ✗ ▶︎ ◀︎ ℃ ©&lt;/string&gt;
+ &lt;key&gt;Strings&lt;/key&gt;
+ &lt;string&gt;″ ✓ ✗ ▶︎ ◀︎ ℃ ©&lt;/string&gt;
+&lt;/dict&gt;
+
+&lt;!-- v: math symbols --&gt;
+&lt;key&gt;Roman-Accent-v&lt;/key&gt;
+&lt;dict&gt;
+ &lt;key&gt;Direction&lt;/key&gt;
+ &lt;string&gt;right&lt;/string&gt;
+ &lt;key&gt;Keycaps&lt;/key&gt;
+ &lt;!-- I use therefore/because and not equal to much more than any
+ of the other characters here --&gt;
+ &lt;string&gt;× ÷ √ π ∴ ∵ ≈ ≠ ∞&lt;/string&gt;
+ &lt;key&gt;Strings&lt;/key&gt;
+ &lt;string&gt;× ÷ √ π ∴ ∵ ≈ ≠ ∞&lt;/string&gt;
+&lt;/dict&gt;
+
+&lt;!-- t: unicode superscript numbers --&gt;
+&lt;key&gt;Roman-Accent-t&lt;/key&gt;
+&lt;dict&gt;
+ &lt;key&gt;Direction&lt;/key&gt;
+ &lt;string&gt;right&lt;/string&gt;
+ &lt;key&gt;Keycaps&lt;/key&gt;
+ &lt;string&gt;¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁰&lt;/string&gt;
+ &lt;key&gt;Strings&lt;/key&gt;
+ &lt;string&gt;¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁰&lt;/string&gt;
+&lt;/dict&gt;</pre>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

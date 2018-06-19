@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shutdown Causes - George Garside</title>
+	<meta name="description" content="Causes of shutdown on OS X with explanations for what they mean and how to fix them.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/shutdown-causes/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/shutdown-causes/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Shutdown Causes</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<div class="post-info">
+						<h1 itemprop="headline">Shutdown Causes</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2015-07-10</span> <span itemprop="dateModified">2017-05-11</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>In your console, you may see messages such as "Previous Shutdown Cause:" followed by a number. The number is a code representing the cause of the shutdown, which can be rather cryptic as to what it represents. Below are a <b>list of shutdown causes on macOS</b> and OS X with explanations for what the codes mean and some initial troubleshooting steps. The troubleshooting steps are by no means exhaustive, but should give you a good starting point for how to proceed with your investigation, if you suffer from the issue repeatedly.</p>
+					<table class="responsive vatop">
+						<thead>
+							<tr>
+								<th>Code</th>
+								<th>Description</th>
+								<th>Solution</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>5</th>
+								<td>Correct Shut Down.</td>
+								<td>Shutdown was initiated normally, from the OS X Shut Down menu or other shutdown command such as <code>/sbin/shutdown</code>. This does not indicate an issue with your system.</td>
+							</tr>
+							<tr>
+								<th>3</th>
+								<td>Hard shutdown.</td>
+								<td>Check the power button if you did not perform a hard shutdown yourself. It could be the case that the power button stuck down and forced a shutdown.</td>
+							</tr>
+							<tr>
+								<th>0</th>
+								<td>Power disconnected.</td>
+								<td>Check power supply/battery on a laptop, or the power supply for a Mac without a battery. On a laptop, the Mac should hibernate before the battery becomes so discharged it is unable to shutdown correctly, therefore if you see this shutdown cause on a laptop it may indicate a hardware issue with the battery or with the battery controller for reading the charge. Try resetting the SMC by connecting the switched off computer to power, holding <kbd>⌃control</kbd>+<kbd>⌥option</kbd>+<kbd>⇧shift</kbd> and pressing <kbd>power</kbd>.</td>
+							</tr>
+							<tr>
+								<th>-3</th>
+								<td>Multiple temperature sensors exceeded the defined limit.</td>
+								<td>Hold <kbd>D</kbd> on boot to run <a href="https://support.apple.com/kb/HT202731">Apple Diagnostics</a> and follow the instructions if any errors are found. If the issue persists, make an appointment at an Apple Store. For Authorized Service Providers, Run Apple Service Diagnostics to check which sensor went beyond expected thermal limits.</td>
+							</tr>
+							<tr>
+								<th>-60</th>
+								<td>Bad master directory block (badMDBErr).</td>
+								<td>Back up your data, erase the disk and reinstall macOS. If you continue to run the system, data loss may ensue. Use <a href="https://support.apple.com/kb/HT201250">Time Machine</a> to keep a backup until you are able to erase and restore. A common symptom is being <a href="https://apple.stackexchange.com/q/111603/37797">unable to repair with Disk Utility</a> — as such, erasing the disk is required as mentioned.</td>
+							</tr>
+							<tr>
+								<th>-61</th>
+								<td>Watchdog timer detected unresponsive application, shutting down the system.</td>
+								<td>Troubleshoot for stuck application, startup item and any loading preferences. Boot to Safe Mode by holding <kbd>⇧shift</kbd> on boot which disables most startup items and daemons. If the problem does not occur, try a new user account.</td>
+							</tr>
+							<tr>
+								<th>-62</th>
+								<td>Watchdog timer detected unresponsive application, restarting the system.</td>
+								<td>The system will automatically restart after this shutdown cause, unlike -61. Troubleshooting applies the same for cause -61. -61 is used where the system believes it cannot automatically recover from this, whereas -62 is used where the system determines it is likely to be resolved after restart.</td>
+							</tr>
+							<tr>
+								<th>-65</th>
+								<td><i>unknown</i></td>
+								<td>Potentially linked to operating system issue. Try reinstalling macOS as fresh or booting from clean install on an external drive.</td>
+							<tr>
+								<th>-71</th>
+								<td>SO-DIMM Memory temperature exceeds limits.</td>
+								<td>If possible, swap memory module and check with known-good one to confirm issue is with memory. Check fans physically and with an app such as <a href="https://bjango.com/mac/istatmenus/">iStat Menus</a> to determine whether the fans are rotating correctly and being reported correctly. Check air flow: open device and clean airways.</td>
+							</tr>
+							<tr>
+								<th>-74</th>
+								<td>Battery temperature exceeds limits.</td>
+								<td>Reset the SMC by connecting the switched off computer to power, holding <kbd>⌃control</kbd>+<kbd>⌥option</kbd>+<kbd>⇧shift</kbd> and pressing <kbd>power</kbd>. Swap battery and check with known-good one to confirm issue is with customer battery.</td>
+							</tr>
+							<tr>
+								<th>-75</th>
+								<td>Communication issue with AC adapter.</td>
+								<td>Check power/MagSafe connector (plug), adapter and cable. Make sure the adapter in use is an official Apple power supply. On MacBook Pro with USB-C, connect power to opposite side of laptop to determine if issue is with specific ports.</td>
+							</tr>
+							<tr>
+								<th>-78</th>
+								<td>Incorrect current value coming from AC adapter.</td>
+								<td>Make sure the adapter is an official Apple power supply. Check AC adapter plug and cable. Confirm current at the wall where the adapter is connected to.</td>
+							</tr>
+							<tr>
+								<th>-79</th>
+								<td>Incorrect current value coming from battery.</td>
+								<td>Check battery statistics: check if cycles are excessive and may indicate the battery needs replacing. Check the battery connection to logic board.</td>
+							</tr>
+							<tr>
+								<th>-86</th>
+								<td>Proximity temperature exceeds limits.</td>
+								<td>Check thermal contact with heatsink, fan connection and physical/reported activity.</td>
+							</tr>
+							<tr>
+								<th>-95</th>
+								<td>CPU temperature exceeds limits.</td>
+								<td>Check thermal contact with heatsink, fans. Reset SMC by connecting the switched off computer to power, holding <kbd>⌃control</kbd>+<kbd>⌥option</kbd>+<kbd>⇧shift</kbd> and pressing <kbd>power</kbd>.</td>
+							</tr>
+							<tr>
+								<th>-100</th>
+								<td>Power supply temperature exceeds limits.</td>
+								<td>Check fans and air flow. Confirm power supply is official Apple. If MagSafe, remove any MagSafe adapters in use (e.g. MagSafe 1 to 2).</td>
+							</tr>
+							<tr>
+								<th>-103</th>
+								<td>Battery cell under voltage detected.</td>
+								<td>Check battery and replace with known-good. Perform one charge cycle, then try again.</td>
+							</tr>
+							<tr>
+								<th>-104</th>
+								<td><i>unknown</i></td>
+								<td>Possibly linked to battery issue. Perform one charge cycle and try <kbd>D</kbd>-boot to run diagnostics.</td>
+							</tr>
+							<tr>
+								<th>-108</th>
+								<td><i>unverified</i></td>
+								<td>Likely memory issue. Commonly occurs when RAM is full and there was an issue with paging. Can occur when the system is sleeping.</td>
+							</tr>
+							<tr>
+								<th>-112</th>
+								<td><i>unverified</i></td>
+								<td>Memory issue. Almost always occurs around -128, another memory issue. Almost certainly hardware fault. See -128 for troubleshooting.</td>
+							<tr>
+								<th>-127</th>
+								<td>PMU forced shutdown.</td>
+								<td>Check power button on your hardware. Potentially fine if you forced shutdown, otherwise may be hardware/SMC issue.</td>
+							</tr>
+							<tr>
+								<th>-128</th>
+								<td><i>unknown</i></td>
+								<td>Possibly linked to memory issue. If the issue is persistent, try replacing the RAM with known-good if your hardware has removable RAM.</td>
+							</tr>
+						</tbody>
+					</table>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-shutdowncauses';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

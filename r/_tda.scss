@@ -1,0 +1,155 @@
+$colour-tda: #5388c6;
+
+.tda.main {
+	@include mainheader($colour-tda, false);
+}
+// Header
+img.tdalogo {
+	height: 65px;
+	width: inherit;
+	margin: -15px 20px 0 0;
+	@media (min-width: $medium) {
+		float: left;
+		height: 85px;
+	}
+	@media (min-width: $large) {
+		height: 67px;
+	}
+}
+.tda .note {
+	color: #a2a2a2;
+	font-size: 85%;
+}
+
+// Term Dates
+.termdatestable dt {
+	float: left;
+	width: 160px;
+	text-align: right;
+}
+.termdatestable dd {
+	margin-left:180px;
+}
+
+// Login
+@media (min-width: $medium) {
+	.card.logincard, .logincard-container {
+		float: right;
+		z-index: 5;
+		width: 300px;
+	}
+	.logincard-container {
+		width: 326px;
+	}
+	.card.loginaboutcard {
+		width: 600px;
+	}
+}
+@media (min-width: $large) {
+	.card.loginaboutcard {
+		width: 800px;
+	}
+}
+@media (min-width:1400px) {
+	.card.loginaboutcard {
+		width: 1000px;
+	}
+}
+.logincard-sublink {
+	margin-top: 20px;
+	padding-top: 10px;
+	margin-bottom: 2px;
+	text-align: center;
+	border-top: thin solid lightgrey;
+}
+fieldset {
+	border: none;
+}
+label {
+	color: #777;
+	font-size: 14px;
+}
+input[type="text"], input[type="password"] {
+	border: 1px solid transparent;
+	background: #fbfbfb;
+	font-size: 24px;
+	width: 97%;
+	padding: 3px;
+	margin: 2px 0 16px 0;
+}
+input[type="text"]:focus {
+	box-shadow: none;
+}
+button.signinbutton {
+	font-size: 1em;
+	height: 35px;
+	line-height: 28px;
+	padding: 0 12px 2px;
+	background: $colour-tda;
+	border: solid $colour-tda;
+	color: #ffffff;
+	float: right;
+	border-radius: 3px;
+	cursor: pointer;
+}
+// Warning shown under login
+div.warning {
+	padding: 15px;
+	margin: 30px 0 0 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+	border-left-color: #aa6708
+}
+div.warning > p:first-child {
+	font-size: 14px;
+	color: #aa6708;
+	font-weight: 500;
+	margin-top: 0;
+	margin-bottom: 5px;
+	line-height: 1.1;
+}
+div.warning > p {
+	margin: 0 0 10px;
+}
+div.warning > p:last-child {
+	margin-bottom: 0;
+}
+div.warning.red {
+	border-left-color: #ce4844;
+}
+div.warning.red > p:first-child {
+	color: #ce4844;
+}
+
+@media (max-width: $medium) {
+	.fullonly {
+		display: none;
+	}
+}
+
+// ICT Code of Conduct
+.tda ol li ul {
+	list-style-type: disc;
+	padding-bottom: 9px;
+}
+// 2 col
+.col2:after {
+	clear: both;
+	display: block;
+	content: '';
+}
+@media (min-width:$wide) {
+	.col2.wide-only .right {
+		float: right;
+		width: 675px;
+		box-sizing: border-box;
+	}
+	.col2.wide-only .left {
+		width: 675px;
+		box-sizing: border-box;
+	}
+	.col2.wide-only.left-right .left {
+		float: left;
+	}
+}

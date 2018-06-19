@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Photos attempted to repair the library - George Garside</title>
+	<meta name="description" content="How to fix Photos has attempted to repair the library Photos Library.photoslibrary, but is unable to open. The library could not be opened—here's the fix.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/photos-has-attempted-to-repair-the-library/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/photos-has-attempted-to-repair-the-library/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Photos attempted to repair the library</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/macos/photos-has-attempted-to-repair-the-library/library-could-not-be-opened.png" itemprop="image" class="post-header-image">
+					<div class="post-info">
+						<h1 itemprop="headline">Photos attempted to repair the library</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2015-05-24</span> <span itemprop="dateModified">2017-05-13</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>This is a fairly common error taking many forms, shown when opening a photos library with the Photos app. Your library is most likely still intact and your photos still stored safely. Just because Photos can’t automatically repair the library on launch doesn’t mean it is unrecoverable. Here's some steps you can take to recover your photos.</p>
+					<h2>Photos library could not be opened</h2>
+					<blockquote>
+						The library could not be opened.<br>
+						Photos has attempted to repair the library <q>Photos Library.photoslibrary</q> but is unable to open it.
+					</blockquote>
+					<p>The most common cause of this is a permissions problem. Not necessarily that you don't have the permission, as Photos will prompt for administrator permissions if that's simply the case, but that permissions can't be obtained, even with administrator. For example, if the library is open elsewhere: on another Mac on the network, for example. </p>
+					<p>If that didn’t fix it for you, you can manually try repairing the library. If it’s a permissions problem, Photos.app doesn’t like to ask for administrator privileges automatically, instead just saying that Photos attempted to repair the library but is unable to open it without actually trying to repair it. You can force Photos to try to repair the library by <strong>holding <kbd>⌥option</kbd> and <kbd>⌘command</kbd> whilst launching Photos</strong>. Photos.app will try to repair the library and it may ask you for administrator privileges.</p>
+					<h2>Photos library could not be created</h2>
+					<blockquote>
+						Photos could not upgrade your library because it is on an unsupported disk volume
+					</blockquote>
+					<p>This error is likely due to an incorrect partition format, such as NTFS which can't be written to. Photos requires write permission to create a library or to migrate a library from iPhoto. You can fix this by copying the library to somewhere where you can write to, such as your <code>~/Pictures</code> directory — the default location for photos in your home folder.</p>
+					<h2 id="using-console">Using Console.app for error research</h2>
+					<p>For more information on an error message shown in Photos like this, open Console.app, in /Applications/Utilities/ and search for “photos”. This can be extremely telling in what the problem is. For example, in my case, the important lines here is that photolibraryd “failed to open library” with an error message:</p>
+					<blockquote>
+						<code>photolibraryd: Failed to open library Photos Library.photoslibrary Error: Error Domain=com.apple.lithium Code=54 “locked by remote host” UserInfo=0x7fafbbb48d90 {NSURL=file:///Volumes/Server/Shared%20Folders/Photos/Photos%20Library.photoslibrary/database/metaSchema.db.lock, NSLocalizedDescription=locked by remote host, NSLocalizedFailureReason=locked by host georgegarside.com}</code>
+					</blockquote>
+					<p>The important content here is <em>why</em> the library failed to open. Here, the problem is that the library is “locked by remote host” which means that <strong>the library is open somewhere else on the network</strong>, as specified by the NSLocalizedDescription. The NSLocalizedFailureReason also includes the hostname of the Mac on the network which has locked the library—in this case, the device with the hostname of georgegarside.com. If you find that messages in the Console are hidden as &lt;private&gt;, you may need to <a href="https://georgegarside.com/blog/macos/sierra-console-private/">set the Console privacy level to see private logs</a>.</p>
+					<p>The solution to this issue: <b>close Photos.app on the other Mac</b>, or open a different library on that Mac if there are multiple libraries available.</p>
+					<p><img src="https://georgegarside.com/blog/wp-content/uploads/2015/05/Screen-Shot-2015-05-24-at-18.46.45.png" alt="Console.app Photos.app" width="1105"></p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = '716 https://georgegarside.com/blog/?p=716';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

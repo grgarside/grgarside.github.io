@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OS X Terminal Zsh Setup - George Garside</title>
+	<meta name="description" content="I use Terminal with the zsh shell, kept up-to-date with Homebrew. Oh My Zsh manages my zsh configuration and themes, and I have a few custom plugins.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">OS X Terminal Zsh Setup</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/osx-terminal-zsh-shell-setup.png" itemprop="image" class="post-header-image">
+					<div class="post-info">
+						<h1 itemprop="headline">OS X Terminal Zsh Setup</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2014-12-14</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>I’ve been asked a few times regarding what my setup is for my Terminal, mainly from people who’ve seen my terminal in various answers across Stack Exchange. I thought I’d finally write a quick post regarding what my OS X Terminal zsh setup is as well so that you can use it if you wish.</p>
+					<p>Firstly, I use <strong>Terminal</strong>, the standard OS X Terminal app. I have tried iTerm 2 on numerous occasions, and I keep going back to Terminal—iTerm 2 is just too buggy and doesn’t fit with OS X standards as far as I want. My shell is <strong>zsh</strong>, installed and kept up-to-date with <strong>Homebrew</strong>. Again, not bash, having moved to zsh a long time ago I have no desire to return, and not MacPorts as I simply prefer Homebrew—personal preference very much here.</p>
+					<p><a href="http://ohmyz.sh/"><strong>Oh My Zsh</strong></a> manages my zsh setup configuration and zsh themes, and I have customised my shell with a few custom Oh My Zsh plugins. I used to use a customised version of the&nbsp;<strong>agnoster</strong>&nbsp;theme as shown in many of my earlier answers on Stack Exchange, but I no longer use this.</p>
+					<p><img class="post-image" src="https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/DUqIh4.png" alt="Terminal Agnoster Theme" width="676"></p>
+					<p>Instead, I now use&nbsp;<strong>sorin</strong>:</p>
+					<p><img class="post-image" src="https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/Screen-Shot-2014-12-14-at-11.33.18.png" alt="OS X Terminal Sorin Theme" width="751"></p>
+					<p>I have a few specific custom plugins for development with Cordova, but not much else has changed. I’ve got a few Homebrew packages installed though, the best of which is probably&nbsp;<a href="https://github.com/joelthelion/autojump"><strong>autojump</strong></a> (shown above) which lets me cd quickly around my zsh setup by allowing it to learn which directories I access most often.</p>
+					<p>The colour scheme I’m using in Terminal is a customised version of <a href="https://github.com/chriskempson/tomorrow-theme/blob/master/OS%20X%20Terminal/Tomorrow%20Night.terminal">Tomorrow Night</a>, with Menlo Regular for Powerline 11pt and some custom keyboard actions.</p>
+					<p>I have a custom .screenrc file on my servers that provides a nice toolbar of the screens and some server info which can be very useful when connecting to remote servers, even when I don’t have my entire zsh setup available there.</p>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

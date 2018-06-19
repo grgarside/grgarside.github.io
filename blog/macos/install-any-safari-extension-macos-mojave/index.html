@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bypass ‘Safari no longer supports the unsafe extension’ in macOS Mojave  - George Garside</title>
+	<meta name="description" content="Install any extension blocked by Safari in macOS Mojave using Safari's developer tools from its safariextz file to bypass the error message ‘Safari no longer supports the unsafe extension’.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="How to install any Safari extension in macOS Mojave">
+	<meta name="twitter:description" content="Bypass ‘Safari no longer supports the unsafe extension’ and install any extension blocked by Safari in macOS Mojave using Safari's developer tools from its safariextz file">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/safari-no-longer-supports-unsafe-extension-tampermonkey-header.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/TechArticle">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/" itemprop="item" itemscope itemtype="https://schema.org/WebPage" rel="home">
+						<span itemprop="name">Home</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span>
+					<a href="https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/">
+						<span>Bypass ‘Safari no longer supports the unsafe extension’ in macOS Mojave</span>
+					</a>
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/safari-no-longer-supports-unsafe-extension-tampermonkey-header.png" itemprop="image url" class="post-header-image" alt="Safari error message ‘Safari no longer supports the unsafe extension Tampermonkey’ with Tampermonkey showing in the background having been installed successfully">
+						<meta itemprop="caption" content="Safari error message ‘Safari no longer supports the unsafe extension Tampermonkey’ with Tampermonkey showing in the background having been installed successfully">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name">Bypass ‘Safari no longer supports the unsafe extension’ in macOS Mojave</h1></a>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2018-06-06</span> <span itemprop="dateModified">2018-06-09</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>If you've just updated to macOS Mojave or the latest version of Safari Technology Preview, you might be greeted with the following message when you try to install an extension like you've always done in Safari. There doesn't appear to be any way round the problem, with existing extensions removed and unable to be added again even if you download the package for the extension as worked in previous versions.</p>
+					<img src="safari-no-longer-supports-the-unsafe-extension-error.png" width="420" alt="Safari no longer supports the unsafe extension">
+					<blockquote>
+						<strong>Safari no longer supports the unsafe extension.</strong>
+						You can find newer extensions reviewed by Apple in the App Store or Safari Extensions Gallery.
+					</blockquote>
+					<p>Fortunately there's a way round this problem. It requires manually installing the extension, so you won't get automatic updates for it in the future, but it's still perfectly usable and is the only way to get certain functionality until developers update their extensions for you (which some might not even do). This article presumes you've checked whether your extension exists in an Apple-approved form elsewhere, for example if you've installed uBlock Origin from uBlock0.safariextz you'll get the message that the extension was removed, but it is available to download from the Safari Extensions Gallery (here's a link to <a href="https://safari-extensions.apple.com/details/?id=com.el1t.uBlock-3NU33NW2M3">get uBlock Origin</a> without going through this process). However, not all extensions are available there and it is soon to be discontinued anyway with App Extensions the only way forward. Follow these steps to install any extension blocked by Safari:</p>
+					<h2>Download and unzip the extension</h2>
+					<p>The first step is to <strong>download the .safariextz file</strong>. This will be from the developer's website, how you usually installed the extension previously. In this tutorial, I will use Tampermonkey as the example as it is my preferred userscripts extension for Safari and is not available on the App Store or the Gallery. <strong>Rename the file's extension from .safariextz to .zip</strong>, then <strong>extract the zip</strong> by double-clicking on the file. This gives you a .safariextension which is a folder containing the JavaScript and other files which make up the extension. You're ready to add the extension to Safari!</p>
+					<p>
+						<img src="tampermonkey-safariextz.png" width="308" alt="Tampermonkey.safariextz extension bundle package" class="inline">
+						<img src="rename-safariextz-zip.gif" width="544" alt="Rename safariextz file to zip file" class="inline">
+						<img src="extracting-safariextz-zip.png" width="686" alt="Extracting Safari extension as zip file">
+					</p>
+					<h2>Add safariextension to Extension Builder</h2>
+					<p>The Develop menu needs to be enabled to use the Extension Builder, which can be enabled from Safari → Preferences → Advanced → Show Develop menu in menu bar.</p>
+					<p>Once the <strong>Develop menu</strong> is enabled, open it and <strong>select Show Extension Builder</strong>. You'll be presented with a window, and if you've never built an extension before it will be blank. <strong>Click the + button</strong> and choose <strong>Add Extension…</strong>. Select the .safariextension folder that you extracted and choose the Select button.</p>
+					<p>
+						<img src="safari-enable-develop-menu.png" width="770" alt="Safari Preferences showing develop menu option in Advanced" class="inline">
+						<img src="develop-menu-show-extension-builder.png" width="364" alt="Safari Develop menu with Show Extension Builder highlighted" class="inline">
+						<img src="extension-builder-add-extension.png" width="700" alt="Extension Builder with Add Extension menu option from plus button" class="inline">
+					</p>
+					<h2>Run the extension in Safari</h2>
+					<p>The extension folder you added will be shown in the builder, and some extension information should be shown too such as a logo and author details. Click the Run button in the top-right to run the extension. You will be prompted to authenticate the action, which you can do by entering your account password or with Touch ID. The extension will be installed and be available from the usual places, such as a menu bar button and Safari Preferences. Enjoy your unblocked extension!</p>
+					<p>
+						<img src="extension-builder-extension.png" width="700" alt="Extension Builder showing one extension just added" class="inline">
+						<img src="extension-builder-install-extension.png" width="444" alt="Safari is trying to install an extension" class="inline">
+						<img src="tampermonkey-install-macos-mojave.png" width="383" alt="Tampermonkey menu shown in macOS Mojave's Safari" class="inline">
+						<img src="tampermonkey-safari-preferences-mojave.png" width="776" alt="Safari Preferences showing Extensions tab with Tampermonkey listed as installed" class="inline">
+					</p>
+					<h2>Import previous settings into new extension</h2>
+					<p>Settings for an extension you previously had installed won't be seen by this extension you've run manually. If you don't mind setting up the extension from scratch, or it had no options, there's no need to worry about this step. Otherwise you can import these settings by copying them from the old extension to the new extension which has a different team ID. Open <code>~/Library/Preferences/com.apple.Safari.Extensions.plist</code> with something like Xcode. Find the extension you just added, which should be at the bottom, and delete its dictionary using the minus sign. Go to the dictionary with the same extension name, click on the name and replace the team ID with <code>0000000000</code>, 10 zeros. Save the file and reload the extension in Safari to see your settings imported.</p>
+					<p>
+						<img src="extension-teamid.gif" width="798" alt="Safari extensions settings plist to copy preferences from an older version of the extension">
+					</p>
+					<p>To expand some more on precisely what this does: when you install an extension built by someone else usually, that extension will be signed with a Safari Extensions certificate. The package that is created has this certificate inside it, and this contains a Team ID which is the ID of the developer or organisation which built and signed the extension. Your previous installation of the extension will have a Team ID because of this signing process, however the extension you have packed yourself and run manually will not since you did not use a certificate. Therefore, the Team ID for your unsigned certificate is ten zeros, so you'll need to rename the old extension's Team ID to be zeros for it to associate it with your new extension.</p>
+					<h3>Next steps</h3>
+					<p>Next time you relaunch Safari, the extension will still be in Extension Builder but won't be ‘Run’. You can automatically run the extension with the following AppleScript. Add this script to <code>~/Library/Scripts/Applications/Safari</code> (you may need to create the folders along this path, note the ~ reference to your home folder rather than the root Library folder).</p>
+					<pre class="prettyprint">
+tell application "System Events"
+  tell process "Safari"
+    set frontmost to true
+    click menu item "Show Extension Builder" of menu "Develop" of menu bar 1
+    delay 0.5
+    click button "Run" of splitter group 1 of window "Extension Builder"
+    click button 1 of window "Extension Builder"
+  end tell
+end tell</pre>
+					<p>You can also prevent Safari from inexplicably throwing away your extension settings by locking the preferences file. Get Info (⌘I) on the com.apple.Safari.Extensions.plist preferences file, then check the box labelled Locked. This prevents changes to the file and will ensure Safari doesn't throw away the preferences for the extension on quit.</p>
+					<p><img src="safari-extensions-preferences-locked.png" width="265" alt="Safari extensions preferences file locked in Finder Get Info"></p>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-macosmojave-safariextz';
+						var disqus_title = 'How to install any Safari extension in macOS Mojave';
+						var disqus_url = 'https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/&amp;text=How to install any Safari extension in macOS Mojave&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/macos/install-any-safari-extension-macos-mojave/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

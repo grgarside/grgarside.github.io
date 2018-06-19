@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Content Caching in macOS High Sierra - George Garside</title>
+	<meta name="description" content="Content Caching is a new feature available in High Sierra, making the existing Caching service from Server.app available to all consumers to use in their home environment.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/high-sierra-content-caching/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Content Caching in macOS High Sierra">
+	<meta name="twitter:description" content="Content Caching is a new feature available in High Sierra, making the existing Caching service from Server.app available to all consumers to use in their home environment.">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/high-sierra-content-caching/content-caching.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/TechArticle">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/" itemprop="item" itemscope itemtype="https://schema.org/WebPage" rel="home">
+						<span itemprop="name">Home</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/high-sierra-content-caching/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Content Caching in macOS High Sierra</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/macos/high-sierra-content-caching/content-caching.png" itemprop="image url" class="post-header-image" alt="Content caching in Sharing.prefpane for macOS High Sierra">
+						<meta itemprop="caption" content="Content caching in Sharing.prefpane for macOS High Sierra">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/macos/high-sierra-content-caching/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name">Content Caching in macOS High Sierra</h1></a>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2017-09-23</span> <span itemprop="dateModified">2017-09-24</span></p>
+					</div>
+				</div>
+				<aside class="card-toc jump">
+					<ul class="ul-primary ul-primary-compressed">
+						<li><a href="#setup">Set up Content Caching</a></li>
+						<li><a href="#storage">Storage</a></li>
+						<li><a href="#advopt">Advanced Options</a>
+							<ul>
+								<li><a href="#clients">Clients</a></li>
+								<li><a href="#peers">Peers</a></li>
+								<li><a href="#peers">Parents</a></li>
+								<li><a href="manualconfig">AssetCacheManagerUtil</a></li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+				<div class="card" itemprop="articleBody">
+					<p>Content Caching is a new feature available in High Sierra. In essence, it makes the existing Caching service from Server.app available to all consumers to use in their home environment or other environments where configuring a server installation is too costly in time or knowledge. It's much easier to set up and configure Content Caching than the caching service in Server.app, but functions in the same way by caching the same types of content, Apple first-party and iCloud.</p>
+					<p>Content Caching reduces bandwidth usage and speeds up installation on supported devices, by storing software updates, apps, and other content on this computer. Cache iCloud content: Store iCloud data, such as photos and documents, on this computer. Share internet connection: Share this computer's Internet connection and cached content with iOS devices connected using USB.</p>
+					<img src="https://georgegarside.com/blog/macos/high-sierra-content-caching/content-caching.png" width="668" alt="Content caching in Sharing.prefpane for macOS High Sierra">
+					<h2 id="setup">How to set up Content Caching in macOS High Sierra?</h2>
+					<ol>
+						<li>Open Sharing.prefpane from System Preferences.</li>
+						<li>Unlock the pane. Click the padlock icon in the lower-left and authenticate.</li>
+						<li>Configure the sharing service. More information is given next.</li>
+						<li>Switch it on. Click the checkbox on the left of the service name to enable it.</li>
+					</ol>
+					<p>Keep in mind that Content Caching will download all content requested by any client device, so the service will consume vast quantities of storage space unless you limit the storage, explained later. Content caching should only be configured on a Mac over Ethernet unless the network bandwidth is so low that Wi-Fi would still provide sufficient speed, faster than downloading again from Apple.</p>
+					<h2 id="storage">Storage</h2>
+					<img src="https://georgegarside.com/blog/macos/high-sierra-content-caching/content-caching-storage.png" width="545" alt="View storage used and set maximum cache size for caching service">
+					<p>You can inspect how much storage space is being used on your Mac by the caching service by clicking the Options button shown in the above screenshot. This will show the following pane, which will present the current cache total. The storage used by the caching service is purgeable if the disk is running out of space, and the total is included in Finder, Disk Utility and System Information as purgeable storage, to be automatically cleared by the system if space is low. You can also manually set a limit using the slider in this pane, which prevents caching from using any more than permitted. If you have more than one available disk for storing cache on, another option appears in this tab for setting the storage disk — click Edit to change the disk used for content caching.</p>
+					<h2 id="advopt">Advanced Options configuration</h2>
+					<p>To configure other options, hold <kbd>⌥alt</kbd> and the Options button changes to Advanced Options. Clicking it brings up a sheet with tabs across the top: as well as the previous Storage tab, three more tabs for Clients, Peers and Parents.</p>
+					<h3 id="clients">Clients</h3>
+					<img src="https://georgegarside.com/blog/macos/high-sierra-content-caching/content-caching-clients.png" width="545" alt="Limit who can use your caching service">
+					<p>The Clients tab allows you to configure which computers can class themselves as clients of this caching server and are permitted to use and store data here. The default setting is to cache content for devices using the same local networks, where the local networks use one public IP address. This configures clients in such a way that if they meet the criteria they will automatically use Content Caching without any configuration required. This automatic configuration works for iOS 7 or later and macOS 10.8.2 or later.</p>
+					<p>Other configurations are available, such as caching for the same public IP regardless of meeting the local networks criteria, or providing custom local network address ranges. The latter allows for configuration of a fallback content cache, where the computer will cache content for devices when their preferred content caches are unavailable. Should custom public IP address ranges be required, this option can be set using the second dropdown and custom ranges provided. More configuration is required when choosing this option, as automatic DNS resolving doesn't work here — a DNS entry must be added manually. Once the public IP ranges have been set, choose DNS Configuration to show the necessary configuration required.</p>
+					<ul>
+						<li>DNS type: BIND, TXT record:<br><code>_aaplcache._tcp	259200 IN TXT	"prs=x.x.x.x-y.y.y.y"</code>,<br>copy the TXT record into your network's DNS configuration.</li>
+						<li>DNS type: Windows, Command:<br><code>dnscmd . /RecordAdd &lt;ZoneName> _aaplcache._tcp 259200 TXT "prs=x.x.x.x-y.y.y.y"</code>,<br>replace &lt;ZoneName> and run the command.</li>
+					</ul>
+					<h3 id="peers">Peers</h3>
+					<img src="https://georgegarside.com/blog/macos/high-sierra-content-caching/content-caching-peers.png" width="545" alt="Decide whether other caching servers can share your cache">
+					<p>The Peers tab is similar to the Clients tab, but this tab concerns itself with sharing cache between other servers instead of clients. Borrowing from the previous tab, a similar dropdown is available for setting which IP ranges to share content with: content caches on the same local networks (default), same public IP address or custom IP ranges which you can provide.</p>
+					<h3 id="parents">Parents</h3>
+					<img src="https://georgegarside.com/blog/macos/high-sierra-content-caching/content-caching-parents.png" width="545" alt="Add caching server parents">
+					<p>You can configure a hierarchy of caching servers using the Parents tab. Specify IP addresses of parent content caching servers and choose a policy for deciding which caching server to use:</p>
+					<ul>
+						<li>Round robin (default): Standard load balancing procedure of cycling through the parents in order one by one.</li>
+						<li>First available: The IPs are tried in order until an available server is found, which should be the first IP in the list unless something's gone wrong.</li>
+						<li>Sticky available: Like First available, except when a server is unavailable and so the next one was chosen, keep using that subsequent one until it itself becomes unavailable, then use the next one and repeat.</li>
+						<li>Random: If in doubt, randomly pick this option to end up with a random choice of cache for each request.</li>
+						<li>Hash: Creates a hash from the path of the URL which was accessed and which the cache intercepted and always directs the same hash to the same server. This limits the overlap of the caches and maximises the storage space available in all content caches.</li>
+					</ul>
+					<h2 id="manualconfig">AssetCacheManagerUtil</h2>
+					<p>Settings are stored in <code>/Library/Preferences/com.apple.AssetCache.plist</code>, and are managed by <a href="x-man-page://AssetCacheManagerUtil">AssetCacheManagerUtil</a>. To view settings, use <code>AssetCacheManagerUtil settings</code>. Settings can be set using</p>
+					<pre>sudo -u _assetcache defaults write /Library/Preferences/com.apple.AssetCache.plist
+sudo AssetCacheManagerUtil reloadSettings</pre>
+					<p>In addition to the settings mentioned above, there are a few more settings which can be configured manually. I will expand this section at a later date to go into detail with the keys which can be set.</p>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-highsierra-contentcaching';
+						var disqus_title = 'Content Caching in macOS High Sierra';
+						var disqus_url = 'https://georgegarside.com/blog/macos/high-sierra-content-caching/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/macos/high-sierra-content-caching/&amp;text=Content Caching in macOS High Sierra&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/macos/high-sierra-content-caching/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/macos/high-sierra-content-caching/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+form {
+	min-height: 310px;
+	
+	.input-group {
+		margin-bottom: 1rem;
+		
+		&.full-width input[type="text"] {
+			display: block;
+			width: 100%;
+		}
+		
+		input[id="studentName"] {
+			font-size: 1.5rem;
+		}
+	}
+	.student-photo {
+		@media (min-width: 768px) {
+			float: left;
+		}
+	}
+	
+	label {
+		color: #55595c;
+	}
+	input + label {
+		margin-left: 1rem;
+	}
+	
+	input {
+		box-sizing: border-box;
+		
+		&[type="text"] {
+			padding: {
+				left: .2rem;
+				bottom: .5rem;
+				right: .2rem;
+				top: .5rem;
+			}
+			font-size: 1rem;
+			line-height: 1.25;
+			background: {
+				color: #fff;
+				image: none;
+			}
+			border: none {
+				bottom: 1px solid rgba(0, 0, 0, .25);
+			}
+			
+			&::placeholder {
+				color: lightgray;
+			}
+		}
+		
+		&[id="studentPhoto"] {
+			width: 180px;
+		}
+	}
+}
+
+// Tabs
+ul.tabs {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	border-bottom: 1px solid #dddddd;
+	
+	li {
+		background: none;
+		color: #222;
+		display: inline-block;
+		padding: 10px 15px;
+		cursor: pointer;
+		
+		&.current {
+			color: #222;
+			border-bottom: 2px solid $jhcolour
+		}
+	}
+}
+.tab-content {
+	display: none;
+	padding: 15px;
+	
+	&.current {
+		display: inherit;
+	}
+	
+	h2 {
+		display: none;
+	}
+	
+	&[data-tab-content="tab-meetings"], &[data-tab-content="tab-home"], &[data-tab-content="tab-squad"], &[data-tab-content="tab-school"] {
+		> ul {
+			margin: 0 {
+				bottom: 2px;
+			}
+			padding-left: 20px;
+			
+			> li {
+				list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10"><rect fill="grey" x="2" y="2" height="4" width="4"/></svg>');
+				
+				// meeting div
+				> div {
+					margin: 5px;
+					padding: 5px {
+						left: 20px;
+					}
+					border-left: 2px solid grey;
+					
+					input {
+						font-size: 100%;
+					}
+					
+					h3 {
+						font-weight: normal;
+						padding-top: 4px;
+						margin-bottom: 0;
+						border-top: 1px solid rgba(0, 0, 0, .25);
+					}
+					h4 {
+						margin-top: 8px;
+						font-weight: bold;
+					}
+					
+					// field div
+					div {
+						margin-bottom: 8px;
+						
+						textarea {
+							height: 5em;
+							border: 1px solid rgba(0, 0, 0, .25);
+							max-height: 25em;
+						}
+						
+						&.single-text {
+							> label {
+								display: inline-block;
+								width: 140px;
+								text-align: right;
+							}
+						}
+						&.single-text, &.single-text-prompt {
+							> input {
+								width: 500px;
+								max-width: 100%;
+								border: none {
+									bottom: 1px solid rgba(0, 0, 0, .25);
+								}
+							}
+						}
+						
+						&.points-text {
+							max-width: 650px;
+							column: {
+								count: 2;
+								width: 300px;
+							}
+							.column {
+								break-inside: avoid;
+								
+								> label {
+									display: block;
+								}
+								> textarea {
+									width: 100%;
+									resize: vertical;
+								}
+							}
+						}
+						
+						&.prose-text {
+							> label {
+								display: block;
+							}
+							> textarea {
+								width: 600px;
+								max-width: 100%;
+							}
+						}
+						
+						&.scale .radio-scale {
+							display: inline-block;
+							
+							> span {
+								display: block;
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&[data-tab-content="tab-updates"] {
+		> ul {
+			margin: 0 {
+				bottom: 2px;
+			}
+			padding-left: 20px;
+			
+			> li {
+				list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10"><rect fill="grey" x="2" y="2" height="4" width="4"/></svg>');
+				
+				&:not(#newupdatebutton) {
+					border-bottom: 1px solid rgba(0, 0, 0, .25);
+					padding: 5px;
+					margin: 5px 0;
+				}
+				
+				img {					
+					@media (min-width: 768px) {
+						float: left;
+					}
+					max-height: 130px;
+					margin-right: 5px;
+				}
+				
+				textarea {
+					font-size: 14px;
+					width: 600px;
+					height: 130px;
+					max-width: 100%;
+					resize: none;
+				}
+				
+				button.delete {
+					float: right;
+					margin-top: -2px;
+				}
+			}
+		}
+	}
+}

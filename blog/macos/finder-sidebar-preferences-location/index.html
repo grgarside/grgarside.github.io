@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Finder Sidebar Preferences Location - George Garside</title>
+	<meta name="description" content="The favourites are stored in the Finder sidebar preferences' favoriteitems dictionary in the aforementioned plist file, under the CustomListItems array.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/finder-sidebar-preferences-location/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/finder-sidebar-preferences-location/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Finder Sidebar Preferences Location</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/wp-content/uploads/2015/03/Finder-Sidebar-Location.png" itemprop="image" class="post-header-image" alt="macOS Finder sidebar">
+					<div class="post-info">
+						<h1 itemprop="headline">Finder Sidebar Preferences Location</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2015-03-14</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>Finder in OS X allows you to place favourite locations (volumes and folders) in the sidebar of every Finder window and other Finder dialog or sheet (such as the Finder sidebar shown in a Save or Open sheet). This isn’t a folder in Finder, but rather the Finder sidebar preferences simply stores a pointer to the item. Furthermore, Finder places volumes under Devices, as well as network locations under Shared and tags under Tags. The categories themselves can be re-ordered by dragging the section headers, a feature introduced in Mountain Lion to all standard OS X sidebars, and this order is also stored by the Finder sidebar preferences.</p>
+					<p>The Finder sidebar preferences are stored in two locations:</p>
+					<ul>
+						<li><code class="prettyprint">~/Library/Preferences/com.apple.finder.plist</code></li>
+						<li><code class="prettyprint">~/Library/Preferences/com.apple.sidebarlists.plist</code></li>
+					</ul>
+					<p>The order of the Finder sidebar’s sections is stored in the com.apple.finder.plist, under the SidebarZoneOrder pre-Mavericks and SidebarZoneOrder1 post-Mavericks.</p>
+					<p><img src="https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-14-at-19.43.47.png" alt="Finder Sidebar Preferences Section Order SidebarZoneOrder1" width="600"></p>
+					<p>The <em>SidebarZoneOrder</em> array stores strings with the name of the section, in order that it is displayed in Finder before OS X Mavericks. The sections are <em>favorites</em>, <em>devices</em>, <em>shared</em> and <em>media_browser</em>. With Mavericks, the Finder tags were introduced which added another section to the Finder sidebar. Therefore, <em>SidebarZoneOrder1</em> is used instead which, along with the contents of <em>SidebarZoneOrder</em>, also introduces&nbsp;the&nbsp;<em>tags</em> section.</p>
+					<p>The contents of the Finder sidebar is stored in the com.apple.sidebarlists.plist, in dictionaries for each of the sections. Some of these sections are not shown in the sidebar, but are still stored and managed by this plist file.</p>
+					<ul>
+						<li><em>finderprojects</em><br>
+							All the Finder tags, not just the ones shown in the sidebar. Tags shown in the sidebar have the&nbsp;<em>kLSSharedTagFileListItemPinned</em> boolean set to true, whilst those hidden behind All Tags… are set to false.</li>
+						<li><em>favoriteservers</em><br>
+							These aren’t shown in the sidebar, but rather in the Connect to Server dialog, shown by pressing ⌘K, or Go → Connect to Server….</li>
+						<li><em>favorites</em> and&nbsp;<i>systemitems</i><br>
+							This is the sidebar contents as shown in Finder preferences, under Sidebar. This includes options for showing certain certain types of volumes (for example: <em>ShowRemovable</em>, <em>ShowHardDisks</em> and <em>ShowEjectables</em>).</li>
+						<li><em>favoriteitems<br>
+						</em>This is probably what you’re looking for. This dictionary contains the contents of the sidebar items that you have placed there for accessing.<br>
+							<img src="https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-14-at-19.53.36.png" alt="com.apple.sidebarlists.plist Finder Sidebar Preferences" width="600"></li>
+						<li><em>savedsearches</em><br>
+							An archaic dictionary for when Finder used to show smart search folders such as Today and Yesterday. This isn’t&nbsp;shown anymore in the Finder sidebar.</li>
+						<li><i>networkbrowser</i><br>
+							Contains the preferences for the Network section of the Finder sidebar. For example,&nbsp;<em>com.apple.NetworkBrowser.backToMyMacEnabled</em> is a boolean for whether ‘Back to My Mac’ Macs show in the Network section.</li>
+					</ul>
+					<p>In summary, the Finder sidebar favourites are stored in the&nbsp;<em>favoriteitems</em> dictionary in the aforementioned com.apple.sitebarlists.plist file, under the <em>CustomListItems</em> array. Each item is a dictionary with a Name and CustomItemProperties, as well as the Alias itself.</p>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = '563 https://georgegarside.com/blog/?p=563';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

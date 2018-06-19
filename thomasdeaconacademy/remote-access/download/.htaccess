@@ -1,0 +1,2 @@
+AddType text/x-testbed-rdp .rdp
+Header set Content-Disposition "attachment; filename=TDA.rdp"

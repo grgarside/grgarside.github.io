@@ -1,0 +1,2 @@
+RewriteBase /thomasdeaconacademy/eportal-login
+RewriteRule ^(.*)$ https://georgegarside.com/thomasdeaconacademy/vle-login/ [R=301]

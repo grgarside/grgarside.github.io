@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>A better top nav bar for Stack Overflow - George Garside</title>
+	<meta name="description" content="The new top nav for Stack Overflow isn't quite right. Here's some CSS to improve it whilst keeping the new ideas.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="A better top nav bar for Stack Overflow">
+	<meta name="twitter:description" content="The new top nav for Stack Overflow isn't quite right. Here's some CSS to improve it whilst keeping the new ideas.">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/new-nav-custom-css-improved-stack-overflow.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/stack-exchange/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Stack Exchange</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">A better top nav bar for Stack Overflow</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/new-nav-custom-css-improved-stack-overflow.png" itemprop="image url" class="post-header-image" alt="New navigation custom CSS for Stack Exchange" width="402">
+						<meta itemprop="caption" content="New navigation custom CSS for Stack Exchange">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name" id="codetitle">A better top nav bar for <span class="wrapspan">Stack Overflow</span></h1></a>
+						<p><span itemprop="articleSection">Stack Exchange</span> <span itemprop="datePublished">2017-02-13</span> <span itemprop="dateModified">2017-09-23</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="sharedContent" itemscope itemtype="https://schema.org/SoftwareSourceCode" itemref="codetitle">
+					<p>After much time in beta and quite a bit of testing, the <a href="">new top nav is out</a>, with many concerns unaddressed. I'm generally welcoming of change, such as the move to the new design across SE, but this top bar isn't ideal. I've written some <span itemprop="programmingLanguage">CSS</span> to try to make it look a little nicer. Some things have been rearranged to be closer to the original design — not <em>just</em> to make it closer to the original but because I preferred the original layout. Here's what it looks like:</p>
+					<img src="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/css-applied-to-new-nav-stack-overflow.png" alt="CSS applied to the new nav bar on Stack Overflow" width="1072">
+					<p><span class="highlight-blue">Updated for Stack Exchange:</span> I've updated this post with a new stylesheet to apply to the rest of Stack Exchange now that the top bar is out elsewhere. This attempts to bring the new top bar more in line with Stack Overflow (integrating the navigation) and also rearranging the items like my prior stylesheet. Most of what I've written below applies here as well. You can find the <a href="#stylesheet-stackexchange">new stylesheet below</a>.</p>
+					<img src="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/new-nav-better-stylesheet-stack-exchange.png" alt="New nav bar better stylesheet for Stack Exchange" width="1120">
+					<p>Here are the main problems I had with the existing bar:</p>
+					<ul>
+						<li>The height whilst being sticky. I have no problems with the height of the bar when it's static on a page, but being sticky means it simply takes up too much room on the page. I do like the nav being sticky, and even made the previous top bar sticky with a stylesheet, but with this sticky bar it simply takes up too much room.</li>
+						<li>The actions are on the right hand side. This isn't in the normal viewing direction, which is just plain odd once you're logged in. Logged out, fair enough, but logged in, these are the most important buttons. I use the inbox and achievements dropdown modals constantly, which mean they need to be in the top-left.</li>
+						<li>A ridiculous animation on search. Seriously, what is this? You click in the box, but unlike a normal search box animation which moves the <em>end</em> of the box, oh no, they move the <em>start</em> of the box. This completely repositions the insertion point at least the entire search box width away from where it started. Absolutely ridiculous. Clearly no-one uses the on-site search, mainly because Google exists, but it's still a useful feature which I do use especially for combining searches with tags, users or other advanced search features.</li>
+					</ul>
+					<p>Things I've changed:</p>
+					<ul>
+						<li><b>It's a lot thinner.</b> This means it can remain sticky without encroaching much on the content within.</li>
+						<li><b>Actions are moved before the navigation.</b> This means the inbox and such is on the left instead of the right, since I use these buttons more often. This was done with flex order, so no JavaScript required for actually manipulating the DOM.</li>
+						<li>Individual actions themselves have been rearranged. The Stack Exchange button is now left-most. Again, this uses flex order.</li>
+						<li><b>Search is no longer animated.</b> Much less distracting, unlike having the insertion point move miles away from where it started.</li>
+						<li>Each dropdown occupies the same position, rather than starting from a location relative to the button.<br>
+							<img src="https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/new-nav-custom-css-improved-stack-overflow.png" alt="New navigation custom CSS for Stack Exchange" width="402"></li>
+						<li>The navigation fades very slightly on scroll. Only slightly. Feel free to disable this if you're not a fan, but I feel it makes the text blend better with the rest of the page when you're much less likely to use it.</li>
+						<li>The logo and search box are slightly smaller to fit with the narrower bar. None of the other components had their text size or svg scale change.</li>
+						<li>The new nav and dropdown boxes have a <code>-webkit-backdrop-filter</code> applied. If your browser is not compatible with this, you should remove it. Alpha without a blur looks awful.</li>
+						<li>The box shadow is applied constantly, not only on scroll. Having the shadow flicker on and off was pretty distracting for me, I'd rather it just be constant. It's not much of a shadow anyway.</li>
+						<li>The header is sticky using <code>sticky</code> and <code>-webkit-sticky</code>. This works better for me than using <code>fixed</code>.</li>
+					</ul>
+					<p>You’ll need <a href="http://sobolev.us/stylish/">Stylish</a> (or equivalent) for your browser to be able to import this custom stylesheet.</p>
+					<p id="stylesheet-stackoverflow">Here's the <span itemprop="codeSampleType">full</span> Stack Overflow stylesheet:</p>
+<pre class="prettyprint p402_premium" itemprop="text">.top-bar {
+	height: 34px !important;
+	position: sticky !important;
+	position: -webkit-sticky !important;
+	border-top: none !important;
+	box-shadow: 0 1px 0 rgba(12, 13, 14, 0.1), 0 1px 3px rgba(12, 13, 14, 0.1), 0 4px 20px rgba(12, 13, 14, 0.035), 0 1px 1px rgba(12, 13, 14, 0.025) !important;
+	-webkit-backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.8) !important;
+}
+.top-bar .-main {
+	order: 2;
+}
+.top-bar .-logo {
+	height: 40px !important;
+	transform: scale(.85);
+	margin-left: -25px !important;
+}
+.top-bar .navigation {
+	max-width: unset !important;
+	opacity: 1 !important;
+}
+.top-bar .navigation .beta-badge {
+	top: 22px !important;
+}
+.top-bar._scrolling .navigation {
+	opacity: .8 !important;
+}
+.top-bar .secondary-nav .-link {
+	height: 35px !important;
+	padding-top: 0 !important;
+}
+.top-bar .searchbar {
+	order: 2;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+.top-bar .searchbar>[role="icon"] {
+	transform: scale(.7) translateY(-70%) !important;
+	margin-left: -8px !important;
+	opacity: 1 !important;
+}
+.top-bar .searchbar input[type="text"].f-input {
+	height: 26px !important;
+	padding-left: 25px !important;
+	padding-top: 9px !important;
+}
+.top-bar .searchbar .btn {
+	transform: scale(.6) translateY(-82%) translateX(11px) !important;
+}
+.top-bar .-actions {
+	order: 1;
+	padding: 0;
+	height: 36px !important;
+	margin-left: -8px !important;
+	margin-right: 48px !important;
+}
+.top-bar .my-profile {
+	order: 1;
+	height: 34px !important;
+}
+.top-bar .my-profile .gravatar-wrapper-24 .-avatar {
+	height: 18px;
+	width: 18px;
+}
+.top-bar .secondary-nav .-list .-item:not(:last-of-type) {
+	order: 1;
+}
+.top-bar .secondary-nav .-list .-item:last-of-type {
+	order: 0;
+}
+.top-bar .secondary-nav .-list .-item:first-of-type {
+	order: 2; /*SOX*/
+}
+.top-bar ~ .container {
+	margin-top: 0px !important;
+}
+.topbar-dialog, #sox-settings-dialog.topbar-dialog.achievements-dialog.dno.new-topbar {
+	left: 6px !important;
+	top: 34px !important;
+	background: rgba(255, 255, 255, 0.8) !important;
+	-webkit-backdrop-filter: blur(20px);
+}</pre>
+					<p>If you use SOX, append the following to keep the action buttons in the correct order.</p>
+<pre class="prettyprint">.top-bar .secondary-nav .-list .-item:first-of-type {
+	order: 2;
+}</pre>
+					<p id="stylesheet-stackexchange">Here's the equivalent stylesheet for the rest of Stack Exchange:</p>
+<pre class="prettyprint">.top-bar {
+	position: fixed;
+	top: 0;
+	z-index: 9;
+	-webkit-backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.8) !important;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.26);
+}
+.top-bar .-actions {
+	order: -1;
+	margin-left: 0;
+	padding-left: 0;
+}
+.top-bar .secondary-nav:last-child {
+	order: -1;
+	margin-left: -16px;
+}
+.top-bar .-item:nth-child(4) {
+	order: -1;
+}
+.top-bar .-item path {
+	fill: rgba(12, 13, 14, 0.8) !important;
+}
+.top-bar .my-profile {
+	color: rgba(12, 13, 14, 0.8) !important;
+}
+.top-bar .-item .-link:hover, .top-bar .my-profile:hover {
+	background-color: #d6d9dc !important;
+	color: rgba(12, 13, 14, 0.8) !important;
+}
+.top-bar .-logo svg {
+	visibility: hidden;
+}
+.top-bar .-logo::before {
+	display: block;
+	background-image: url("https://cdn.sstatic.net/Sites/apple/img/sprites.svg"); /* change for sites other than Ask Different */
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: 13rem;
+	width: 10rem;
+	height: 2rem;
+	content: "";
+}
+
+#hlogo, #hmenus li:nth-child(4), #hmenus li:nth-child(5) {
+	display: none;
+}
+#header {
+	height: 16px;
+}
+#hmenus {
+	z-index: 9;
+	top: -32px;
+	right: 300px;
+}
+.nav ul li {
+	margin: 0 -15px 0 0 !important;
+}
+
+#nav-askquestion {
+	text-indent: -9999px;
+	line-height: 0;
+	width: 26px;
+}
+#nav-askquestion::after {
+	content: "Ask";
+	text-indent: 0;
+	display: block;
+	line-height: initial;
+}
+
+.top-bar .searchbar {
+	margin-left: 120px;
+}
+.top-bar .searchbar input {
+	font-size: 12px;
+}
+
+.topbar-dialog {
+	left: -2px !important;
+	background: rgba(255, 255, 255, 0.8) !important;
+	-webkit-backdrop-filter: blur(20px);
+}</pre>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-sebettertopnav';
+						var disqus_title = 'A better top nav bar for Stack Overflow';
+						var disqus_url = 'https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/&amp;text=A better top nav bar for Stack Overflow&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/stack-exchange/better-top-nav-stack-overflow/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hey Siri in Sierra on macOS - George Garside</title>
+	<meta name="description" content="Enable Hey Siri in macOS Sierra to activate Siri just like iOS, without additional software. Works from anywhere at any time.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Hey Siri in Sierra on macOS">
+	<meta name="twitter:description" content="Enable Hey Siri in macOS Sierra to activate Siri just like iOS, without additional software. Works from anywhere at any time.">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/hey-siri-macos-sierra.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/TechArticle">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Hey Siri in Sierra on macOS</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/hey-siri-macos-sierra.png" itemprop="image url" class="post-header-image" alt="Hey Siri in macOS Sierra">
+						<meta itemprop="caption" content="Hey Siri in macOS Sierra">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name">Hey Siri in Sierra on macOS</h1></a>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2016-07-15</span> <span itemprop="dateModified">2016-09-16</span></p>
+					</div>
+				</div>
+				<div class="card">
+					<p>With macOS Sierra, Siri was introduced to the Mac. By default, Siri can be invoked using fn-space (function + space), however on iOS you can use <q>Hey Siri</q> to activate it from anywhere. This feature can be enabled in macOS using a lesser-known Accessibility feature. This is how to set up Hey Siri in macOS Sierra.</p>
+					<ol>
+						<li>
+							<p>Open Accessibility in System Preferences. You can open this by searching for <q>Accessibility</q> or <q>UniversalAccessPref.prefpane</q> in Spotlight search.</p>
+						</li>
+						<li>
+							<p>Choose Dictation in the sidebar. Dictation is under Interacting. This shows the Dictation preferences, which include a variety of preferences responsible for the Siri &amp; Dictation functionality, and includes features not available in any other system preference pane such as Siri or Sound.</p>
+						</li>
+						<li>
+							<p>Check the <q>Enable the dictation keyword phrase</q> option and enter <q>Hey</q> in the box. Just enter <q>Hey</q>, not <q style="text-decoration: line-through;">Hey Siri</q>. It is unnecessary to check the <q>Play sound when command is recognised</q> option as invoking Siri makes the Siri sound anyway.</p>
+							<img src="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/hey-siri-accessibility-dictation-sierra.png" width="668" alt="Accessibility Dictation settings in System Preferences in macOS for enabling Hey Siri in Sierra">
+							<p>You will see a new menu bar item, a little microphone (<img src="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/dictation-microphone-menu-bar-item.png" width="30" alt="Dictation microphone in menu bar" style="vertical-align: -25%;">) indicating the system is waiting for the keyword phrase (<q>Hey</q>) to begin listening.</p>
+							<img src="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/dictation-activation-phrase-keyword.png" width="307" alt="Dictation activation keyword phrase in menu bar">
+						</li>
+						<li>
+							<p>Choose <q>Dictation Commands</q> and add a new command with the plus button. Dictation Commands opens a list of commands which Dictation can invoke, one of which will be your new custom command to launch Siri. Set <q>When I say</q> to <q>Siri</q> and add your <del>keyboard shortcut for Siri. Make sure the keyboard shortcut in the Siri preference pane matches this shortcut — it will have to be changed from fn-space since you can't use fn in a dictation command keyboard shortcut.</del> <b>Update:</b> Instead of using a keyboard shortcut, you can instead use <q>Open Finder Items…</q> and select Siri.app. Thanks to kleerkoat for suggesting this.</p>
+							<img src="https://georgegarside.com/blog/macos/hey-siri-sierra-macos/siri-dictation-command-sierra-open-app.png" width="590" alt="When I say Siri open Finder items Siri.app in Sierra with Hey Siri">
+						</li>
+					</ol>
+					<p>That's it! Now, whenever you say <q>Hey Siri</q> Siri will be activated automatically! Very easy tip and really helps with activating Siri more easily, just like in iOS. If you find Dictation runs other commands when you don't intend, you can disable the other Dictation Commands in step 4 to restrict it to just your Siri command. <del>If you don't want to change your keyboard shortcut from fn-space, you can stop at step 3 and use the phrase <q>Hey Open Siri</q> to start Siri.</del> No need to change your keyboard shortcut from fn-space with the updated instructions so you're free to continue using the default shortcut to invoke Siri in Sierra.</p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-osx-heysiri';
+						var disqus_title = 'Hey Siri in Sierra on macOS';
+						var disqus_url = 'https://georgegarside.com/blog/macos/hey-siri-sierra-macos/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/macos/hey-siri-sierra-macos/&amp;text=Hey%20Siri%20in%20Sierra%20on%20macOS&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/macos/hey-siri-sierra-macos/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/macos/hey-siri-sierra-macos/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

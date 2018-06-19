@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Show private messages in Console.app for Sierra - George Garside</title>
+	<meta name="description" content="Unified Logging in macOS Sierra replaces sensitive information with private in the logs to hide the information, and this is how users and developers can unhide the information">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/sierra-console-private/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Show private messages in Console.app for Sierra">
+	<meta name="twitter:description" content="Unified Logging in macOS Sierra replaces sensitive information with private in the logs to hide the information, and this is how users and developers can unhide the information">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/console-app-logs.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/sierra-console-private/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Show private messages in Console.app for Sierra</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/console-app-logs.png" itemprop="image url" class="post-header-image" alt="Unified Logging in macOS Sierra replaces important information with private to hide the contents">
+						<meta itemprop="caption" content="Unified Logging in macOS Sierra replaces important information with private to hide the contents">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/macos/sierra-console-private/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name">Show private messages in Console.app for Sierra</h1></a>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2017-04-24</span> <span itemprop="dateModified">2017-04-29</span></p>
+					</div>
+				</div>
+				<div class="card">
+					<h2>Background</h2>
+					<p>The <a href="https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/#sierra-console">new Console app in Sierra</a> was a complete redesign, but also came with an entirely new logging mechanism. This changed much about the way logging works on macOS. No longer are there separate files for individual logs, but rather a <q>Unified Logging</q> mechanism which centralises the logs into a single database. You can find more information about <a href="https://developer.apple.com/videos/play/wwdc2016/721/">Unified Logging in the WWDC session</a>.</p>
+					<p>Most notably for users, this change affects the way sensitive information is logged. Where the OS (or the app developer) decides that personal information is being logged, it will replace it with <code>&lt;private&gt;</code>. This means it cannot be viewed by other apps on the system, but also means the user has no access to it, as shown in the screenshot below.</p>
+					<h2>Showing private logs</h2>
+					<p>To show all private logs in the macOS Sierra console, run the following command in Terminal:</p>
+					<pre>sudo log config --mode "private_data:on"</pre>
+					<p>For app developers, to override the OS and write publicly to the log, use the following format:</p>
+					<pre>%{public}s</pre>
+					<a href="https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/console-app-logs.png"><img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/console-app-logs.png" width="1106" class="inline" alt="Unified Logging in macOS Sierra replaces important information with private to hide the contents"></a>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-sierraconsoleprivate';
+						var disqus_title = 'Show private messages in Console.app for Sierra';
+						var disqus_url = 'https://georgegarside.com/blog/macos/sierra-console-private/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<div class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li><a href="https://georgegarside.com/blog/macos/photos-has-attempted-to-repair-the-library/">Photos unable to open library</a></li>
+						<li><a href="https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/">grgarside's Terminal setup</a></li>
+					</ul>
+				</div>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/macos/sierra-console-private/&amp;text=Show private messages in Console.app for Sierra&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/macos/sierra-console-private/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/macos/sierra-console-private/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

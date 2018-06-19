@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /cdn-cgi
+Disallow: /o/old
+Disallow: /o/editor
+Disallow: /o/w
+Disallow: /o/cliff
+Disallow: /o/crest
+Disallow: /o/thomasdeaconacademy
+Disallow: /o/server-default
+Disallow: /o/wiki
+Disallow: /search
+Disallow: /blog-bak
+Disallow: /blog/drafts
+Disallow: /wiki
+Disallow: /apps/phabricator
+Disallow: /apps/tda-planner/remote
+Disallow: /r/i

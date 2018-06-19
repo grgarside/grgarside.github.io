@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+				xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/</loc>
+		<lastmod>2016-10-04</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/pressandhold-app-custom-characters.png</image:loc>
+			<image:title>Custom Characters in OS X PressAndHold.app Accent Popup</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/finder-sidebar-preferences-location/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Finder-Sidebar-Location.png</image:loc>
+			<image:title>Finder Sidebar Preferences Property List with OS X Finder Sidebar</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-14-at-19.43.47.png</image:loc>
+			<image:title>SidebarZoneOrder1 Array in Finder Sidebar Preferences Property List</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-14-at-19.53.36.png</image:loc>
+			<image:title>com.apple.sidebarlists.plist Finder Sidebar Preferences Property List in Xcode</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/wide-stack-overflow-stack-exchange/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-29-at-14.55.49.png</image:loc>
+			<image:title>Wide Ask Different CSS Homepage for Wide Stack Exchange</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-29-at-15.08.13.png</image:loc>
+			<image:title>Wide Stack Overflow CSS Homepage</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-29-at-15.08.30.png</image:loc>
+			<image:title>Wide Stack Overflow CSS Questions List</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-29-at-15.08.42.png</image:loc>
+			<image:title>Wide Stack Overflow CSS Badges Page</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Screen-Shot-2015-03-29-at-15.12.40.png</image:loc>
+			<image:title>Wide Ask Different CSS User Profile Page for Wide Stack Exchange</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/03/Wide-Stack-Overflow.png</image:loc>
+			<image:title>Wide Stack Overflow CSS</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/decode-data-plist/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-01-at-11.06.41.png</image:loc>
+			<image:title>Base 64 in TextMate</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-01-at-11.10.47.png</image:loc>
+			<image:title>Binary Property List in TextMate</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/keynote-magic-move-two-different-objects/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/Magic-Move-Between-Two-Different-Objects.png</image:loc>
+			<image:title>Keynote Magic Move Between Two Different Objects</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/Screen-Shot-2015-05-04-at-12.54.59.png</image:loc>
+			<image:title>Keynote Magic Move Two Different Objects Step 1</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/step2.gif</image:loc>
+			<image:title>Keynote Magic Move Two Different Objects Step 2</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/Screen-Shot-2015-05-04-at-13.02.57.png</image:loc>
+			<image:title>Keynote Magic Move Preferences in Format Inspector</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/move.gif</image:loc>
+			<image:title>Keynote Magic Move Preferences in Format Inspector</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/Screen-Shot-2015-05-04-at-12.59.50.png</image:loc>
+			<image:title>iWork Keynote Opacity Slider in Format Inspector</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/final.gif</image:loc>
+			<image:title>Keynote Magic Move Two Different Objects Final Result</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/photos-has-attempted-to-repair-the-library/</loc>
+		<lastmod>2017-05-13</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/photos-has-attempted-to-repair-the-library/library-could-not-be-opened.png</image:loc>
+			<image:title>Photos.app could not open the library</image:title>
+			<image:caption>The library could not be opened. Photos has attempted to repair the library "Photos Library.photoslibrary", but is unable to open it.</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/Screen-Shot-2015-05-24-at-18.46.45.png</image:loc>
+			<image:title>Console.app Photos.app</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/05/Screen-Shot-2015-05-24-at-18.08.10.png</image:loc>
+			<image:title>Photos.app Preparing Library</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/safari-8-0-7/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/06/Screen-Shot-2015-06-14-at-10.57.19.png</image:loc>
+			<image:title>OS X Yosemite 10.10.4 Pre-release seed 14E26a</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/06/Screen-Shot-2015-06-14-at-11.01.39.png</image:loc>
+			<image:title>Safari 8.0.7 Don't show more alerts from this webpage</image:title>
+			<image:caption>Safari 8.0.7 Don't show more alerts from this webpage</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/Screen-Shot-2015-02-28-at-14.19.45.png</image:loc>
+			<image:title>Safari 8.0.4 Seed 1 Update in Mac App Store</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/Screen-Shot-2015-02-28-at-14.22.47.png</image:loc>
+			<image:title>About Safari 8.0.4 10600.4.10.4</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/02/Screen-Shot-2015-04-09-at-17.14.31.png</image:loc>
+			<image:title>About Safari 8.0.5 10600.5.9</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/ios/itunes-connect-analytics-not-enough-data/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-19.52.27.png</image:loc>
+			<image:title>iTunes Connect Analytics Not Enough Data</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-19.54.53.png</image:loc>
+			<image:title>iTunes Connect Analytics Not Enough Data App Campaigns Top Campaigns</image:title>
+			<image:caption>iTunes Connect Analytics Not Enough Data App Campaigns Top Campaigns Generate a Campaign Link: There isn't enough data to display campaigns</image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/shutdown-causes/</loc>
+		<lastmod>2017-05-11</lastmod>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/safari-download-copy-address.png</image:loc>
+			<image:title>Safari 8.1 Download pane context menu</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/el-capitan-rootless-finder-get-info.png</image:loc>
+			<image:title>El Capitan Rootless Finder Get Info</image:title>
+			<image:caption>The operation can't be completed because you don't have the necessary permission.</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/osx-el-capitan-all-the-little-things-icloud-drive-progress.png</image:loc>
+			<image:title>OS X El Capitan Finder Sidebar iCloud Drive Progress Indicator</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/automatically-hide-menu-bar-osx.png</image:loc>
+			<image:title>Auto-hide menu bar in OS X El Capitan</image:title>
+			<image:caption>Automatically hide and show the menu bar</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/osx-el-capitan-disk-utility.png</image:loc>
+			<image:title>OS X 10.11 El Capitan Disk Utility</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/app-store-password-settings-remember-password.png</image:loc>
+			<image:title>Mac App Store Password Settings Remember Password 15 minutes save password</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/OS-X-10.11-El-Capitan-SystemVersion-plist-ProductBuildVersion.png</image:loc>
+			<image:title>OS X 10.11 El Capitan SystemVersion.plist ProductBuildVersion 15A263e</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/systemversion-plist-10-11.png</image:loc>
+			<image:title>SystemVersion.plist OS X 10.11</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/itunes-connect-error-new-apps-beta-osx.png</image:loc>
+			<image:title>iTunes Connect error when submitting an app built on a beta version of OS X</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/package-incompatible-installer/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/package-incompatible-installer/installer-package-incompatible-this-version.png</image:loc>
+			<image:title>This package is is incompatible with this version of OS X and may fail to install. Installing this package may damage your system, and the installation may fail.</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/</loc>
+		<lastmod>2016-10-07</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/vector-magic-smoothing-image.png</image:loc>
+			<image:title>Vector Magic Smoothing Image</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/Finder-copy-same-folder.tiff</image:loc>
+			<image:title>OS X Finder Copy file to same folder by holding alt and dragging the file</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/vector-magic-crash-el-capitan/Finder-copy-replace.png</image:loc>
+			<image:title>Copy file in Finder replacing existing file</image:title>
+			<image:caption>An item named "libBLAS.dylib" already exists in this location. Do you want to replace it with the one you're moving? Keep Both, Skip, Stop, or Replace</image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/other/suits-behind-scenes-tour/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/other/suits-behind-scenes-tour/suits-set-tour.png</image:loc>
+			<image:title>Suits Set Tour Video</image:title>
+		</image:image>
+		<video:video>
+      <video:thumbnail_loc>https://georgegarside.com/blog/other/suits-behind-scenes-tour/suits-set-tour.png</video:thumbnail_loc>
+      <video:title>Suits Set Tour</video:title>
+      <video:description>Behind the scenes set tour of Suits USA</video:description>
+      <video:player_loc allow_embed="yes">https://tv.yahoo.com/video/suits-set-tour-130000603.html?format=embed</video:player_loc>
+      <video:duration>270</video:duration>
+      <video:publication_date>2015-10-24</video:publication_date>
+      <video:tag>Suits</video:tag>
+      <video:tag>USA</video:tag>
+      <video:category>Other</video:category>
+      <video:uploader info="https://yahoo.com/">Yahoo</video:uploader>
+	  </video:video>
+	</url>
+	<url>
+	<loc>https://georgegarside.com/blog/stack-exchange/ask-different-winter-bash-2015-leaderboard/</loc>
+		<lastmod>2016-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/stack-exchange/ask-different-winter-bash-2015-leaderboard/stack-exchange-ask-different-winter-bash-2015-leaderboard.png</image:loc>
+			<image:title>Stack Exchange Ask Different Winter Bash 2015 Leaderboard Graph</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/stack-exchange/ask-different-winter-bash-2015-leaderboard/ianc-hat.png</image:loc>
+			<image:title>Stack Exchange Ian C with Winter Bash 2015 hat</image:title>
+		</image:image>
+	</url>
+</urlset>

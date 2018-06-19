@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Package is incompatible with this version of OS X - George Garside</title>
+	<meta name="description" content="This package is is incompatible with this version of OS X and may fail to install. Installing this package may damage your system, and the installation may fail.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/package-incompatible-installer/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Package is incompatible with this version of OS X">
+	<meta name="twitter:description" content="&quot;This package is is incompatible with this version of OS X and may fail to install. Installing this package may damage your system, and the installation may fail.&quot;">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/package-incompatible-installer/installer-package-incompatible-this-version.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/package-incompatible-installer/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Package is incompatible with this version of OS X</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/macos/package-incompatible-installer/installer-package-incompatible-this-version.png" itemprop="image" class="post-header-image" alt="This package is is incompatible with this version of OS X and may fail to install. Installing this package may damage your system, and the installation may fail.">
+					<div class="post-info">
+						<h1 itemprop="headline">Package is incompatible with this version of OS&nbsp;X</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2015-08-31</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>In versions of OS X prior to El Capitan, the ability to edit files in /System and other system locations was restricted to root. Now, in OS X El Capitan, Rootless means that there is no longer the ability for root to edit these files. This means that El Capitan Rootless blocking Installer.app can happen with standard installer packages, because even though a password has been entered into the standard OS X administrator privileges dialog box, the ability to write files to locations that the system may read from has been prevented.</p>
+					<p>The following error message is shown if you attempt to install a package in 10.11 with Rootless enabled:</p>
+					<blockquote>
+						<p><b>This package is is incompatible with this version of OS X and may fail to install.</b></p>
+						<p>Installing this package may damage your system, and the installation may fail. To stop the program and the installation, click <q>Cancel Installation</q>.</p>
+						<p><span class="highlight-grey">Install Anyway</span> – <span class="highlight-blue">Continue Installation</span></p>
+					</blockquote>
+					<p>Certain packages created for Installer.app may have been designed for an older version of OS X that allows writing files into these protected locations. These packages can't be installed in OS X El Capitan with Rootless enabled, because the write action would be prevented. There are three possible solutions to this problem:</p>
+					<h2>Request an updated installer from the developer of the software</h2>
+					<p>The software developer can update the installer to not need to write certain files as part of the installer package. This will probably mean that the software itself needs to be updated, to either look for files in a different location or to workaround the prohibition and provide a means to do the same function without needing the certain custom system files. In the worst case with system utilities, this may result in a reduction of functionality.</p>
+					<h2>Disable OS X El Capitan Rootless and permit write actions to System Integrity Protection locations</h2>
+					<p>This is not an ideal solution as this reduces the security of the system, however in some cases this is the only option, where the software has not been updated or cannot be updated to be compatible with the new security restrictions.</p>
+					<p>To disable System Integrity Protection, you can do the following:</p>
+					<ol>
+						<li>Boot into the Recovery HD by restarting whilst holding ⌘R.</li>
+						<li>Open Terminal (from the Utilities menu).</li>
+						<li>Run the following command in Terminal:<pre class="prettyprint">csrutil disable</pre></li>
+						<li>Restart.</li>
+					</ol>
+					<p>This will allow the user to make modifications to protected locations and thus allow Installer.app to make modifications on behalf of the user. System Integrity Protection can be disabled once Installer.app has finished making the modifications, however this may cause problems if write access to containing folders is required in the future by the app.</p>
+					<h2>Extract the app from the package yourself</h2>
+					<p>In cases where the software or files that needs to be installed in a protected location is supplementary to the functionality of the software, you may be able to extract the core files from the package and install it yourself in a different location. A good app for doing this is Pacifist, which allows you to open packages (and meta-packages) and extract individual files and folders to custom locations. Whilst the entire functionality of the program may be reduced by this procedure and crashes may ensue, it is possible to work around System Integrity Protection without the need to disable it.</p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-osx-packageincompatible';
+						var disqus_title = 'Package is incompatible with this version of OS X';
+						var disqus_url = 'https://georgegarside.com/blog/macos/package-incompatible-installer/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

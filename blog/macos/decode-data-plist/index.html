@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Decode data plist in property list files - George Garside</title>
+	<meta name="description" content="Property lists, or plists, can contain data key-value pairs, which are binary property list files encoded in Base64. Here's how to decode data plist.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/decode-data-plist/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/decode-data-plist/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Decode data plist in property list files</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-01-at-11.06.41.png" itemprop="image" class="post-header-image">
+					<div class="post-info">
+						<h1 itemprop="headline">Decode data plist in property list files</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2015-04-01</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>Property lists, or plists, can contain data key-value pairs, which are binary property list files encoded in Base64. As they are, they’re impossible to parse and extract any meaningful data from. However, decoding them is very easy and you end up with a very nice looking pretty-printed property list file. Here’s how to decode data plist from a property list.</p>
+					<h3>Decode data plist</h3>
+					<ol>
+						<li>Extract the data from the plist file, using a text editor or other method of opening property list files.<br>
+							You should end up with a block of encoded data that looks something like this. Line breaks are unimportant here, as is superfluous whitespace at the beginning or end of a line. I’ve stripped the whitespace and the line breaks to produce this.<p></p>
+							<pre class="prettyprint lang-none">YnBsaXN0MDDUAQIDBAUIKClUJHRvcFgkb2JqZWN0c1gkdmVyc2lvblkkYXJjaGl2ZXLRBgdUcm9vdIABqQkKDxkaGxwdJFUkbnVsbNILDA0OViRjbGFzc18QGk5TRm9udERlc2NyaXB0b3JBdHRyaWJ1dGVzgAiAAtMQCxESFRZaTlMub2JqZWN0c1dOUy5rZXlzohMUgAWABoAHohcYgAOABF8QE05TRm9udE5hbWVBdHRyaWJ1dGVfEBNOU0ZvbnRTaXplQXR0cmlidXRlXU1lbmxvLVJlZ3VsYXIiQUAAANIeHyAhWCRjbGFzc2VzWiRjbGFzc25hbWWjISIjXxATTlNNdXRhYmxlRGljdGlvbmFyeVxOU0RpY3Rpb25hcnlYTlNPYmplY3TSHh8lJ6ImI18QEE5TRm9udERlc2NyaXB0b3JfEBBOU0ZvbnREZXNjcmlwdG9yEgABhqBfEA9OU0tleWVkQXJjaGl2ZXIACAARABYAHwAoADIANQA6ADwARgBMAFEAWAB1AHcAeQCAAIsAkwCWAJgAmgCcAJ8AoQCjALkAzwDdAOIA5wDwAPsA/wEVASIBKwEwATMBRgFZAV4AAAAAAAACAQAAAAAAAAAqAAAAAAAAAAAAAAAAAAABcA==</pre>
+						</li>
+						<li>Decode this using a Base64 decoder, such as <a href="http://www.opinionatedgeek.com/dotnet/tools/Base64Decode/">this one</a>. Paste in the encoded data block from the plist and click Decode. This will download a .bin file entitled DecodedBase64.bin, the contents of which is as follows. This is a plist, but it’s not the standard XML plist — instead, it’s a binary plist, as denoted by the <em>bplist</em> at the beginning of the file. This has decoded some of the words in the data, but it’s still not very easy to understand.
+<pre class="prettyprint lang-none">bplist00�()T$topX$objectsX$versionY$archiver�Troot��
+$U$null�
+V$class_NSFontDescriptorAttributes���ZNS.objectsWNS.keys�������_NSFontNameAttribute_NSFontSizeAttribute]Menlo-Regular"A@��� !X$classesZ$classname�!"#_NSMutableDictionary\NSDictionaryXNSObject�%'�&amp;#_NSFontDescriptor_NSFontDescriptor���_NSKeyedArchiver�����(�2�5�:�&lt;�F�L�Q�X�u�w�y������������������������������������"+03FY^�������������*��������������p</pre>
+						</li>
+						<li>Open the DecodedBase64.bin file with <a href="https://macromates.com">TextMate</a>. This pretty-prints the binary property list as an old-style key-value plist.<br>
+							<img src="https://georgegarside.com/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-01-at-11.10.47.png" alt="TextMate pretty-printed plist full for decode data plist" width="659"><p></p>
+<pre class="prettyprint linenums">// !!! BINARY PROPERTY LIST WARNING !!!
+//
+// The pretty-printed property list below has been created
+// from a binary version on disk and should not be saved as
+// the ASCII format is a subset of the binary representation!
+//
+{	"$archiver" = "NSKeyedArchiver";
+"$objects" = (
+	"$null",
+	{	"$class" = :false;
+		NSFontDescriptorAttributes = :false;
+	},
+	{	"$class" = :false;
+		NS.keys = ( :false, :false );
+		NS.objects = ( :false, :false );
+	},
+	"NSFontNameAttribute",
+	"NSFontSizeAttribute",
+	"Menlo-Regular",
+	12,
+	{	"$classes" = ( "NSMutableDictionary", "NSDictionary", "NSObject" );
+		"$classname" = "NSMutableDictionary";
+	},
+	{	"$classes" = ( "NSFontDescriptor", "NSObject" );
+		"$classname" = "NSFontDescriptor";
+	},
+);
+"$top" = { root = :false; };
+"$version" = 100000;
+}</pre>
+						</li>
+					</ol>
+					<p>That’s it; that’s how you decode data plist from a plist file! The data is decoded as a normal-looking property list file which you can do whatever you wish with.</p>
+					<aside class="ad ad-inline">
+						<!-- Blog Inline -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9733787518596382"
+						     data-ad-slot="4232604434"
+						     data-ad-format="auto"></ins>
+					</aside>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = '622 https://georgegarside.com/blog/?p=622';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

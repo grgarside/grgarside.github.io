@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fix Keyboard Maestro Execute Shell Script not running - George Garside</title>
+	<meta name="description" content="Environment variables have a maximum size, so if your variables are too large, then the shell script action will stop working. Here's how you can fix it.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/fix-keyboard-maestro-execute-shell-script-not-running/">
+	<meta name="twitter:site" content="@grgarside">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/fix-keyboard-maestro-execute-shell-script-not-running/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Fix Keyboard Maestro Execute Shell Script not running</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<img src="https://georgegarside.com/blog/macos/fix-keyboard-maestro-execute-shell-script-not-running/shell-script.png" itemprop="image" class="post-header-image">
+					<div class="post-info">
+						<h1 itemprop="headline">Fix Keyboard Maestro Execute Shell Script not running</h1>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2014-10-29</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>Keyboard Maestro has an action to run a Shell Script. This action lets you run a script file or a text script entered into the action’s text field in the edit mode of the macro. The output of the shell script can be shown in a window, in a notification, typed or pasted into the current text field, or saved to a clipboard or variable. This is useful for multiple-step macros where the output of one action is the input of another.</p>
+					<p>However, Shell Scripts can also take input by the means of variables set in Keyboard Maestro’s preferences, or set by other actions, even in other macros. This is the cause of the shell script action not working, as the variables in Keyboard Maestro are set in environment variables so that the shell script can access them. Environment variables have a maximum size, so if your variables are too large, then the shell script action will stop working, without showing any error. This can be quite confusing as no error is presented to the user. Even the shell script results box doesn’t open and display any output.</p>
+					<p><img class="post-image" src="https://georgegarside.com/blog/macos/fix-keyboard-maestro-execute-shell-script-not-running/Screen-Shot-2014-10-29-at-10.05.53.png" alt="Keyboard Maestro Execute Shell Script Result Window" width="581"></p>
+					<p>Here’s how you can fix it so that the Keyboard Maestro Execute Shell Script actions function again:</p>
+					<ol>
+						<li>Open Keyboard Maestro Editor (click the Keyboard Maestro icon in the menu bar and choose Launch Keyboard Maestro Editor).</li>
+						<li>Go to Keyboard Maestro → Preferences (⌘,) → Variables.</li>
+						<li>Select all the variables in the list and delete them with ⌫ or the delete button at the bottom of the window.</li>
+					</ol>
+					<p><img class="post-image" src="https://georgegarside.com/blog/macos/fix-keyboard-maestro-execute-shell-script-not-running/Screen-Shot-2014-10-29-at-10.15.51.png" alt="Keyboard Maestro Variables Preferences" width="727"></p>
+					<p>That’s it—run your macro again and the action should work! If it breaks again in the future, you can simply repeat this procedure to clear the variable causing the scripts to not run and try again. This also applies to the Execute AppleScript action as the environment variables are set there too so that they can be accessed through “run shell script”.</p>
+				</div>
+				<div class="card card-comments">
+
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

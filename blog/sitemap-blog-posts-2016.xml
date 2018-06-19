@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/</loc>
+		<lastmod>2016-10-07</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/dfp-gtm.png</image:loc>
+			<image:title>Google Tag Manager with DoubleClick for Publishers variable for DOM elements of ad units</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-user-defined-variables.png</image:loc>
+			<image:title>Google Tag Manager User-Defined Variables</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-dfp-variable.png</image:loc>
+			<image:title>DFP ads variable in GTM</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-trigger-dfp-ads-does-not-equal-null.png</image:loc>
+			<image:title>GTM trigger: DFP Ads does not equal null</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/gtm-trigger-dfp-ads.png</image:loc>
+			<image:title>GTM trigger: DFP Ads</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/google/doubleclick-publishers-google-tag-manager/dfp-inventory-generate-tags.png</image:loc>
+			<image:title>DFP inventory: Generate tags</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/</loc>
+		<lastmod>2016-09-06</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/macos-sierra-manage-storage.png</image:loc>
+			<image:title>macOS Sierra Manage Storage System Information</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/console-app-activities.png</image:loc>
+			<image:title>macOS Sierra's new Console app shows Activities</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/console-app-logs.png</image:loc>
+			<image:title>Logs in macOS Sierra's Console app can show other device logs such as iOS devices</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/no-available-windows.png</image:loc>
+			<image:title>Mission Control No Available Windows</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/notes-attachment-extensions.png</image:loc>
+			<image:title>Push attachments in Notes through Extensions</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/notes-collaboration-highlighting.png</image:loc>
+			<image:title>When collaborating in Notes or making changes to your own note on another device, it's highlighted</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/prefer-tabs-when-opening-documents-always.png</image:loc>
+			<image:title>Prefer tabs when opening documents always</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/sierra-wifi-suggestions-unsecured-network.png</image:loc>
+			<image:title>Wi-Fi Suggestions</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/sort-folders-above-files-finder.png</image:loc>
+			<image:title>Sort folders above files in Finder</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/substitutions-data-detectors.png</image:loc>
+			<image:title>Substitutions and Data Detectors</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/system-information-file-browser-with-folder-sizes.png</image:loc>
+			<image:title>Browse folders on your disk using System Information's file browser showing folder sizes</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/installer-delete-package-when-complete.png</image:loc>
+			<image:title>Move installer.app package to trash on completion</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/safari-bookmark-description.png</image:loc>
+			<image:title>Safari bookmark description</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features/safari-bookmarks-ui.png</image:loc>
+			<image:title>New Safari bookmarks UI in macOS Sierra</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/hey-siri-sierra-macos/</loc>
+		<lastmod>2016-09-16</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/hey-siri-sierra-macos/hey-siri-macos-sierra.png</image:loc>
+			<image:title>Hey Siri in macOS Sierra</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/hey-siri-sierra-macos/hey-siri-accessibility-dictation-sierra.png</image:loc>
+			<image:title>Accessibility Dictation settings in System Preferences in macOS for enabling Hey Siri in Sierra</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/hey-siri-sierra-macos/dictation-microphone-menu-bar-item.png</image:loc>
+			<image:title>Dictation microphone in menu bar</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/hey-siri-sierra-macos/dictation-activation-phrase-keyword.png</image:loc>
+			<image:title>Dictation activation keyword phrase in menu bar</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/hey-siri-sierra-macos/siri-dictation-command-sierra.png</image:loc>
+			<image:title>When I say Siri press keyboard shortcut to activate Siri in Sierra with Hey Siri</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/hey-siri-sierra-macos/siri-dictation-command-sierra-open-app.png</image:loc>
+			<image:title>When I say Siri open Finder items Siri.app in Sierra with Hey Siri</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/macos/installing-hugs-98-haskell/</loc>
+		<lastmod>2016-11-11</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/macos/installing-hugs-98-haskell/hugs-98-mac-terminal-haskell.png</image:loc>
+			<image:title>Hugs 98 in macOS Terminal</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://georgegarside.com/blog/stack-exchange/ask-different-winter-bash-2016-leaderboard/</loc>
+		<lastmod>2017-07-17</lastmod>
+		<image:image>
+			<image:loc>https://georgegarside.com/blog/stack-exchange/ask-different-winter-bash-2016-leaderboard/stack-exchange-ask-different-winter-bash-2016-leaderboard.png</image:loc>
+			<image:title>Stack Exchange Ask Different Winter Bash 2016 Leaderboard Graph</image:title>
+		</image:image>
+	</url>
+</urlset>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>macOS High Sierra Hidden Features - George Garside</title>
+	<meta name="description" content="Another year, another disappointing macOS release. Here's the most comprehensive list of hidden features and underdocumented changes in macOS High Sierra.">
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="macOS High Sierra Hidden Features">
+	<meta name="twitter:description" content="Another year, another disappointing macOS release. Here's the most comprehensive list of hidden features and underdocumented changes in macOS High Sierra.">
+	<meta name="twitter:image" content="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/significant-locations.png">
+</head>
+
+<body>
+
+<div id="main" class="main blog post" itemscope itemtype="https://schema.org/TechArticle">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+				<a href="https://georgegarside.com/blog/" itemprop="url"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/" itemprop="item" itemscope itemtype="https://schema.org/WebPage" rel="home">
+						<span itemprop="name">Home</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">macOS High Sierra Hidden Features</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container">
+				<div class="post-header">
+					<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+						<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/significant-locations.png" itemprop="image url" class="post-header-image" alt="Significant locations in High Sierra and iOS 11 shows places you've visited whether frequently or for a long period which the OS deems is significant to record">
+						<meta itemprop="caption" content="Significant locations in High Sierra and iOS 11 shows places you've visited whether frequently or for a long period which the OS deems is significant to record">
+						<meta itemprop="representativeOfPage" content="true">
+					</div>
+					<div class="post-info">
+						<a href="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/" itemprop="mainEntityOfPage url"><h1 itemprop="headline name">macOS High Sierra Hidden Features</h1></a>
+						<p><span itemprop="articleSection">macOS</span> <span itemprop="datePublished">2017-09-04</span> <span itemprop="dateModified">2017-09-04</span></p>
+					</div>
+				</div>
+				<aside class="card-toc jump">
+					<ul class="ul-primary ul-primary-compressed">
+						<li><a href="#highsierra-touchbar">Touch Bar</a></li>
+						<li><a href="#highsierra-systempreferences">System Preferences.app</a></li>
+						<li><a href="#highsierra-notes">Notes.app</a></li>
+						<li><a href="#highsierra-finder">Finder.app</a></li>
+						<li><a href="#highsierra-safari">Safari.app</a></li>
+					</ul>
+				</aside>
+				<div class="card" itemprop="articleBody">
+					<p>Another year, another disappointing macOS release. With the only real feature being APFS and the great(!) things that come with it like <a href="https://support.apple.com/kb/HT208018">no read/write in Boot Camp</a> and <a href="https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html">no directory hard links and no deduplication</a>, I was excited to go looking for other features and changes with this macOS release. Unfortunately with High Sierra, there wasn't even that many hidden features unlike <a href="https://georgegarside.com/blog/macos/all-the-little-things-macos-sierra-hidden-features">last time with Sierra</a>, which was yet another disappointment as sometimes these features are more useful to me on a daily basis than flagship features introduced at the keynote. Never mind, another year and another go, here's the hidden features and underdocumented changes in macOS High Sierra from Sierra.
+					<h2 id="highsierra-touchbar">Touch Bar</h2>
+					<h3>Colour picker</h3>
+					<p>The Touch Bar colour picker has been greatly expanded with more functionality. Still here is the ‘simple’ view, with a number of preset swatch colours to choose from and the functionality of these are identical. All the new functionality is behind the button to the left. These changes are accessible systemwide in any app which supported the macOS colour picker previously.</p>
+					<ul>
+						<li>Tapping the menu button (or holding and sliding) reveals a menu of different colour picker types to be shown on the Touch Bar. All the different types of sliders which are available in the colour picker on the macOS desktop are now available in the Touch Bar: Grayscale, RGB, CMYK and HSB.</li>
+						<li>When any of these slider types are selected, the new sliders are shown; these sliders now show the exact numbers they are set at, for example the Red is set to 28 in the screenshot of the Touch Bar below — previously this information was only available by looking at the colour picker on screen if it was visible and set to the correct page, now it's always visible right on the Touch Bar, a much welcome improvement and makes Touch Bar colour selection much easier.</li>
+						<li>The final selection is ‘swatches’, which presents a scrolling list of all the swatches that you've added to the list in the colour picker on the desktop. As demonstrated by the + icon on the right, the currently selected colour can be added to the swatches from this page, but another hidden feature is that a swatch can be added from any page: simply tap the colour shown on the right (i.e. any of the blue swatches in the Touch Bar rows on RGB/CMYK/HSB slider pages) to show the + button and tap again to add the swatch!</li>
+					</ul>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/colour-picker-touch-bar-redesign.png" width="1095" alt="All new colour picker in the Touch Bar in macOS High Sierra">
+					<blockquote>
+						<p>Here's what the colour picker used to look like in Sierra prior to this redesign, for comparison. Click to begin playing.</p>
+						<video src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/touch-bar-colour-picker-old-sierra.mp4" width="768" height="27" style="max-width: 100%;" controls></video>
+					</blockquote>
+					<p>While we're here talking about the colour picker, on the desktop it now supports scrolling for more swatches. Prior to High Sierra, one could drag the bottom of the window in steps of 1 swatch row and ones off the window couldn't be accessed. Now, you can simply scroll the colour picker to view more swatches without extending the window.</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/colour-picker-swatches.png" width="219" alt="Colour picker swatches now supports scrolling">
+					<h3>Brightness and Volume</h3>
+					<p>Faster access to simple adjustments of brightness and volume can now be performed with quick flicks left and right on the brightness or volume buttons in the control strip. This one's from the <a href="https://developer.apple.com/go/?id=macos-10.13-beta-rn">High Sierra beta release notes</a>, so if you are a developer, you should be giving these a good read anyway! The swipe gestures work for the brightness and volume sliders regardless of whether they are accessed in the Control Strip or when they have been manually added to the expanded view through Touch Bar customisation.</p>
+					<h3>PressAndHold.app</h3>
+					<p>When using PressAndHold.app input method, i.e. holding down a key to show the popup to enter special characters, the options now appear in the Touch Bar. This is really useful: having <a href="https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/">customised the PressAndHold.app characters</a>, the characters show directly in the Touch Bar and tapping a character inserts it. Unfortunately the bar doesn't scroll so it still only allows access to the first 9 items in the list. This is fine for the standard use of PressAndHold.app, but if you've customised it then you still can't access the other characters without multiple steps (using the <kbd>←left</kbd> arrow to highlight the picker and then pressing <kbd>↩︎return</kbd>).</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/pressandhold-custom-characters-touch-bar.png" width="1085" alt="PressAndHold.app Touch Bar controls">
+					<p>Speaking of PressAndHold.app, its character viewer shown on screen now has a more cleaner design.</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/pressandhold-redesign-high-sierra.png" width="301" alt="PressAndHold.app character viewer shown on screen redesigned in High Sierra">
+					<h2 id="#highsierra-systempreferences">System Preferences.app</h2>
+					<h3>Significant Locations</h3>
+					<p>A new option in Privacy settings, available in <abbr title="Security & Privacy">Security.prefpane</abbr> under Privacy → Location Services → System Services, is that of Significant Locations. This is a feature ported from iOS where it was called Frequent Locations prior to iOS 11. In iOS 11, the functionality was expanded to more actively add locations to the list, and it is unclear at the moment exactly how much functionality was ported to macOS High Sierra. To remove your Significant Locations, go to the location mentioned in System Preferences and click Clear History.</p>
+					<blockquote>Allow your Mac to learn places significant to you in order to provide useful location-related information in Maps, Calendar, Photos, and more. Significant Locations are encrypted and cannot be read by Apple.</blockquote>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/significant-locations.png" width="608" alt="Significant locations in High Sierra and iOS 11 shows places you've visited whether frequently or for a long period which the OS deems is significant to record">
+					<p>A minor UI tweak here is that the System Services details page in Location Services can now be opened without unlocking the preference pane. In prior versions of macOS, it was necessary to unlock the pane before even <i>looking</i> at the currently set options, as the Details button would be greyed out. Now, the button is no longer greyed out and can be clicked, showing the settings within, even if they can't be edited without unlocking the pane. This was something a user on Ask Different had difficulty with when <a href="https://apple.stackexchange.com/q/280164/37797">turning off the Setting Time Zone location service</a> as the button greyed out potentially indicated that the services were disabled.</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/privacy-system-services-unlocked.png" width="666" alt="Security &amp; Privacy: System Services">
+					<h3>UI tweaks</h3>
+					<p>There's been another UI tweaks to System Preferences.app which you might not spot at first. The Show All button which looks a little different indicates added functionality: the button can be held to show a list of preference panes. The list of preference panes which appeared in the View menu in prior versions of macOS is now gone on opening System Preferences, but reappears later (which is probably a bug).</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/system-preferences-show-all.png" width="370" alt="System Preferences show all button hold function to show all preference panes list">
+					<p>In the Siri preference pane (Speech.prefpane), the main switch for toggling Siri on/off has been renamed from Enable Siri to Enable Ask Siri. Siri is now mentioned in other places in the OS such as the Look up feature which now includes a ‘Siri Knowledge’ tab pulling content from various web locations.</p>
+					<h2 id="highsierra-notes">Notes.app</h2>
+					<h3>Monospaced font</h3>
+					<p>In addition to the existing format types such as Title, Heading and Body, there is a new format named ‘Monospaced’. This format is a variation of the Body format but with a monospaced font family. The format can be accessed from the toolbar button or from the Format menu. Because formats apply to the entire paragraph, this isn't useful for inline code formatting, which would probably be a more likely use case for me, as full code snippets isn't really what Notes is for and is rather unsuitable. Also unfortunately the option isn't available from the Touch Bar format menu, which is probably the most disappointing thing not because this specific feature is missing from the Touch Bar but because it seems like Apple has already forgot the Touch Bar exists…</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/notes-monospaced.png" width="454" alt="Notes.app monospaced format font in macOS">
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/notes-monospaced-touch-bar.png" width="850" alt="Notes.app monospaced format font button missing on the Touch Bar format menu">
+					<h2 id="highsierra-finder">Finder.app</h2>
+					<p>All My Files has been renamed to Recents, possibly to alleviate some confusion users had with where their files were stored and how Finder was accessing them. When All My Files came out, it was suggested that a possible reason was to continue the trend of moving macOS away from a filesystem-based interface, however the use of Recents seems to indicate a reverse of this. I'm happy about this; I've been in the situation of trying to explain the All My Files folder (and how it's not a folder) to users and this should make it easier to do that.</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/finder-recents-all-my-files.png" width="660" alt="All My Files renamed to Recents in High Sierra Finder">
+					<h2 id="highsierra-safari">Safari.app</h2>
+					<h3>Reader</h3>
+					<p>In the keynote, Apple spoke about the ability to always use Reader mode when available and that there are per-website settings, however it's also useful to note that quick access to set this functionality for a website is available when holding down the Reader button. The other option in this menu, <q>Reader Website Preferences</q> takes you to Safari Preferences → Websites → Reader where you can set your Reader preferences per website and view/change existing configuration for other websites. Also here are other per-website options condensed from other places in Safari Preferences to this one pane, such as Notifications.</p>
+					<img src="https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/safari-use-reader-automatically.png" width="466" alt="Use reader automatically on georgegarside.com in Safari by holding down the Reader button in the toolbar">
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = 'blog-highsierrahiddenfeatures';
+						var disqus_title = 'macOS High Sierra Hidden Features';
+						var disqus_url = 'https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/&amp;text=macOS High Sierra Hidden Features&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/macos/all-the-little-things-macos-high-sierra-hidden-features/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

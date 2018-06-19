@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8619ca0e-a563-422e-a21f-5c556363815a" name="gg" url="https://georgegarside.com">
+        <fileTransfer host="server.georgegarside.com" port="2994" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/Server/Websites/Default" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2994" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

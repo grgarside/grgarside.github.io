@@ -1,0 +1,397 @@
+// Text
+p {
+	margin: 0 0 0.8em;
+	word-wrap: break-word;
+}
+a {
+	color: #3276b1;
+	-webkit-tap-highlight-color: rgba(21, 169, 0, 0.5);
+	text-decoration: none; // Removes underline on links, overridden by hover/focus
+	
+	&:hover:not(.nounderline), &:focus:not(.nounderline) {
+		text-decoration: underline;
+	}
+}
+.smallcaps {
+	font-variant: small-caps;
+}
+// Used for wrap points
+.wrapspan {
+	display: inline-block;
+}
+kbd {
+	font-family: unset;
+	font-weight: 100;
+	display: inline-block;
+	margin: 0 2px;
+}
+
+// # Headings
+
+h1 {
+	font-weight: 400;
+}
+h2 {
+	font-size: 1.66em;
+	font-weight: 500;
+	line-height: 1.1;
+	margin-bottom: 9px;
+	
+	&:first-of-type {
+		// First heading needs to be closer to top of the card
+		margin-top: 2px;
+	}
+	&:not(:first-child) {
+		// Other headings, add line and padding above headings
+		padding-top: 15px;
+		border-top: 1px solid #dddddd;
+	}
+}
+h3 {
+	font-size: 1.3em;
+	margin: 8px 0;
+}
+h4 {
+	font-size: 1.2em;
+	margin: 6px 0;
+}
+
+// Lists
+ul {
+	list-style-type: square;
+}
+ul:not(.siteslinks), ol:not(.siteslinks) {
+	overflow: auto; // Fix calculator gif float overlap with bullet numbers
+}
+.card p, .card li {
+	line-height: 1.6;
+}
+.card li {
+	padding-bottom: 4px;
+}
+.ul-primary > li {
+	font-size: 18px;
+	> a {
+		display: inline-block;
+		margin-bottom: 4px;
+	}
+}
+@media (min-width: $medium) {
+	.ul-primary li {
+		display: flex;
+	}
+	.ul-primary > li {
+		padding-bottom: 10px;
+		padding-top: 10px;
+		border-bottom: .05em solid lightgray;
+	}
+}
+
+// Posts
+ul.posts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		border-bottom: 1px solid #dddddd;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		// Correct height with float
+		overflow: hidden;
+	}
+}
+
+// Images
+.posts-image {
+	max-width: 300px;
+	max-height: 100px;
+	
+	@media (min-width: $medium) {
+		float: left;
+		width: 300px;
+		height: 125px;
+		max-height: none;
+		overflow: hidden;
+	}
+	
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		
+		@media (min-width: $medium) {
+			width: 100%;
+			max-height: initial;
+		}
+	}
+}
+.right-image {
+	display: block;
+	text-align: center;
+	@media (min-width: $medium) {
+		float: right;
+	}
+}
+@media (min-width: $medium) {
+	div.posts-info {
+		margin-left: 320px;
+	}
+	// Inline toc table of contents
+	.card.toc {
+		float: right;
+		z-index: 5;
+		margin: -5px -5px 20px 20px;
+	}
+}
+span[itemprop="datePublished"] {
+	color: #606060;
+	padding-left: 5px;
+}
+div.posts-info {
+	margin-top: 10px;
+}
+
+// Category
+.category-image {
+	width: 500px;
+	max-width: 100%;
+	display: block;
+	margin: 10px auto 10px;
+}
+.card-categories .flex-post.box-aside {
+	padding: 5px;
+	background: #fbfbfb;
+}
+
+// Post
+.post-header {
+	color: white;
+	overflow: hidden;
+	
+	h1 {
+		font-size: 250%;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		color: white;
+	}
+	
+	span[itemprop="datePublished"] {
+		color: lightgrey;
+	}
+}
+img.post-header-image {
+	max-width: 100%;
+	max-height: 200px;
+	
+	@media (min-width: $medium) {
+		max-height: 150px;
+		max-width: 500px;
+		float: right;
+	}
+}
+@media (min-width: $medium) {
+	ul.ul-primary-compressed {
+		padding: 0 10px;
+	}
+}
+ul.ul-primary-compressed li {
+	padding: 3px 0;
+	border-bottom: none;
+}
+ul.ul-primary-compressed-inline li {
+	display: inline-block;
+	margin-right: 50px;
+}
+blockquote {
+	margin-left: 0;
+	padding: 8px;
+	background-color: #f5f5f5;
+	border-left: 2px solid #ffeb8e;
+	
+	&.large {
+		margin: 8px 0;
+		font-size: 1.2em;
+		text-align: center;
+		q {
+			display: block;
+			font-size: 1.2em;
+		}
+	}
+}
+[itemprop="articleBody"] img:not(.inline) {
+	max-width: 100%;
+	display: block;
+	margin: 8px auto;
+}
+.card.card-sideimage > img:first-of-type {
+	max-width: 80%;
+	margin: 0 auto;
+}
+@media (min-width: $medium) {
+	.card.card-sideimage {
+		overflow: hidden;
+	}
+	.card.card-sideimage > img:first-of-type {
+		float: left;
+		padding-right: 20px;
+	}
+}
+.card img {
+	max-width: 100%;
+}
+.box-aside {
+	background: #f2f2f2;
+	border: 1px solid #e3e3e3;
+
+	.flex-image img {
+		margin: 10px auto 10px;
+		display: block;
+	}
+}
+.box-note {
+	background-color: #fff8dc;
+	border: 1px solid #e0dcbf;
+}
+@media (min-width: $medium) {
+	.box-toc {
+		float: right;
+		margin-left: 20px;
+		margin-top: 20px;
+	}
+}
+.box-toc ul, .box-toc li {
+	padding: 0 !important;
+	margin: 0;
+}
+.box-toc li {
+	font-size: 0.9em;
+}
+@media (max-width: $medium) {
+	.box-toc ul {
+		margin-left: 15px;
+	}
+	.ad-inline + .box-note, .ad-inline + .box-aside {
+		margin-top: 10px;
+	}
+}
+.highlight-grey {
+	background: #f2f2f2;
+	box-shadow: 0 0 0 2px #f2f2f2;
+}
+.highlight-yellow, .note {
+	background-color: #fff8dc;
+	box-shadow: 0 0 0 2px #fff8dc;
+}
+.highlight-blue {
+	background-color: #ddfcff;
+	box-shadow: 0 0 0 2px #ddfcff;
+}
+div.box-aside.inline, div.box-note.inline {
+	padding: 5px;
+}
+div.flex-post-info {
+	display: flex;
+	flex-wrap: wrap;
+}
+div.flex-post-info > * {
+	flex-basis: 200px;
+	flex-grow: 1;
+}
+div.flex-post-info > ul {
+	margin: 0;
+}
+// Resource indicator for resource posts
+.flex-post.resource h2 a:before {
+	content: "resource";
+	display: block;
+	color: grey;
+	font-size: .6em;
+	margin: -8px 0 6px 0;
+}
+
+// Comments
+.card-comments {
+	overflow: hidden;
+	
+	div#disqus_thread {
+		margin-bottom: -68px;
+		margin-top: -2px;
+		@media (max-width: 480px) {
+			margin-bottom: -240px;
+		}
+	}
+}
+
+dl.definitions dt {
+	display: inline;
+	font-weight: bold;
+}
+dl.definitions dd {
+	margin-bottom: 8px;
+}
+
+// Video card
+video {
+	display: block;
+	margin: 0 auto;
+}
+.card-video {
+	padding-bottom: 50%;
+}
+iframe.video, .card-video video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+// Image card
+.card-image {
+	padding: 0;
+	
+	// Image
+	img {
+		display: block;
+		width: 100%;
+		border-radius: 6px 6px 0 0;
+		
+		// Card footer
+		~ p {
+			background: #fafafa;
+			margin: 0;
+			padding: 8px;
+			border-top: .5px solid #e1e1e1;
+			line-height: 1.4;
+			border-radius: 0 0 6px 6px;
+			background-clip: padding-box;
+			
+			// Copyright
+			&::after {
+				content: "© George Garside, contact before use";
+				display: block;
+				text-align: right;
+				font-size: .8em;
+				color: grey;
+			}
+		}
+	}
+}
+
+// Code
+pre, code {
+	word-wrap: break-word; // Overridden by blog, where `overflow-x: scroll` is used
+}
+pre {
+	word-wrap: normal;
+	overflow-x: scroll;
+}
+// GitHub Theme
+pre.prettyprint {
+	background: white;
+	font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+	font-size: 12px;
+	line-height: 1.5;
+	border: 1px solid #ccc !important;
+	padding: 10px !important;
+}

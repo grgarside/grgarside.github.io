@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.git-disabled" />
+      <excludeFolder url="file://$MODULE_DIR$/o/s/dofe2014" />
+      <excludeFolder url="file://$MODULE_DIR$/o/s/hockey2014" />
+      <excludeFolder url="file://$MODULE_DIR$/o/s/sports2014" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="sass-stdlib" level="application" />
+    <orderEntry type="library" name="jquery-ui" level="application" />
+    <orderEntry type="library" name="button1" level="application" />
+  </component>
+</module>

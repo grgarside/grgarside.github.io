@@ -1,0 +1,50 @@
+RewriteEngine On
+RewriteBase /blog/
+
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteRule ^(.*)$ https://georgegarside.com/blog/$1 [R=301,L]
+
+RewriteRule ^osx/(.*)$ macos/$1 [R=301,NC,L]
+
+RedirectPermanent /blog/fix-bt-home-hub-5-orange-light/ https://georgegarside.com/blog/other/fix-bt-home-hub-5-orange-light/
+RedirectPermanent /blog/safari-8-0-4/ https://georgegarside.com/blog/macos/safari-8-0-7/
+RedirectPermanent /blog/safari-8-0-4-8-0-5/ https://georgegarside.com/blog/macos/safari-8-0-7/
+RedirectPermanent /blog/pressandhold-app-custom-characters-in-os-x-accent-popup/ https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/
+RedirectPermanent /blog/fix-keyboard-maestro-execute-shell-script-not-working/ https://georgegarside.com/blog/macos/fix-keyboard-maestro-execute-shell-script-not-running/
+RedirectPermanent /blog/fix-google-chrome-crash-in-yosemite/ https://georgegarside.com/blog/macos/fix-safari-8-crash-yosemite/
+RedirectPermanent /blog/boom-beach-help/gameplay-support/ https://georgegarside.com/blog/boom-beach-help-guide/gameplay-support/
+RedirectPermanent /blog/boom-beach-help-guide/account/transfer-ios-to-ios/ https://georgegarside.com/blog/boom-beach-help-guide/account/
+RedirectPermanent /blog/boom-beach-help-guide/account/transfer-android-ios/ https://georgegarside.com/blog/boom-beach-help-guide/account/
+RedirectPermanent /blog/boom-beach-help-guide/gameplay-support/quick-tips-tricks/ https://georgegarside.com/blog/boom-beach-help-guide/gameplay-support/
+RedirectPermanent /blog/how-to-fix-safari-8-crash-since-yosemite-dp4/ https://georgegarside.com/blog/macos/fix-safari-8-crash-yosemite/
+
+RewriteRule new-to-boom boom-beach-help-guide/gameplay-support/ [R,L]
+RewriteRule google-chrome-crash macos/fix-safari-8-crash-yosemite/ [R=301,NC,L]
+RewriteRule google-chrome https://georgegarside.com/search?q=Safari [R=301,NC,L]
+
+RedirectPermanent /blog/my-os-x-terminal-shell-setup-2014/ https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/
+RedirectPermanent /blog/osx-terminal-shell-zsh-setup/ https://georgegarside.com/blog/macos/terminal-shell-zsh-setup/
+RedirectPermanent /blog/safari-8-0-7/ https://georgegarside.com/blog/macos/safari-8-0-7/
+RedirectPermanent /blog/custom-characters-accent-popup-osx/ https://georgegarside.com/blog/macos/custom-characters-accent-popup-osx/
+RedirectPermanent /blog/all-the-little-things-osx-el-capitan-hidden-features/ https://georgegarside.com/blog/macos/all-the-little-things-osx-el-capitan-hidden-features/
+RedirectPermanent /blog/all-the-little-things-osx-yosemite-hidden-features/ https://georgegarside.com/blog/macos/all-the-little-things-osx-yosemite-hidden-features/
+RedirectPermanent /blog/decode-data-plist/ https://georgegarside.com/blog/macos/decode-data-plist/
+RedirectPermanent /blog/fix-keyboard-maestro-execute-shell-script-not-running/ https://georgegarside.com/blog/macos/fix-keyboard-maestro-execute-shell-script-not-running/
+RedirectPermanent /blog/how-to-fix-safari-8-crash-yosemite/ https://georgegarside.com/blog/macos/fix-safari-8-crash-yosemite/
+RedirectPermanent /blog/photos-has-attempted-to-repair-the-library/ https://georgegarside.com/blog/macos/photos-has-attempted-to-repair-the-library/
+RedirectPermanent /blog/keynote-magic-move-two-different-objects/ https://georgegarside.com/blog/macos/keynote-magic-move-two-different-objects/
+RedirectPermanent /blog/cellular-data-app-preferences-not-saving-on-ios-7/ https://georgegarside.com/blog/ios/cellular-data-app-preferences-not-saving-on-ios-7/
+RedirectPermanent /blog/wide-stack-overflow-stack-exchange/ https://georgegarside.com/blog/stack-exchange/wide-stack-overflow-stack-exchange/
+RedirectPermanent /blog/finder-sidebar-preferences-location/ https://georgegarside.com/blog/macos/finder-sidebar-preferences-location/
+RedirectPermanent /blog/google-schema-org-person-markup-for-adding-structured-data/ https://georgegarside.com/blog/google/person-markup-adding-structured-data/
+RedirectPermanent /blog/itunes-connect-analytics-not-enough-data/ https://georgegarside.com/blog/ios/itunes-connect-analytics-not-enough-data/
+
+RedirectPermanent /blog/category/os-x/ https://georgegarside.com/blog/macos/
+RedirectPermanent /blog/category/ios/ https://georgegarside.com/blog/ios/
+RedirectPermanent /blog/category/stack-exchange/ https://georgegarside.com/blog/stack-exchange/
+RedirectPermanent /blog/tag/stack-exchange/ https://georgegarside.com/blog/stack-exchange/
+RedirectPermanent /blog/tag/google/ https://georgegarside.com/blog/google/
+RedirectPermanent /blog/category/google/ https://georgegarside.com/blog/google/
+RedirectPermanent /blog/tag/bt/ https://georgegarside.com/blog/other/fix-bt-home-hub-5-orange-light/
+
+RewriteRule ict-a-level - [G]

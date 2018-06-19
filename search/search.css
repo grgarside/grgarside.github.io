@@ -1,0 +1,11 @@
+.gsc-refinementsArea, .gsc-above-wrapper-area {
+	border-bottom: none !important;
+}
+
+.gcsc-branding {
+	display: none;
+}
+
+.gsc-webResult {
+	max-width: 600px;
+}

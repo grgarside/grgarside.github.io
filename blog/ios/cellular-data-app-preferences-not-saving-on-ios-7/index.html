@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fix cellular data app settings not saving on iOS 9 - George Garside</title>
+	<meta name="author" content="George Garside">
+	<link rel="stylesheet" type="text/css" media="screen" href="/r/all.css?v=1.2.23">
+	<link rel="canonical" href="https://georgegarside.com/blog/ios/cellular-data-app-preferences-not-saving-on-ios-7/">
+	<meta name="twitter:site" content="@grgarside">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Fix cellular data app settings not saving on iOS 9">
+	<meta name="twitter:description" content="There's a bug with /var/wireless/Library/Databases/CellularUsage.db and here's how to fix it.">
+</head>
+
+<body>
+
+<div id="main" class="main blog post">
+
+	<div class="container has-sidebar">
+		<div class="header">
+			<span class="title">
+				<a href="https://georgegarside.com/blog/"><span itemprop="name">George <b>Garside</b> Blog</span></a>
+			</span>
+			<p class="subtitle">If you find something useful on here, it's probably an accident.</p>
+			<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<span>
+					<a href="https://georgegarside.com/">
+						<span>George Garside</span>
+					</a>
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Blog</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/ios/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">iOS</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</span>
+				› <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="https://georgegarside.com/blog/cellular-data-app-preferences-not-saving-on-ios-7/" itemprop="item" itemscope itemtype="https://schema.org/WebPage">
+						<span itemprop="name">Fix cellular data app settings not saving on iOS 9</span>
+					</a>
+					<meta itemprop="position" content="3">
+				</span>
+			</div>
+		</div>
+		<div class="content-container">
+			<article class="card-container" itemscope itemtype="https://schema.org/BlogPosting">
+				<div class="post-header">
+					<div class="post-info">
+						<h1 itemprop="headline">Fix cellular data app settings not saving on iOS 9</h1>
+						<p><span itemprop="articleSection">iOS</span> <span itemprop="datePublished">2014-05-31</span> <span itemprop="dateModified">2015-10-09</span></p>
+					</div>
+				</div>
+				<div class="card" itemprop="articleBody">
+					<p>I’ve suffered from an odd bug for a while on iOS 7, where the cellular data app preferences that I set in Settings → Cellular (Mobile in the UK) for each of the individual apps on my iOS 7 device wasn’t getting saved. I could slide the switch on or off, and when I leave the app and return, the settings would be back to how they were.</p>
+					<p>This became a large problem, especially on my limited data plan where every megabyte was precious and limited. I had to do something to fix this. The only thing I found that people seemed to find to fix it was to restore. However, I was their device probably wasn’t jailbroken.</p>
+					<p>My iPhone is jailbroken. This means that I can look in the device’s filesystem and see exactly the file that I need. I was expecting to look for the file and either see something blatantly wrong with it and fix it, or simply change the variables there instead of in the Settings app (I don’t change settings <em>that</em> often—I wouldn’t mind changing the setting in iFile/etc if required).</p>
+					<p>This wasn’t as easy as I expected. For starters, I couldn’t find the file. I was expecting a property list somewhere in ~/Library/Preferences, but that didn’t happen. After concluding that I must be looking in completely the wrong place, <a href="http://apple.stackexchange.com/a/122881/37797" rel="nofollow">I got an answer from Andrew over at Ask Different</a>.</p>
+					<blockquote><p>The directory you’re looking for happens to be <code>/var/wireless/Library/Preferences</code>. This is where the <code>Settings &gt; Cellular</code> settings are stored. The per-application settings are stored in the database <code>/var/wireless/Library/Databases/CellularUsage.db</code>.</p></blockquote>
+					<p>With my new-found knowledge, I looked at the database at <strong>/var/wireless/Library/Databases/CellularUsage.db</strong> using Navicat on my Mac (over Netatalk) and found what I was looking for—all the app cellular data preferences. I could change a value and have the change reflected in Settings. This meant that Settings was reading the database but was for some reason unable to write to it. I tried many things including permissions on both the database and the app, but everything seemed fine.</p>
+					<p>Finally, I just tried <strong>deleting it from my device</strong>. Everything was back to normal—the settings were saving and the database was getting written to!</p>
+					<p>This has occurred again with the update to iOS 9. If you update to iOS 9 OTA (over-the-air), a bug can cause the CellularData.db to become corrupted. Unfortunately, a jailbreak isn't available for iOS 9 yet, which means that this fix doesn't apply yet. Once a jailbreak is released, this solution will work fine. Until then, a workaround is to restore iOS and not restore from your backup. This will create a new CellularData.db database which works fine.</p>
+					<p><b>iOS 9.0.2 update fixes this bug.</b> You can install this update OTA through Settings &rarr; Software Update, or through iTunes.</p>
+					<blockquote><p>This update contains bug fixes and improvements, including: Fixes an issue with the setting to turn on or off app mobile data usage</p></blockquote>
+				</div>
+				<div class="card card-comments">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = 'grgarside';
+						var disqus_identifier = '11 http://georgegarside.com/blog/?p=11';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+				</div>
+			</article>
+			<div class="sidebar-container">
+				<nav class="card card-sidebar card-sidebar-top">
+					<p itemprop="author" itemscope itemtype="https://schema.org/Person">By <a href="https://georgegarside.com/" itemprop="sameAs"><span itemprop="name">George&nbsp;Garside</span></a></p>
+					<ul>
+						<li>
+							<a href="https://georgegarside.com/">Home</a>
+							<ul>
+								<li><a href="https://georgegarside.com/blog/">Blog</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="card ad ad-sidebar">
+					<!-- Blog Sidebar Right -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:160px;height:600px"
+					     data-ad-client="ca-pub-9733787518596382"
+					     data-ad-slot="3347734034"></ins>
+				</div>
+			</div>
+		</div>
+		<div class="card ad ad-footer">
+			<!-- Blog Footer Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9733787518596382"
+			     data-ad-slot="6589757235"
+			     data-ad-format="auto"></ins>
+		</div>
+	</div>
+</div>
+<footer><div class="footer">
+	<a href="https://georgegarside.com/blog/">blog</a>
+	<a href="https://georgegarside.com/thomasdeaconacademy/">TDA</a>
+	<a href="https://georgegarside.com/apps/">apps</a>
+	<a href="https://georgegarside.com/search/">search</a>
+	<a class="melink" href="https://georgegarside.com/">&copy; George Garside, 2018</a>
+</div></footer>
+
+<div class="share">
+	<div class="share-left">
+		<a class="share-button share-button-twitter" href="http://twitter.com/share?url=https://georgegarside.com/blog/ios/cellular-data-app-preferences-not-saving-on-ios-7/&amp;text=Fix%20cellular%20data%20app%20preferences%20not%20being%20saved%20on%20iOS%207&amp;via=grgarside" target="_blank"><i class="icon twitter"></i></a>
+		<a class="share-button share-button-googleplus" href="https://plus.google.com/share?url=https://georgegarside.com/blog/ios/cellular-data-app-preferences-not-saving-on-ios-7/" target="_blank"><i class="icon googleplus"></i></a>
+		<a class="share-button share-button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://georgegarside.com/blog/ios/cellular-data-app-preferences-not-saving-on-ios-7/" target="_blank"><i class="icon facebook"></i></a>
+		<script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+		<a class="commentslink" href="#disqus_thread">Need help?</a>
+	</div>
+</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>
