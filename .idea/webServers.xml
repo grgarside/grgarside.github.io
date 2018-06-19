@@ -10,6 +10,9 @@
           <option name="port" value="2994" />
         </fileTransfer>
       </webServer>
+      <webServer id="1a65529c-571f-406f-b5bb-d42e0af11574" name="In place" url="http://georgegarside:63344/">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
     </option>
   </component>
 </project>

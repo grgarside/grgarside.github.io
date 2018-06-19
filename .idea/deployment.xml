@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="gg" deleteMissingItems="true" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;.git-disabled">
+  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="In place" deleteMissingItems="true" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;.git-disabled">
     <serverData>
-      <paths name="gNRG Sites">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-          <excludedPaths>
-            <excludedPath path="Default/NetBoot" />
-            <excludedPath local="true" path="$PROJECT_DIR$/NetBoot" />
-            <excludedPath path="Default/o/Unit 1.pdf" />
-            <excludedPath path="Default/o/s/gda.zip" />
-            <excludedPath path="Default/TeamCity" />
-            <excludedPath path="Default/i" />
-          </excludedPaths>
-        </serverdata>
-      </paths>
       <paths name="gg">
         <serverdata>
           <mappings>
