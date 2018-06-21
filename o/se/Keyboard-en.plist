@@ -1,0 +1,79 @@
+<!-- q: OS X symbols -->
+<key>Roman-Accent-q</key>
+<dict>
+  <key>Direction</key>
+  <string>right</string>
+  <key>Keycaps</key>
+  <string>⌘ ⌥ ⇧ ⌃ ⎋ ⏏ ⌫ ⇥ ↩︎ ⇞</string>
+  <key>Strings</key>
+  <string>⌘ ⌥ ⇧ ⌃ ⎋ ⏏ ⌫ ⇥ ↩︎ ⇞</string>
+</dict>
+
+<!-- w: arrows -->
+<key>Roman-Accent-w</key>
+  <dict>
+  <key>Direction</key>
+  <string>right</string>
+  <key>Keycaps</key>
+  <string>→ ← ↑ ↓</string>
+  <key>Strings</key>
+  <string>→ ← ↑ ↓</string>
+</dict>
+
+<!-- r: misc -->
+<key>Roman-Accent-r</key>
+  <dict>
+  <key>Direction</key>
+  <string>right</string>
+  <key>Keycaps</key>
+  <!-- That's a double prime, not speech marks
+       also, the degrees celsius is a single unicode character
+       I rarely use these arrows in comparison to the ones above -->
+  <string>″ ✓ ✗ ▶︎ ◀︎ ℃ ©</string>
+  <key>Strings</key>
+  <string>″ ✓ ✗ ▶︎ ◀︎ ℃ ©</string>
+</dict>
+
+<!-- v: maths symbols -->
+<key>Roman-Accent-v</key>
+  <dict>
+  <key>Direction</key>
+  <string>right</string>
+  <key>Keycaps</key>
+  <string>× ÷ √ π ∴ ∵ ≈ ≠ ∞ ≟</string>
+  <key>Strings</key>
+  <string>× ÷ √ π ∴ ∵ ≈ ≠ ∞ ≟</string>
+</dict>
+
+<!-- x: maths symbols 2 -->
+<key>Roman-Accent-x</key>
+  <dict>
+  <key>Direction</key>
+  <string>right</string>
+  <key>Keycaps</key>
+  <string>⊂ ⊆ ⊃ ⊇ ∈ ∋ ∪ ∩ ≤ ≥</string>
+  <key>Strings</key>
+  <string>⊂ ⊆ ⊃ ⊇ ∈ ∋ ∪ ∩ ≤ ≥</string>
+</dict>
+
+<!-- x: maths symbols 3 -->
+<key>Roman-Accent-f</key>
+  <dict>
+  <key>Direction</key>
+  <string>right</string>
+  <key>Keycaps</key>
+  <string>ℕatural ℤint ℚrational ℝeal ℂomplex</string>
+  <key>Strings</key>
+  <string>ℕ ℤ ℚ ℝ ℂ</string>
+</dict>
+
+<!-- t: unicode superscript numbers -->
+<key>Roman-Accent-t</key>
+  <dict>
+  <key>Direction</key>
+  <string>right</string>
+  <key>Keycaps</key>
+  <string>¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁰</string>
+  <key>Strings</key>
+  <string>¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁰</string>
+</dict>

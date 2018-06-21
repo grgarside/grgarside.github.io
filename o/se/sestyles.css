@@ -1,0 +1,7 @@
+.main {
+	box-shadow: 0 150px 0 #4fc6c2 inset;
+}
+
+ul.resourceslist li > a:first-child {
+	font-weight: bold;
+}

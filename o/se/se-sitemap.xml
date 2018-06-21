@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://georgegarside.com/o/se/reset-osx-mail.html</loc>
+    <lastmod>2015-01-24</lastmod>
+  </url>
+  <url>
+    <loc>https://georgegarside.com/o/se/safari-codesign.html</loc>
+    <lastmod>2015-01-24</lastmod>
+  </url>
+  <url>
+    <loc>https://georgegarside.com/o/se/finder.h.html</loc>
+    <lastmod>2015-01-24</lastmod>
+  </url>
+  <url>
+    <loc>https://georgegarside.com/o/se/wifiagent-localizable-strings.html</loc>
+    <lastmod>2015-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://georgegarside.com/o/se/touchid/</loc>
+    <lastmod>2015-04-05</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://georgegarside.com/o/se/touchid/touch-id-require-passcode-thumbnail.png</video:thumbnail_loc>
+      <video:title>Touch ID Require Passcode Time</video:title>
+      <video:description>Change the Require Passcode time whilst keeping Touch ID enabled for iTunes and App Store</video:description>
+      <video:content_loc>https://georgegarside.com/o/se/touchid/Touch-ID-Require-Passcode.mov</video:content_loc>
+      <video:duration>12</video:duration>
+      <video:publication_date>2015-04-05</video:publication_date>
+      <video:tag>Touch ID</video:tag>
+      <video:tag>iOS</video:tag>
+      <video:category>Stack Exchange</video:category>
+      <video:uploader info="https://georgegarside.com/">George Garside</video:uploader>
+    </video:video>
+  </url>
+</urlset>

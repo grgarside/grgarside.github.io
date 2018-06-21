@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" type="text/css" href="markdown.css">
+  <title>Safari Passing Codesign</title>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage">
+
+<header>
+  <p itemprop="breadcrumb">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="https://georgegarside.com/" rel="home" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a>
+    </span> › <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="https://georgegarside.com/blog/stack-exchange/" itemprop="url">
+        <span itemprop="title">Stack Exchange</span>
+      </a>
+    </span> › <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="https://georgegarside.com/o/se/safari-codesign.html" itemprop="url">
+        <span itemprop="title">Safari passing codesign</span>
+      </a>
+    </span>
+  </p>
+</header>
+
+<h1 itemprop="headline">Safari passing codesign</h1>
+
+<pre itemprop="mainContentOfPage">~ ❯ codesign -vvvv /Applications/Safari.app/
+--validated:/Applications/Safari.app/Contents/MacOS/SafariForWebKitDevelopment
+--validated:/Applications/Safari.app/Contents/XPCServices/com.apple.Safari.BrowserDataImportingService.xpc
+/Applications/Safari.app/: valid on disk
+/Applications/Safari.app/: satisfies its Designated Requirement</pre>
+
+<footer>
+  <hr />
+  <p itemprop="dateModified">Updated 2014-12-25</p>
+  <p itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://georgegarside.com/" itemprop="url"><span itemprop="name">George Garside</span></a></p>
+  <script src="ad.js"></script>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+  <!-- End Google Tag Manager -->
+</footer>
+
+</body>
+</html>

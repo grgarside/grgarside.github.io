@@ -1,0 +1,7 @@
+RewriteRule /o/se/ https://georgegarside.com/blog/stack-exchange/ [R=301,L]
+RedirectPermanent /o/se/grgarside-statistics.html https://georgegarside.com/blog/stack-exchange/
+RedirectPermanent /o/se/Reset-OSX-Mail.html https://georgegarside.com/o/se/reset-osx-mail.html
+RedirectPermanent /o/se/Reset-OSX-Mail-app.html https://georgegarside.com/o/se/reset-osx-mail.html
+RedirectPermanent /o/se/resetMail.html https://georgegarside.com/o/se/reset-osx-mail.html
+RedirectPermanent /o/se/arc.html https://georgegarside.com/blog/stack-exchange-review-comments/
+RedirectPermanent /o/se/arcjson.html https://georgegarside.com/blog/stack-exchange-review-comments/

@@ -1,0 +1,83 @@
+#content {
+    width: 1300px !important;
+}
+#mainbar, .question-summary {
+    width: 1050px !important;
+}
+.narrow .summary {
+    width: 860px !important;
+}
+#header {
+    width: 1330px !important;
+}
+.topbar .topbar-wrapper {
+    width: 1300px !important;
+}
+.post-text {
+    width: 960px !important;
+}
+.fw {
+    width: 958px !important;
+}
+#answers {
+    width: 928px !important;
+}
+#answers-header, .answer {
+    width: 1028px !important;
+}
+.comments {
+    width: 960px !important;
+}
+.tag-cell {
+    width: 320px !important;
+}
+#user-browser table {
+    margin-left: 170px !important;
+}
+.user-show-new .user-header .user-header-left .gravatar {
+    margin-left: 30px !important;
+    margin-right: 35px !important;
+}
+.user-show-new .user-header .user-header-left {
+    width: 785px !important;
+}
+.user-show-new .user-header .data {
+    width: 552px !important;
+}
+.user-show-new .user-panel {
+    width: 630px !important;
+}
+.user-show-new .user-panel .question-hyperlink, .user-show-new .user-panel .answer-hyperlink {
+    width: 555px !important;
+    max-width: 555px !important;
+}
+.user-show-new .user-rep-chart-summary {
+    margin-left: 80px !important;
+}
+.badges-page .badge-description {
+    width: 740px !important;
+}
+.footerwrap {
+    width: 1300px !important;
+}
+.topbar-dialog.inbox-dialog, .topbar-dialog.modInbox-dialog, .topbar-dialog.achievements-dialog {
+    width: 475px !important;
+}
+.achievements-dialog .message-text {
+    width: 378px !important;
+}
+.topbar-dialog.inbox-dialog .inbox-item .item-content, .topbar-dialog.modInbox-dialog .inbox-item .item-content, .topbar-dialog.achievements-dialog .inbox-item .item-content {
+    width: 423px !important;
+}
+.summary {
+    width: 940px !important;
+}
+#revisions .markdown-diff .full-diff td.content {
+    width: 620px !important;
+}
+.revcell4 {
+    width: 120px !important;
+}
+.dashboard-item .dashboard-summary {
+    width: 670px !important;
+}

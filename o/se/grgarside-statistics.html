@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" type="text/css" href="markdown.css">
+  <title>grgarside's Ask Different Statistics</title>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage">
+
+<header>
+  <p itemprop="breadcrumb">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="https://georgegarside.com/" rel="home" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a>
+    </span> › <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="https://georgegarside.com/blog/stack-exchange/" itemprop="url">
+        <span itemprop="title">Stack Exchange</span>
+      </a>
+    </span> › <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="https://georgegarside.com/o/se/grgarside-statistics.html" itemprop="url">
+        <span itemprop="title">grgarside's Statistics</span>
+      </a>
+    </span>
+  </p>
+</header>
+
+<h1 itemprop="headline">grgarside's Ask Different Statistics</h1>
+
+<p id="loading"><b>Data is loading, please wait!</b></p>
+
+<div id="flair" style="padding-bottom: 10px;"></div>
+
+<p>Consecutive time at #1 in week reputation: <code>27 weeks</code><br/>(<a href="http://chat.stackexchange.com/transcript/38/2014/9/28" rel="external">Ask Different record</a>, previously set by bmike at 17 weeks)</p>
+<p>Reviewing:</p>
+<ul>
+  <li><b>#1</b> <a href="http://apple.stackexchange.com/review/first-posts/stats" rel="external">First Posts</a>: <span id="qtyFirstPosts">0000</span> reviews</li>
+  <li><b>#1</b> <a href="http://apple.stackexchange.com/review/late-answers/stats" rel="external">Late Answers</a>: <span id="qtyLateAnswers">0000</span> reviews</li>
+  <li><b>#1</b> <a href="http://apple.stackexchange.com/review/low-quality-posts/stats" rel="external">Low Quality Posts</a>: <span id="qtyLowQuality">0000</span> reviews</li>
+</ul>
+<p>Flag accuracy: <code>99</code>%, <a href="http://apple.stackexchange.com/help/badges/73/marshal?userid=37797" rel="external">Marshal</a> badge</p>
+
+<footer>
+  <hr />
+  <p itemprop="dateModified">Updated 2014-12-25</p>
+  <p itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://georgegarside.com/" itemprop="url"><span itemprop="name">George Garside</span></a></p>
+  <script src="ad.js"></script>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+  <!-- End Google Tag Manager -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      window.setTimeout(function() {
+        $.get('https://cors-anywhere.herokuapp.com/https://se-flair.appspot.com/1686675.html', function(data) {
+          var b = $(data);
+          b.find('.gravatar').remove();
+          b.find('a:not(:first)').removeAttr('href');
+          $("#flair").html(b).find('style').remove();
+        });
+        window.setTimeout(function() {
+          $.get('https://cors-anywhere.herokuapp.com/http://apple.stackexchange.com/review/first-posts/stats', function(data) {
+            $("#qtyFirstPosts").html($(data).find(':nth-child(3) tr:nth-child(4) .review-stats-all-count').text());
+          });
+          window.setTimeout(function() {
+            $.get('https://cors-anywhere.herokuapp.com/http://apple.stackexchange.com/review/late-answers/stats', function(data) {
+              $("#qtyLateAnswers").html($(data).find(':nth-child(3) tr:nth-child(4) .review-stats-all-count').text());
+            });
+            window.setTimeout(function() {
+              $.get('https://cors-anywhere.herokuapp.com/http://apple.stackexchange.com/review/low-quality-posts/stats', function(data) {
+                $("#qtyLowQuality").html($(data).find(':nth-child(3) tr:nth-child(4) .review-stats-all-count').text());
+              });
+              window.setTimeout(function() {
+                $('#loading').remove();
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    });
+  </script>
+</footer>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMTRLS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMTRLS');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>
