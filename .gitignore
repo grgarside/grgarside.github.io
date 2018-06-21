@@ -16,3 +16,6 @@
 
 # Backups
 .bak/
+
+# Temporary
+/blog/drafts
